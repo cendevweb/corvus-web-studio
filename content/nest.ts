@@ -16,10 +16,13 @@ export interface Experiment {
   status: "playable" | "soon";
   /** Which game it comes from (`null`: the studio itself). */
   from: GameSlug | null;
+  /** Wording of the origin on a playable card ("Tiré de Fastr"). Defaults to the game's name. */
+  origin?: Localized;
   title: { card: Localized; page: Localized };
   description: { card: Localized; page: Localized };
   /** Tags on the home card, and the fuller list on the Nid page. */
   tags: { card: Localized<string[]>; page: Localized<string[]> };
+  /** How it works, in three steps. Backticks mark inline code. */
   how?: Localized<string[]>;
   demo?: ExperimentDemo;
   /** Copyable snippet (MIT). `short` is the home-page version. */
@@ -41,15 +44,21 @@ const springFull = `// Un ressort à deux réglages : raideur (k) et amortisseme
 // Pas de durée : il s'arrête quand il n'a plus d'élan.
 const spring = (apply, k = 0.06, d = 0.86) => {
   let x = 0, y = 0, vx = 0, vy = 0, tx = 0, ty = 0, raf = 0;
+
   const step = () => {
     vx = (vx + (tx - x) * k) * d;
     vy = (vy + (ty - y) * k) * d;
     x += vx; y += vy;
     apply(x, y, vx, vy);
-    const moving = Math.abs(vx) + Math.abs(vy) + Math.abs(tx - x) + Math.abs(ty - y) > 0.01;
+
+    const moving = Math.abs(vx) + Math.abs(vy)
+      + Math.abs(tx - x) + Math.abs(ty - y) > 0.01;
     raf = moving ? requestAnimationFrame(step) : 0;
   };
-  return { to(a, b) { tx = a; ty = b; if (!raf) raf = requestAnimationFrame(step); } };
+
+  return {
+    to(a, b) { tx = a; ty = b; if (!raf) raf = requestAnimationFrame(step); }
+  };
 };
 
 // La vitesse horizontale incline le corbeau et choisit son profil.
@@ -58,6 +67,7 @@ const crow = spring((x, y, vx) => {
   bird.style.transform = \`translate(\${x}px, \${y}px) rotate(\${tilt}deg)\`;
   bird.classList.toggle('flip', vx < 0);
 });
+
 sky.addEventListener('pointermove', e => crow.to(e.offsetX, e.offsetY));`;
 
 const timerShort = `// Timer de manche : le temps restant dérive de l'horloge, pas d'un setInterval (MIT)
@@ -87,7 +97,9 @@ const loop = now => {
 
 const paint = () => {
   const s = Math.ceil(left);
-  clock.textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+  clock.textContent =
+    String(Math.floor(s / 60)).padStart(2, '0') + ':' +
+    String(s % 60).padStart(2, '0');
   const lit = Math.ceil(left / ROUND * SEGMENTS);
   segments.forEach((el, i) => el.classList.toggle('off', i >= lit));
   box.classList.toggle('danger', left > 0 && left <= 10);
@@ -110,6 +122,7 @@ const flipShort = `/* Carte à retourner : deux faces, une rotation (MIT) */
 const flipFull = `/* Une carte = un bouton. L'état vit dans aria-pressed :
    le style et l'accessibilité lisent la même source. */
 .grid { perspective: 800px; }
+
 .card {
   position: relative;
   transform-style: preserve-3d;
@@ -117,7 +130,11 @@ const flipFull = `/* Une carte = un bouton. L'état vit dans aria-pressed :
 }
 .card[aria-pressed='true'] { transform: rotateY(180deg); }
 .card:active { transform: scale(.95); }
-.face { position: absolute; inset: 0; backface-visibility: hidden; }
+
+.face {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+}
 .face.answer { transform: rotateY(180deg); }
 
 /* Mouvement réduit : la carte change de face sans tourner. */
@@ -139,6 +156,7 @@ export const experiments: readonly Experiment[] = [
     number: "01",
     status: "playable",
     from: null,
+    origin: l("Le studio", "The studio"),
     title: {
       card: l("Le corbeau qui suit le curseur", "The crow that follows the cursor"),
       page: l("Le corbeau qui suit le curseur", "The crow that follows the cursor"),
@@ -177,6 +195,7 @@ export const experiments: readonly Experiment[] = [
     number: "02",
     status: "playable",
     from: "fastr",
+    origin: l("Tiré de Fastr", "From Fastr"),
     title: {
       card: l("Timer de manche, façon Fastr", "Round timer, Fastr style"),
       page: l("Timer de manche, façon Fastr", "Round timer, Fastr style"),
@@ -215,6 +234,7 @@ export const experiments: readonly Experiment[] = [
     number: "03",
     status: "playable",
     from: "iconic",
+    origin: l("Tiré d'Iconic", "From Iconic"),
     title: {
       card: l("Grille d'icônes, façon Iconic", "Icon grid, Iconic style"),
       page: l("Grille d'icônes à retourner", "Flip-card icon grid"),
@@ -235,12 +255,12 @@ export const experiments: readonly Experiment[] = [
     },
     how: l(
       [
-        "Chaque carte est un bouton dont l'état vit dans aria-pressed.",
+        "Chaque carte est un bouton dont l'état vit dans `aria-pressed`.",
         "Le CSS lit ce même attribut pour faire tourner la carte en 3D.",
         "Un seul écouteur gère toute la grille, clavier et lecteur d'écran compris.",
       ],
       [
-        "Every card is a button whose state lives in aria-pressed.",
+        "Every card is a button whose state lives in `aria-pressed`.",
         "CSS reads that same attribute to rotate the card in 3D.",
         "A single listener handles the whole grid, keyboard and screen reader included.",
       ],
