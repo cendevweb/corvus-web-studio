@@ -1,1 +1,119 @@
-{}
+{
+  "aboutPage": {
+    "hero": {
+      "eyebrow": "About · Dylan Tuna · Nancy",
+      "title": "One developer, <em>one crow</em>, three games.",
+      "lede": "<strong>Corvus Web Studio</strong> is the independent studio of <strong>Dylan Tuna</strong>, Senior Fullstack Engineer. Nine years of SaaS products in teams, and online games designed, built and drawn solo.",
+      "cta": "See the career",
+      "crowAlt": "Pixel art crow perched on a branch",
+      "crowReplay": "Replay the crow's landing",
+      "crowCaption": "corvus, spirit animal",
+      "proofLabel": "The studio in numbers",
+      "proof": {
+        "years": { "value": "9+ years", "label": "of SaaS products in teams" },
+        "games": { "value": "3", "label": "games released, solo" },
+        "fighters": { "value": "51", "label": "fighters in One Piexel" },
+        "icons": { "value": "300+", "label": "icons to find in Iconic" }
+      }
+    },
+    "dylan": {
+      "kicker": "01 / Dylan Tuna",
+      "title": "Full-stack <em>and AI</em>, product side.",
+      "p1": "Senior Fullstack Engineer based in Nancy, France. Since 2016, Dylan has been building SaaS in teams: ad tech, sports, creator tools. <strong>From the database schema to the interface</strong>, with a real taste for the details nobody notices when they work.",
+      "p2": "On the side, he designs, builds and draws the studio's games on his own. AI is part of the daily toolkit: <strong>GPT-4 built into TweetHunter</strong>, then MCP, Skills and agents.",
+      "facts": {
+        "years": "<b>9+ years</b> of experience",
+        "senior": "<b>Senior</b> Fullstack",
+        "ai": "<b>AI</b> & agents",
+        "stack": "TypeScript · React · Next.js"
+      },
+      "timelineLabel": "Career milestones",
+      "timeline": {
+        "t1": {
+          "period": "2025-26",
+          "title": "SportsDynamics",
+          "text": "Senior Fullstack · sports SaaS, data-rich interfaces, AWS Lambda"
+        },
+        "t2": {
+          "period": "2023-24",
+          "title": "Lempire · TweetHunter",
+          "text": "Senior Fullstack · GPT-4, content automation, image and video pipelines"
+        },
+        "t3": {
+          "period": "2021-23",
+          "title": "Weblib",
+          "text": "Fullstack · multi-repo to monorepo migration"
+        },
+        "t4": {
+          "period": "2019-21",
+          "title": "Paragone",
+          "text": "Fullstack · ad-tech platform, schema redesign, reporting"
+        },
+        "t5": {
+          "period": "2016-19",
+          "title": "Formiris, Pernod Ricard",
+          "text": "CMS, data platform, user base overhaul"
+        }
+      },
+      "fullCareer": "Full career"
+    },
+    "studio": {
+      "kicker": "02 / The studio",
+      "title": "What <em>the studio</em> does.",
+      "link": "See the services",
+      "items": {
+        "games": {
+          "title": "Online games",
+          "text": "One Piexel, Iconic, Fastr: three released games, playable in the browser, on desktop and mobile."
+        },
+        "web": {
+          "title": "Web products",
+          "text": "Websites, applications and SaaS for clients, in fullstack Next.js."
+        },
+        "ai": {
+          "title": "AI services",
+          "text": "MCP servers, Skills, agents and AI generation built into a product."
+        },
+        "components": {
+          "title": "Components",
+          "text": "Components and web experiences, published in the Nest with their code."
+        }
+      }
+    },
+    "crow": {
+      "kicker": "03 / The crow",
+      "title": "Why <em>Corvus</em>?",
+      "alt": "Pixel art crow in flight",
+      "p1": "No founding legend. The crow is <strong>Dylan's spirit animal</strong>, and the studio's name follows from it: <em>corvus</em>, in Latin.",
+      "p2": "It stays on as a signature: an animated logo, a few pixels, a quiet presence on every page."
+    },
+    "values": {
+      "kicker": "04 / Values",
+      "title": "Four principles, <em>kept</em>.",
+      "items": {
+        "precision": {
+          "title": "Precision",
+          "text": "From netcode to button, every detail gets attention, including the ones nobody notices."
+        },
+        "sobriety": {
+          "title": "Restraint",
+          "text": "Few effects, nothing superfluous. The interface serves the project, never the other way round."
+        },
+        "autonomy": {
+          "title": "Autonomy",
+          "text": "Design, development, art: one person carries the product from end to end."
+        },
+        "transparency": {
+          "title": "Transparency",
+          "text": "Patch notes, devlogs, open code whenever possible: the work is shown."
+        }
+      }
+    },
+    "links": {
+      "kicker": "05 / Links",
+      "title": "Follow <em>the studio</em>.",
+      "text": "The code is on GitHub, trailers and devlogs on YouTube. A question? Write to the studio: reply within 24 h.",
+      "services": "See the services"
+    }
+  }
+}
