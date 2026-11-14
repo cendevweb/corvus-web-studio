@@ -43,9 +43,10 @@ export function GameGallery({ shots, labels }: GameGalleryProps) {
             className="shot"
             type="button"
             delay={(index % 3) * 60}
-            aria-label={`${labels.enlarge} ${item.alt}`}
             onClick={() => setCurrent(index)}
           >
+            {/* Name = "Agrandir : <alt>"; no aria-label, so the visible caption stays in it (WCAG 2.5.3). */}
+            <span className="sr">{labels.enlarge} </span>
             <Image
               src={item.src}
               width={item.width}
@@ -59,9 +60,7 @@ export function GameGallery({ shots, labels }: GameGalleryProps) {
             <span className="shot-z" aria-hidden="true">
               <GameIcon name="zoom" />
             </span>
-            <span className="shot-c" aria-hidden="true">
-              {item.caption}
-            </span>
+            <span className="shot-c">{item.caption}</span>
           </Reveal>
         ))}
       </div>

@@ -223,6 +223,18 @@ export function rehypeArticle() {
     }
     close();
 
+    // An article without `##` sections starts at `###`: shift its headings up one level so the outline
+    // stays h1 → h2 → h3 (WCAG 1.3.1). The `as-h3` / `as-h4` classes keep the original look.
+    if (number === 0) {
+      for (const node of output) {
+        if (!isElement(node)) continue;
+        const shifted = { h3: "h2", h4: "h3" }[node.tagName];
+        if (!shifted) continue;
+        node.properties = { ...node.properties, className: [...classes(node), `as-${node.tagName}`] };
+        node.tagName = shifted;
+      }
+    }
+
     tree.children = output;
   };
 }

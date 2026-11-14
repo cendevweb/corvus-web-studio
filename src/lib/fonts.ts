@@ -17,7 +17,7 @@ export const bricolage = Bricolage_Grotesque({
 export const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
-  style: ["normal", "italic"],
+  style: "italic",
   display: "swap",
   variable: "--font-instrument",
 });

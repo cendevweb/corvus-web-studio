@@ -55,7 +55,9 @@ interface TrailerPosterProps {
 export function TrailerPoster({ poster, playLabel, badge }: TrailerPosterProps) {
   const open = useContext(TrailerContext);
   return (
-    <button className="poster" type="button" aria-label={playLabel} onClick={open}>
+    <button className="poster" type="button" onClick={open}>
+      {/* Name = play label + poster alt + visible badge; no aria-label (WCAG 2.5.3). */}
+      <span className="sr">{playLabel} : </span>
       <Image
         src={poster.src}
         width={poster.width}

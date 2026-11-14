@@ -1,7 +1,4 @@
-"use client";
-
-import { useEffect, useRef, useState, type CSSProperties, type ElementType, type ReactNode } from "react";
-import { cn } from "@/lib/cn";
+import type { CSSProperties, ElementType, ReactNode } from "react";
 
 interface RevealProps {
   as?: ElementType;
@@ -14,51 +11,22 @@ interface RevealProps {
   [attribute: string]: unknown;
 }
 
-const callbacks = new WeakMap<Element, () => void>();
-let observer: IntersectionObserver | null = null;
-
-function getObserver(): IntersectionObserver {
-  observer ??= new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        callbacks.get(entry.target)?.();
-        callbacks.delete(entry.target);
-        observer?.unobserve(entry.target);
-      }
-    },
-    { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
-  );
-  return observer;
-}
-
 /**
- * Reveals its content when it scrolls into view (fade + 14px rise, 420ms).
- * - Content stays visible without JS (the hidden state needs `html.js`, set by the inline head script).
+ * Reveals its content when it scrolls into view (fade + 14px rise, 300ms).
+ * - No client JS of its own: the inline head script (src/lib/theme-script.ts) watches every `[data-r]`
+ *   element. What is already on screen stays visible (so the LCP element is painted with the first
+ *   frame); what is below gets `data-r="wait"`, then `data-r="in"` once it scrolls into view.
+ * - Content stays visible without JS (the hidden state needs `html.js`, set by the same script).
  * - With `prefers-reduced-motion` only the opacity animates (handled in CSS).
  */
 export function Reveal({ as, delay, className, style, children, ...rest }: RevealProps) {
   const Tag: ElementType = as ?? "div";
-  const ref = useRef<HTMLElement>(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = getObserver();
-    callbacks.set(el, () => setShown(true));
-    io.observe(el);
-    return () => {
-      callbacks.delete(el);
-      io.unobserve(el);
-    };
-  }, []);
-
   return (
     <Tag
-      ref={ref}
       data-r=""
-      className={cn(className, shown && "in")}
+      // The head script changes `data-r` before React hydrates.
+      suppressHydrationWarning
+      className={className}
       style={delay ? ({ ...style, "--d": `${delay}ms` } as CSSProperties) : style}
       {...rest}
     >

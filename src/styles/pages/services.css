@@ -71,7 +71,7 @@
     .steps{display:grid;gap:0;position:relative}
     .steps::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--line)}
     .steps::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--iris);transform:scaleY(0);transform-origin:top;transition:transform 1400ms var(--ease-in-out)}
-    .steps.in::after{transform:none}
+    .steps[data-r="in"]::after{transform:none}
     .step{position:relative;padding:0 0 30px 26px}
     .step::before{content:"";position:absolute;left:-4px;top:6px;width:10px;height:10px;background:var(--bg);border:2px solid var(--violet-t)}
     .step b{font-family:var(--pixel);font-weight:400;font-size:16px;letter-spacing:.04em;color:var(--violet-t)}

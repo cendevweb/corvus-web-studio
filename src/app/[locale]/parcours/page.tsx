@@ -16,6 +16,7 @@ import type { Locale } from "@/i18n/routing";
 import { personJsonLd } from "@/lib/jsonld";
 import { resolveLocale, type LocaleParams } from "@/lib/page";
 import { absoluteUrl, buildMetadata } from "@/lib/seo";
+import "@/styles/pages/career.css";
 
 export async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
   const locale = await resolveLocale(params);

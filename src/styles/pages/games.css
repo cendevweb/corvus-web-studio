@@ -7,7 +7,7 @@
   .gp-ic{--acc:#45c2bf;--glow:#2CA6A4;--shot-r:18px;--shot-b:4px solid #f5f5f5}
   .gp-fa{--acc:#f7b90f;--glow:#29d8ff;--shot-r:0px;--shot-b:2px solid rgba(41,216,255,.5)}
   :root[data-theme=light] .gp-op{--acc:#8a5d00}
-  :root[data-theme=light] .gp-ic{--acc:#1f7f7d}
+  :root[data-theme=light] .gp-ic{--acc:#1a7472}
   :root[data-theme=light] .gp-fa{--acc:#8a6200}
   :root[data-theme=light] .gp .lb{--bone:#E8E6E3;--muted:#A5A3AC;--line-2:rgba(232,230,227,.18)}
   :root[data-theme=light] .gp .sk-ic,:root[data-theme=light] .gl .sk-ic{box-shadow:0 0 0 1px rgba(14,14,18,.10),0 10px 30px rgba(14,14,18,.06)}

@@ -89,23 +89,25 @@
     top: 12px;
   }
 
-  /* Scroll reveal (see components/ui/Reveal.tsx). Only hidden once JS is known to run. */
-  html.js [data-r] {
+  /* Scroll reveal (components/ui/Reveal.tsx, driven by the inline head script in lib/theme-script.ts).
+     Only what is off screen is hidden ("wait"); the transition lives on the revealed state so hiding is instant. */
+  html.js [data-r="wait"] {
     opacity: 0;
     transform: translateY(14px);
+  }
+  html.js [data-r="in"] {
     transition:
       opacity var(--duration-reveal) var(--ease-out),
       transform var(--duration-reveal) var(--ease-out);
     transition-delay: var(--d, 0ms);
   }
-  html.js [data-r].in {
-    opacity: 1;
-    transform: none;
-  }
   @media (prefers-reduced-motion: reduce) {
-    html.js [data-r] {
+    html.js [data-r="wait"] {
       transform: none;
-      transition: opacity 300ms ease;
+    }
+    html.js [data-r="in"] {
+      transition: opacity 200ms ease;
+      transition-delay: 0ms;
     }
   }
 

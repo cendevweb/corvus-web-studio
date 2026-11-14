@@ -5,11 +5,5 @@
 @import "../styles/layout.css";
 @import "../styles/skins.css";
 @import "../styles/home.css";
-@import "../styles/pages/games.css";
-@import "../styles/pages/career.css";
-@import "../styles/pages/news.css";
-@import "../styles/pages/nest.css";
-@import "../styles/pages/services.css";
-@import "../styles/pages/about.css";
-@import "../styles/pages/contact.css";
-@import "../styles/pages/legal.css";
+/* Page styles (src/styles/pages/*.css) are imported by the routes that use them, so each page only
+   downloads its own CSS. */

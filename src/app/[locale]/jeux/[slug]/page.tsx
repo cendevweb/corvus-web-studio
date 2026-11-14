@@ -19,6 +19,7 @@ import { videoGameJsonLd } from "@/lib/jsonld";
 import { getNewsByGame } from "@/lib/news";
 import { resolveLocale } from "@/lib/page";
 import { absoluteUrl, buildMetadata } from "@/lib/seo";
+import "@/styles/pages/games.css";
 
 type Params = Promise<{ locale: string; slug: string }>;
 

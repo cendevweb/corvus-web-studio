@@ -21,7 +21,7 @@ export function LocaleSwitch() {
           href={localizedPath(locale)}
           hrefLang={locale}
           lang={locale}
-          aria-label={NAMES[locale]}
+          aria-label={`${NAMES[locale]} (${locale.toUpperCase()})`}
           aria-current={locale === current ? "true" : undefined}
           scroll={false}
         >

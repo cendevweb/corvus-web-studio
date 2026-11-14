@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
 import { resolveLocale, type LocaleParams } from "@/lib/page";
 import { buildMetadata } from "@/lib/seo";
+import "@/styles/pages/legal.css";
 
 export async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
   const locale = await resolveLocale(params);

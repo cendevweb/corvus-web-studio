@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { featuredSocials, mainNav } from "@content/site";
 import { Icon } from "@/components/ui/Icon";
 import { Link } from "@/i18n/navigation";
@@ -38,6 +38,8 @@ export function Header() {
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [paletteLoaded, setPaletteLoaded] = useState(false);
   const apple = useSyncExternalStore(noopSubscribe, isApple, () => false);
+  const burger = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
 
   const openPalette = () => {
     setMenuOpen(false);
@@ -53,6 +55,8 @@ export function Header() {
         setPaletteLoaded(true);
         setPaletteOpen((open) => !open);
       } else if (event.key === "Escape") {
+        // Closing hides the menu: bring the focus back to the burger rather than losing it.
+        if (menu.current?.contains(document.activeElement)) burger.current?.focus();
         setMenuOpen(false);
       }
     };
@@ -67,7 +71,7 @@ export function Header() {
     <header className={cn("hd", (stuck || menuOpen) && "is-stuck")}>
       <div className="wrap hd-in">
         <Link className="brand" href="/" aria-label={t("brandLabel")} onClick={() => setMenuOpen(false)}>
-          <Image src="/images/brand/corbeau-logo.png" width={51} height={38} alt="" unoptimized priority />
+          <Image src="/images/brand/corbeau-logo.png" width={51} height={38} alt="" unoptimized loading="eager" />
           <span>Corvus Web Studio</span>
         </Link>
 
@@ -84,11 +88,13 @@ export function Header() {
             type="button"
             className="kbtn"
             aria-haspopup="dialog"
-            aria-label={t("openPalette")}
+            aria-keyshortcuts={apple ? "Meta+K" : "Control+K"}
             onClick={openPalette}
           >
             <Icon name="search" />
-            <kbd suppressHydrationWarning>{apple ? "⌘K" : "Ctrl K"}</kbd>
+            {/* The visible shortcut stays part of the accessible name (WCAG 2.5.3). */}
+            <span className="sr">{t("openPalette")}</span>
+            <kbd>{apple ? "⌘K" : "Ctrl K"}</kbd>
           </button>
           <LocaleSwitch />
           <ThemeToggle />
@@ -96,6 +102,7 @@ export function Header() {
         </div>
 
         <button
+          ref={burger}
           type="button"
           className="burger"
           aria-expanded={menuOpen}
@@ -107,7 +114,7 @@ export function Header() {
         </button>
       </div>
 
-      <div className={cn("menu", menuOpen && "is-open")} id="menu">
+      <div ref={menu} className={cn("menu", menuOpen && "is-open")} id="menu">
         <nav aria-label={t("mobileNav")}>
           {mainNav.map((item, index) => (
             <Link
@@ -115,6 +122,8 @@ export function Header() {
               className="m"
               href={item.href}
               aria-current={isCurrent(item.href) ? "page" : undefined}
+              // The closed menu still sits in the viewport: only prefetch its pages once it is open.
+              prefetch={menuOpen ? null : false}
               onClick={() => setMenuOpen(false)}
             >
               {nav(item.key)} <small>{String(index + 1).padStart(2, "0")}</small>
