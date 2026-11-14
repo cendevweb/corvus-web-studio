@@ -4,7 +4,7 @@
   .pg-about{
     /* Hero: the crow stage sits under the text on mobile, to the right on desktop */
     .ph .stage{order:0;margin:8px auto 20px}
-    @media (min-width:1000px){.ph .stage{width:min(460px,100%);margin-bottom:0}}
+    @media (min-width:1000px){.ph .stage{width:min(460px,100%)}}
 
     /* Dylan: intro + timeline card */
     .two{display:grid;gap:36px}
