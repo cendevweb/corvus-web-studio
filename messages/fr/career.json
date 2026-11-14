@@ -3,7 +3,7 @@
     "intro": {
       "eyebrow": "Parcours · Dylan Tuna · Nancy",
       "title": "Full-stack et IA, <em>du schéma</em> au <em>bouton</em>.",
-      "lede": "<strong>Dylan Tuna</strong>, Senior Fullstack Engineer orienté <strong>Product AI</strong>. Plus de 9 ans à construire des SaaS en équipe : adTech, sport, outils pour créateurs. Plutôt qu'une liste de postes, six réalisations : le problème de départ, la contribution, le choix qui a compté, le résultat.",
+      "lede": "<strong>Dylan Tuna</strong>, Senior Fullstack Engineer orienté <strong>Product AI</strong>. Plus de 9 ans à construire des SaaS en équipe : adTech, sport, outils pour créateurs. Plutôt qu'une liste de postes, six réalisations : le problème de départ, la contribution, le choix qui a compté, le résultat.",
       "downloadCv": "Télécharger le CV (PDF)",
       "pillars": {
         "fullstack": {
@@ -42,7 +42,7 @@
         "hooks": { "key": "hooks", "value": "lint · tests · captures" },
         "review": { "key": "relecture", "value": "validé, on merge" }
       },
-      "note": "Ce site est construit comme ça : il en est la démo.",
+      "note": "Ce site est construit comme ça : il en est la démo.",
       "servicesLabel": "Services IA"
     },
     "timeline": {
@@ -60,8 +60,8 @@
       "title": "Les <em>papiers</em>."
     },
     "contact": {
-      "title": "Un poste, un projet, <em>une question ?</em>",
-      "text": "Recrutement d'un Senior Fullstack, produit à construire ou intégration IA : un message au studio, une réponse sous 24 h."
+      "title": "Un poste, un projet, <em>une question ?</em>",
+      "text": "Recrutement d'un Senior Fullstack, produit à construire ou intégration IA : un message au studio, une réponse sous 24 h."
     }
   }
 }

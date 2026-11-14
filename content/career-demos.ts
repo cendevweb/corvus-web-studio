@@ -20,7 +20,7 @@ export const careerDemos = {
     stepsLabel: l("Étapes du pipeline", "Pipeline steps"),
     steps: l(["Récupérer", "Rendre", "Exporter"], ["Fetch", "Render", "Export"]),
     outputLabel: l(
-      "Capture générée : le tweet recadré sur un fond dégradé",
+      "Capture générée : le tweet recadré sur un fond dégradé",
       "Generated capture: the tweet cropped on a gradient background",
     ),
     formatLabel: l("Format de sortie", "Output format"),
@@ -39,7 +39,7 @@ export const careerDemos = {
     rules: {
       top: {
         condition: l("buts ≥ 10", "goals ≥ 10"),
-        effect: l("badge « Top buteur » + contour", "\"Top scorer\" badge + outline"),
+        effect: l("badge « Top buteur » + contour", "\"Top scorer\" badge + outline"),
         toggle: l("Le joueur a marqué 10 buts ou plus", "The player scored 10 goals or more"),
       },
       live: {
@@ -49,7 +49,7 @@ export const careerDemos = {
       },
       out: {
         condition: l("statut = blessé", "status = injured"),
-        effect: l("griser la fiche + « Indisponible »", "grey out the card + \"Unavailable\""),
+        effect: l("griser la fiche + « Indisponible »", "grey out the card + \"Unavailable\""),
         toggle: l("Le joueur est blessé", "The player is injured"),
       },
     },
@@ -75,7 +75,7 @@ export const careerDemos = {
     after: l("Après", "After"),
     note: l("noms fictifs", "fictional names"),
     diagramLabel: l(
-      "Schéma : six dépôts séparés et reliés par des dépendances croisées convergent vers un monorepo rangé en apps et packages",
+      "Schéma : six dépôts séparés et reliés par des dépendances croisées convergent vers un monorepo rangé en apps et packages",
       "Diagram: six separate repositories linked by crossed dependencies converge into a monorepo organised in apps and packages",
     ),
     legendBefore: l(
@@ -107,7 +107,7 @@ export const careerDemos = {
     hook: {
       label: l("Accroche", "Headline"),
       options: l(
-        ["Cours plus loin.", "Prêt pour dimanche ?", "La prochaine paire attend."],
+        ["Cours plus loin.", "Prêt pour dimanche ?", "La prochaine paire attend."],
         ["Run further.", "Ready for Sunday?", "The next pair is waiting."],
       ),
     },
@@ -148,13 +148,13 @@ export const careerDemos = {
     stateLabel: l("État du schéma", "State of the schema"),
     before: l("Avant", "Before"),
     after: l("Après", "After"),
-    note: l("survol : relations", "hover: relations"),
+    note: l("survol : relations", "hover: relations"),
     beforeLabel: l(
-      "Avant : une seule table users qui mélange identité, société, rôles et marques",
+      "Avant : une seule table users qui mélange identité, société, rôles et marques",
       "Before: a single users table mixing identity, company, roles and brands",
     ),
     afterLabel: l(
-      "Après : six tables reliées. users, memberships, orgs, profiles, roles, brands",
+      "Après : six tables reliées. users, memberships, orgs, profiles, roles, brands",
       "After: six linked tables. users, memberships, orgs, profiles, roles, brands",
     ),
     warnings: l(
@@ -165,7 +165,7 @@ export const careerDemos = {
 
   serverless: {
     flowLabel: l(
-      "Flux : un événement entre dans une queue, une Lambda le traite, puis un hook notifie les autres services. En cas d'échec, le message retourne dans la queue.",
+      "Flux : un événement entre dans une queue, une Lambda le traite, puis un hook notifie les autres services. En cas d'échec, le message retourne dans la queue.",
       "Flow: an event enters a queue, a Lambda processes it, then a hook notifies the other services. On failure, the message goes back to the queue.",
     ),
     nodes: {

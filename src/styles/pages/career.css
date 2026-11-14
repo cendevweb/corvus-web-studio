@@ -12,6 +12,11 @@
   #realisations{padding-top:24px}
   #formation,#contact{padding-top:0}
 
+  .ai-note{font-size:14.5px}
+  /* Real visual of a case study (content: visual.media) */
+  .case-media{border-radius:14px;overflow:hidden;aspect-ratio:var(--ar);background:var(--well)}
+  .case-media img,.case-media video{display:block;width:100%;height:100%;object-fit:cover}
+
   /* Intro */
   .intro{position:relative;padding:20px 0 48px;isolation:isolate}
   .intro::before{content:"";position:absolute;z-index:-1;inset:-120px 0 0;pointer-events:none;background:
@@ -263,7 +268,7 @@
   .ad-h b{display:block;font-size:12.5px;line-height:1.2}
   .ad-h span{font-size:11px;color:#5a5a63;display:block}
   .ad-img{border-radius:8px;aspect-ratio:1;background:var(--g,linear-gradient(135deg,#7C5CFF,#3DDC97));position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:12px;transition:aspect-ratio 260ms var(--ease-out)}
-  .ad[data-f=story] .ad-img{aspect-ratio:4/5}
+  .ad[data-f=portrait] .ad-img{aspect-ratio:4/5}
   .ad-img::before{content:"";position:absolute;width:70%;aspect-ratio:1;right:-18%;top:-22%;border-radius:50%;background:rgba(255,255,255,.2)}
   .ad-img::after{content:"";position:absolute;width:38%;aspect-ratio:1;right:14%;top:30%;border-radius:28%;background:rgba(14,14,18,.22);rotate:18deg}
   .ad-img strong{position:relative;z-index:1;font-size:19px;line-height:1.08;letter-spacing:-.02em;color:#fff;font-weight:700;text-wrap:balance;text-shadow:0 1px 10px rgba(0,0,0,.25)}
