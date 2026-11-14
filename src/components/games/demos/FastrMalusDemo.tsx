@@ -170,7 +170,7 @@ export function FastrMalusDemo() {
             maxLength={MAX_LENGTH}
           />
           <div className="mx-brick" aria-hidden="true" />
-          <Image className="mx-ice" src="/images/games/fastr/gel.png" width={900} height={300} alt="" sizes="900px" />
+          <Image className="mx-ice" src="/images/games/fastr/gel.png" width={900} height={300} alt="" sizes="(min-width: 980px) 900px, 100vw" />
         </div>
         <button className="gbtn a" type="submit">
           {t("submit")}

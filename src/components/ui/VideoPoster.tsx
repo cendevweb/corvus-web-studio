@@ -44,7 +44,7 @@ export function VideoPoster({
         height={poster.height}
         alt={poster.alt}
         sizes={sizes}
-        priority={priority}
+        {...(priority ? { loading: "eager" as const, fetchPriority: "high" as const } : {})}
       />
       <button type="button" className="vplay" aria-label={playLabel} hidden={playing} onClick={() => setPlaying(true)}>
         <span>{children}</span>

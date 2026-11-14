@@ -46,7 +46,9 @@ export function VideoFrame({ video, label, children, className }: VideoFrameProp
   }
 
   return (
-    <button type="button" className={className} aria-label={label} onClick={() => setPlaying(true)}>
+    <button type="button" className={className} onClick={() => setPlaying(true)}>
+      {/* No aria-label: the poster's visible text stays in the accessible name (WCAG 2.5.3). */}
+      <span className="sr">{label} </span>
       {children}
     </button>
   );

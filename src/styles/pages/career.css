@@ -390,7 +390,6 @@
   /* ───────── Reduced motion ───────── */
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
-    .js [data-r]{transform:none;transition:opacity 300ms ease}
     .slot-live i,.pv-live p b i,.d1-vid span i{animation:none}
     .d1 .tw.sweep::after{animation:none}
     .d1.busy .d1-out{transform:none;filter:none}

@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { DocumentState } from "@/components/layout/DocumentState";
 import { SvgDefs } from "@/components/ui/Icon";
+import { CHROME_NAMESPACES, clientMessages } from "@/i18n/client-messages";
 import { baseFontVariables } from "@/lib/fonts";
 import { localeStaticParams, resolveLocale, type LocaleParams } from "@/lib/page";
 import { THEME_COLORS, themeInitScript } from "@/lib/theme-script";
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: { params: LocaleParams }): Pr
 export default async function LocaleLayout({ children, params }: { children: ReactNode; params: LocaleParams }) {
   const locale = await resolveLocale(params);
   const t = await getTranslations({ locale, namespace: "header" });
+  const messages = await clientMessages(locale, CHROME_NAMESPACES);
 
   return (
     <html lang={locale} className={baseFontVariables} suppressHydrationWarning>
@@ -46,7 +48,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
       </head>
       <body>
         <DocumentState />
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
           <a className="skip" href="#contenu">
             {t("skip")}
           </a>

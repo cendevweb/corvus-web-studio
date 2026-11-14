@@ -43,15 +43,23 @@ export function GameGallery({ shots, labels }: GameGalleryProps) {
             className="shot"
             type="button"
             delay={(index % 3) * 60}
-            aria-label={`${labels.enlarge} ${item.alt}`}
             onClick={() => setCurrent(index)}
           >
+            {/* Name = "Agrandir : <alt>"; no aria-label, so the visible caption stays in it (WCAG 2.5.3). */}
+            <span className="sr">{labels.enlarge} </span>
             <Image
               src={item.src}
               width={item.width}
               height={item.height}
               alt={item.alt}
-              sizes={index === 0 ? "(min-width: 860px) 66vw, 100vw" : "(min-width: 860px) 33vw, 50vw"}
+              // Mobile: the first and last shots span both columns; desktop: 3 columns, the first one spans 2.
+              sizes={
+                index === 0
+                  ? "(min-width: 1320px) 780px, (min-width: 860px) 62vw, 100vw"
+                  : index === shots.length - 1
+                    ? "(min-width: 1320px) 380px, (min-width: 860px) 30vw, 100vw"
+                    : "(min-width: 1320px) 380px, (min-width: 860px) 30vw, 50vw"
+              }
             />
             <span className="shot-n" aria-hidden="true">
               {String(index + 1).padStart(2, "0")}
@@ -59,9 +67,7 @@ export function GameGallery({ shots, labels }: GameGalleryProps) {
             <span className="shot-z" aria-hidden="true">
               <GameIcon name="zoom" />
             </span>
-            <span className="shot-c" aria-hidden="true">
-              {item.caption}
-            </span>
+            <span className="shot-c">{item.caption}</span>
           </Reveal>
         ))}
       </div>

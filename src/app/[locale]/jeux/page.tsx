@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { videoGameJsonLd } from "@/lib/jsonld";
 import { resolveLocale, type LocaleParams } from "@/lib/page";
 import { absoluteUrl, buildMetadata } from "@/lib/seo";
+import "@/styles/pages/games.css";
 
 export async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
   const locale = await resolveLocale(params);

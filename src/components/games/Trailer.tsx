@@ -55,13 +55,15 @@ interface TrailerPosterProps {
 export function TrailerPoster({ poster, playLabel, badge }: TrailerPosterProps) {
   const open = useContext(TrailerContext);
   return (
-    <button className="poster" type="button" aria-label={playLabel} onClick={open}>
+    <button className="poster" type="button" onClick={open}>
+      {/* Name = play label + poster alt + visible badge; no aria-label (WCAG 2.5.3). */}
+      <span className="sr">{playLabel} : </span>
       <Image
         src={poster.src}
         width={poster.width}
         height={poster.height}
         alt={poster.alt}
-        sizes="(min-width: 1240px) 660px, (min-width: 920px) 55vw, 100vw"
+        sizes="(min-width: 1240px) 660px, (min-width: 920px) 55vw, calc(100vw - 80px)"
         loading="eager"
         fetchPriority="high"
       />

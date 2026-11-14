@@ -68,7 +68,8 @@ function Featured({ item, labels, hidden }: { item: FeedItem; labels: NewsExplor
                 height={item.cover.height}
                 alt=""
                 sizes="(min-width: 920px) 720px, 100vw"
-                priority
+                loading="eager"
+                fetchPriority="high"
               />
             )}
             <span className="feat-flags">

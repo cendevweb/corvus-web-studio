@@ -12,7 +12,7 @@
     --sk-txt:#dbe6ff;--sk-mut:#b9c8f5;--sk-acc:#f7b90f;--sk-line:rgba(41,216,255,.3)}
   /* Iconic: light, soft, playful */
   .sk-ic{background:#f5f5f5;color:#1E1E1E;border-radius:26px;font-family:var(--font-poppins),sans-serif;
-    --sk-txt:#444;--sk-mut:#555;--sk-acc:#1f7f7d;--sk-line:rgba(30,30,30,.12)}
+    --sk-txt:#444;--sk-mut:#555;--sk-acc:#1a7472;--sk-line:rgba(30,30,30,.12)}
   .sk-ic :focus-visible{outline-color:#1f7f7d}
 
   /* Shared pieces */

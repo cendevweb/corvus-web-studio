@@ -55,8 +55,12 @@ export function CopyAction({ source, label, copiedLabel, ariaLabel, className }:
     timer.current = setTimeout(() => setDone(false), 1600);
   };
 
+  // The accessible name must contain the visible label (WCAG 2.5.3): prefix it when the longer name does not.
+  const name =
+    ariaLabel && !ariaLabel.toLowerCase().includes(label.toLowerCase()) ? `${label} – ${ariaLabel}` : ariaLabel;
+
   return (
-    <button type="button" className={cn("cpy", done && "done", className)} aria-label={ariaLabel} onClick={onClick}>
+    <button type="button" className={cn("cpy", done && "done", className)} aria-label={name} onClick={onClick}>
       <span className="def">
         <Icon name="copy" />
         {label}

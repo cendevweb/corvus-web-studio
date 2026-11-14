@@ -48,12 +48,21 @@ src/
   wrong during static generation of English dynamic routes.
 - **Texts.** UI strings go in `messages/*.json`; editorial data goes in
   `content/` as `l("fr", "en")` pairs read with `pick(value, locale)`.
+- **Client messages.** Server components read any namespace. Client components
+  only see what a `NextIntlClientProvider` was given, because it is serialized
+  into the HTML: the root layout passes `CHROME_NAMESPACES`, and a page with
+  client components that translate wraps them in its own provider with
+  `clientMessages(locale, ["contactPage.form", …])` (`src/i18n/client-messages.ts`).
+  A missing namespace fails the build (`MISSING_MESSAGE`).
 - **News.** `content/news/<locale>/<slug>.md` with frontmatter (required `title`, `excerpt`, `game`,
   `date`, `type`, `lang`; many optional fields), loaded by `src/lib/news.ts` and rendered by
   `src/components/news/` and `src/lib/markdown/`. Schema: `content/news/README.md`. Files can be generated
   from Notion with `npm run news:sync` (`docs/NOTION.md`).
-- **Styles.** Design tokens live in `src/styles/tokens.css` (`@theme`) and
-  switch on `html[data-theme]`. Component classes keep the names of the
+- **Styles.** `globals.css` only holds what every page needs (tokens, base,
+  components, layout, skins, home). Each `src/styles/pages/<page>.css` is
+  imported by the route files that use it (`import "@/styles/pages/news.css"`),
+  so a page downloads its own CSS only. Design tokens live in
+  `src/styles/tokens.css` (`@theme`) and switch on `html[data-theme]`. Component classes keep the names of the
   validated mockups, inside `@layer components`; Tailwind utilities are
   available on top. `.ring/.halo/.disc` of the mockup are named
   `.stage-ring/.stage-halo/.stage-disc`.
@@ -64,9 +73,17 @@ src/
   sets the skin class and loads the skin fonts (`src/lib/fonts-skins.ts`), so
   those fonts are only requested where a skin is rendered.
 - **Motion.** `Reveal` and the canvas components respect
-  `prefers-reduced-motion`. Only `transform` and `opacity` are animated.
-- **Media.** Images through `next/image` with real dimensions; trailers in
+  `prefers-reduced-motion`. Only `transform` and `opacity` are animated; UI
+  transitions stay within 150-300 ms. `Reveal` has no client JS: the inline
+  head script (`src/lib/theme-script.ts`) leaves what is already on screen
+  visible (the LCP element is painted with the first frame) and reveals the
+  rest on scroll through `data-r="wait"` → `data-r="in"`.
+- **Media.** Images through `next/image` with real dimensions and a `sizes`
+  that matches the layout; the LCP image of a page gets `loading="eager"` and
+  `fetchPriority="high"` (`priority` is deprecated in Next 16). Trailers in
   `public/videos/` through `VideoPoster` (poster first, video on click).
+- **Accessible names.** A control with visible text has no `aria-label` that
+  drops that text (WCAG 2.5.3): add a `.sr` span instead.
 - **SEO.** `personJsonLd`, `organizationJsonLd`, `websiteJsonLd`,
   `videoGameJsonLd` in `src/lib/jsonld.ts`, rendered with `<JsonLd>`. The site
   URL comes from `NEXT_PUBLIC_SITE_URL`.

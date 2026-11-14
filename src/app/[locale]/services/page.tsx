@@ -11,6 +11,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Link } from "@/i18n/navigation";
 import { resolveLocale, type LocaleParams } from "@/lib/page";
 import { buildMetadata } from "@/lib/seo";
+import "@/styles/pages/services.css";
 
 export async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
   const locale = await resolveLocale(params);

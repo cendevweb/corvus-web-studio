@@ -21,10 +21,12 @@ import { skinFontVariables } from "@/lib/fonts-skins";
 import { publicImageSize } from "@/lib/image-size";
 import { extractToc, splitLead } from "@/lib/markdown/outline";
 import { parseVideo } from "@/lib/markdown/video";
+import { organizationRef, personRef } from "@/lib/jsonld";
 import { getAllNews, getNewsBySlug, getNewsSlugs, type NewsArticle } from "@/lib/news";
 import { resolveLocale } from "@/lib/page";
 import { getPageTranslations } from "@/lib/page-messages";
 import { absoluteUrl, buildMetadata } from "@/lib/seo";
+import "@/styles/pages/news.css";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
@@ -115,8 +117,10 @@ export default async function NewsArticlePage({ params }: { params: Params }) {
               width={cutout.width}
               height={cutout.height}
               alt={index === cutouts.length - 1 ? (article.hero?.alt ?? "") : ""}
-              sizes="(min-width: 760px) 520px, 60vw"
-              priority={index === cutouts.length - 1}
+              sizes="(min-width: 760px) 420px, 50vw"
+              // The whole hero is above the fold; the front cutout is the LCP candidate.
+              loading="eager"
+              fetchPriority={index === cutouts.length - 1 ? "high" : "auto"}
             />
           ))
         : article.cover &&
@@ -127,7 +131,8 @@ export default async function NewsArticlePage({ params }: { params: Params }) {
               height={cover.height}
               alt={article.coverAlt ?? ""}
               sizes="(min-width: 1240px) 1160px, 100vw"
-              priority
+              loading="eager"
+              fetchPriority="high"
             />
           )}
       {article.hero && (
@@ -163,8 +168,8 @@ export default async function NewsArticlePage({ params }: { params: Params }) {
           inLanguage: locale,
           mainEntityOfPage: url,
           image: article.cover ? `${site.url}${article.cover}` : undefined,
-          author: { "@type": "Person", name: site.author.name },
-          publisher: { "@type": "Organization", name: site.name },
+          author: personRef,
+          publisher: organizationRef,
         }}
       />
       <ReadingBar target=".pg-article .prose" />

@@ -49,7 +49,7 @@
   --duration-press: 160ms;
   --duration-fast: 200ms;
   --duration-base: 240ms;
-  --duration-reveal: 420ms;
+  --duration-reveal: 300ms;
   --duration-slow: 500ms;
 
   /* Layout */
@@ -88,7 +88,7 @@
     --well: #101016;
     --bone: #e8e6e3;
     --muted: #a5a3ac;
-    --faint: #7d7b86;
+    --faint: #888692;
     --violet: #7c5cff;
     --violet-t: #b1a0ff;
     --green: #3ddc97;
@@ -122,7 +122,7 @@
     --well: #ece9e2;
     --bone: #15151b;
     --muted: #55535e;
-    --faint: #6b6975;
+    --faint: #65636e;
     --violet: #5b3fe0;
     --violet-t: #5236d6;
     --green: #0a7a4e;

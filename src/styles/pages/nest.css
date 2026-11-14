@@ -135,7 +135,7 @@
     .lab-grid :focus-visible{outline-color:#1f7f7d}
     .fg-hud{position:absolute;right:12px;top:10px;display:flex;gap:8px}
     .fg-hud span{font-size:12px;font-weight:600;color:#146b69;background:#fff;border-radius:999px;padding:4px 11px;box-shadow:0 2px 6px rgba(0,0,0,.08);font-variant-numeric:tabular-nums}
-    .fg-hud .coin{color:#7a5200;background:#F7C873}
+    .fg-hud .coin{color:#6e4a00;background:#F7C873}
     .fg{display:grid;grid-template-columns:repeat(4,minmax(0,68px));gap:12px;perspective:800px;width:100%;justify-content:center}
     .fg button{aspect-ratio:1;position:relative;transform-style:preserve-3d;transition:transform 420ms var(--ease-out);border-radius:16px}
     .fg button:active{transform:scale(.95)}

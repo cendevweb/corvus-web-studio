@@ -3,6 +3,7 @@ import { NotFoundScene } from "@/components/contact/NotFoundScene";
 import { ContactIcon } from "@/components/contact/icons";
 import { ButtonLink } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
+import "@/styles/pages/contact.css";
 
 /** 404: the crow takes off from the "0" and leaves the frame (scene validated in the contact mockup). */
 export default function NotFound() {

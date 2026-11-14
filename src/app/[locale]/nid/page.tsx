@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import type { ComponentType, CSSProperties, ReactNode } from "react";
 import { getGame } from "@content/games";
@@ -12,12 +13,14 @@ import { CopyAction } from "@/components/news/CopyAction";
 import { LineIcon } from "@/components/news/icons";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
+import { clientMessages } from "@/i18n/client-messages";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { highlight } from "@/lib/highlight";
 import { resolveLocale, type LocaleParams } from "@/lib/page";
 import { getPageTranslations, type PageTranslator } from "@/lib/page-messages";
 import { buildMetadata } from "@/lib/seo";
+import "@/styles/pages/nest.css";
 
 export async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
   const locale = await resolveLocale(params);
@@ -59,6 +62,7 @@ function IdLine({ experiment, locale, t }: { experiment: Experiment; locale: Loc
 export default async function NestPage({ params }: { params: LocaleParams }) {
   const locale = await resolveLocale(params);
   const t = await getPageTranslations(locale, "nestPage");
+  const labMessages = await clientMessages(locale, ["nestPage", "demos", "common"]);
   const filterTags = experimentFilters[locale];
 
   const cards: NestCard[] = experiments.map((experiment) => {
@@ -163,21 +167,24 @@ export default async function NestPage({ params }: { params: LocaleParams }) {
         </div>
       </section>
 
-      <NestExplorer
-        filters={filters}
-        cards={cards}
-        filterLabel={t("filterLabel")}
-        listLabel={t("listLabel")}
-        soonTitle={t("soonTitle")}
-      >
-        <Reveal className="idea">
-          <p>{t.rich("idea.text", { em: (chunks) => <em>{chunks}</em> })}</p>
-          <Link className="btn btn-main" href="/contact">
-            {t("idea.cta")}
-            <Icon name="arrow" className="arr" />
-          </Link>
-        </Reveal>
-      </NestExplorer>
+      {/* The labs are client components: they get the namespaces they read, not the whole catalogue. */}
+      <NextIntlClientProvider messages={labMessages}>
+        <NestExplorer
+          filters={filters}
+          cards={cards}
+          filterLabel={t("filterLabel")}
+          listLabel={t("listLabel")}
+          soonTitle={t("soonTitle")}
+        >
+          <Reveal className="idea">
+            <p>{t.rich("idea.text", { em: (chunks) => <em>{chunks}</em> })}</p>
+            <Link className="btn btn-main" href="/contact">
+              {t("idea.cta")}
+              <Icon name="arrow" className="arr" />
+            </Link>
+          </Reveal>
+        </NestExplorer>
+      </NextIntlClientProvider>
     </div>
   );
 }
