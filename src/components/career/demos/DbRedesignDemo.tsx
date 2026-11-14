@@ -47,7 +47,7 @@ function Columns({ columns }: { columns: readonly Column[] }) {
   return (
     <ul>
       {columns.map(([name, kind]) => (
-        <li className={kind} key={name}>
+        <li className={kind && `c-${kind}`} key={name}>
           {name}
         </li>
       ))}

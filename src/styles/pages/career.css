@@ -9,6 +9,7 @@
   .lede{max-width:34em}
   .facts{margin:28px 0 0}
   .contact .cta{margin-top:0}
+  .contact .avail{margin:18px 0 30px}
   #realisations{padding-top:24px}
   #formation,#contact{padding-top:0}
 
@@ -290,9 +291,9 @@
   .tb b{display:block;font-weight:600;padding:4px 7px;background:#22222d;color:var(--bone);border-bottom:1px solid var(--line-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .tb ul{padding:4px 7px 5px}
   .tb li{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .tb li.k{color:var(--bone)}
-  .tb li.fk{color:var(--violet-t)}
-  .tb li.w{color:var(--amber)}
+  .tb li.c-k{color:var(--bone)}
+  .tb li.c-fk{color:var(--violet-t)}
+  .tb li.c-w{color:var(--amber)}
   .tb-big ul{columns:2;column-gap:14px;padding:7px 10px 8px}
   .tb-big{border-color:rgba(242,184,75,.5);max-width:440px;margin-inline:auto}
   .d5-warn{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
@@ -364,7 +365,7 @@
   .ai-draft ins{color:var(--green);text-decoration:none}
   .ai-acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
   .ai-acts span{font-family:var(--pixel);font-size:14.5px;border:1px solid var(--line-2);border-radius:6px;padding:1px 9px;color:var(--bone)}
-  .ai-term{font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--muted);overflow-x:auto;white-space:pre}
+  .ai-term{margin:1em 0;font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--muted);overflow-x:auto;white-space:pre}
   .ai-term b{color:var(--green);font-weight:500}.ai-term i{font-style:normal;color:var(--violet-t)}
   @media (min-width:860px){.ai-grid{grid-template-columns:1fr 1fr;gap:24px}.ai-c{padding:32px}}
 
