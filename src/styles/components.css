@@ -64,7 +64,7 @@
   .n{display:flex;flex-direction:column;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color 220ms ease,transform 220ms var(--ease-out)}
   .n[hidden]{display:none}
   .n-img{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#000}
-  .n-img img{width:100%;height:100%;object-fit:cover;transition:transform 500ms var(--ease-out)}
+  .n-img img{width:100%;height:100%;object-fit:cover;transition:transform 300ms var(--ease-out)}
   .n-play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(transparent 40%,rgba(14,14,18,.55))}
   .n-play span{width:60px;height:60px;border-radius:50%;background:rgba(14,14,18,.72);border:1px solid rgba(232,230,227,.5);color:#E8E6E3;display:grid;place-items:center;backdrop-filter:blur(6px);transition:transform 200ms var(--ease-out),background-color 200ms ease}
   .n-play svg{width:18px;height:18px;margin-left:3px}
@@ -115,7 +115,7 @@
 
   /* ───────── Video poster with on-demand loading (components/ui/VideoPoster.tsx) ───────── */
   .vposter{position:relative;overflow:hidden;background:#000}
-  .vposter>img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 500ms var(--ease-out)}
+  .vposter>img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 300ms var(--ease-out)}
   .vposter video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;z-index:4}
   .vplay{position:absolute;inset:0;display:grid;place-items:center;z-index:3;background:linear-gradient(transparent 45%,rgba(0,0,0,.45))}
   .vplay[hidden]{display:none}

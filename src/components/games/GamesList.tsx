@@ -38,7 +38,7 @@ export function GamesList() {
         <div className="wrap">
           <div className="games">
             {ORDER.map((slug, index) => (
-              <GameCard key={slug} slug={slug} heading="h2" delay={index === 2 ? 80 : undefined} />
+              <GameCard key={slug} slug={slug} heading="h2" delay={index === 2 ? 80 : undefined} priority={index === 0} />
             ))}
           </div>
           <Reveal className="gl-more">

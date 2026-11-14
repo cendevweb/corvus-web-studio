@@ -18,6 +18,8 @@ interface CardProps {
   locale: Locale;
   heading: Heading;
   delay?: number;
+  /** The card sits in the first viewport (games list): load its media right away. */
+  priority?: boolean;
 }
 
 const titleId = (slug: GameSlug) => `game-title-${slug}`;
@@ -56,12 +58,14 @@ function Trailer({
   locale,
   className,
   iconSize,
+  priority,
   children,
 }: {
   game: Game;
   locale: Locale;
   className: string;
   iconSize: number;
+  priority?: boolean;
   children?: ReactNode;
 }) {
   const t = useTranslations("common");
@@ -75,6 +79,7 @@ function Trailer({
       playLabel={t("playTrailer", { game: game.name })}
       playingLabel={t("trailerPlaying", { game: game.name })}
       sizes="(min-width: 1240px) 600px, (min-width: 860px) 50vw, 100vw"
+      priority={priority}
     >
       <Icon name="play" width={iconSize} height={iconSize} />
       {trailer.label[locale]}
@@ -83,12 +88,12 @@ function Trailer({
   );
 }
 
-function OnePiexelCard({ game: g, locale, heading: Heading, delay }: CardProps) {
+function OnePiexelCard({ game: g, locale, heading: Heading, delay, priority }: CardProps) {
   const inset = g.media.card[1]!;
   return (
     <TiltCard className={gameSkinClass(g.slug, "g g-op")} max={1.6} delay={delay} aria-labelledby={titleId(g.slug)}>
       <div className="g-media">
-        <Trailer game={g} locale={locale} className="op-screen" iconSize={14} />
+        <Trailer game={g} locale={locale} className="op-screen" iconSize={14} priority={priority} />
         <Image
           className="op-inset"
           src={inset.src}
@@ -96,6 +101,7 @@ function OnePiexelCard({ game: g, locale, heading: Heading, delay }: CardProps) 
           height={inset.height}
           alt={inset.alt[locale]}
           sizes="(min-width: 860px) 240px, 38vw"
+          loading={priority ? "eager" : "lazy"}
         />
       </div>
       <div className="g-body">
@@ -150,7 +156,7 @@ function IconicCard({ game: g, locale, heading: Heading, delay }: CardProps) {
               width={card.width}
               height={card.height}
               alt={card.alt[locale]}
-              sizes="220px"
+              sizes="(min-width: 860px) 220px, 168px"
             />
           ))}
         </div>
@@ -175,8 +181,18 @@ const CARDS = { "one-piexel": OnePiexelCard, fastr: FastrCard, iconic: IconicCar
  * Showcase card of a game in its own skin (home page, games list): media, status, pitch, three figures,
  * "Jouer" and "Découvrir le jeu". Place it inside a `.games` grid; One Piexel spans the full width.
  */
-export function GameCard({ slug, heading = "h3", delay }: { slug: GameSlug; heading?: Heading; delay?: number }) {
+export function GameCard({
+  slug,
+  heading = "h3",
+  delay,
+  priority,
+}: {
+  slug: GameSlug;
+  heading?: Heading;
+  delay?: number;
+  priority?: boolean;
+}) {
   const locale = useLocale();
   const Card = CARDS[slug];
-  return <Card game={getGame(slug)!} locale={locale} heading={heading} delay={delay} />;
+  return <Card game={getGame(slug)!} locale={locale} heading={heading} delay={delay} priority={priority} />;
 }

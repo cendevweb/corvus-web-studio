@@ -52,7 +52,14 @@ export function GameGallery({ shots, labels }: GameGalleryProps) {
               width={item.width}
               height={item.height}
               alt={item.alt}
-              sizes={index === 0 ? "(min-width: 860px) 66vw, 100vw" : "(min-width: 860px) 33vw, 50vw"}
+              // Mobile: the first and last shots span both columns; desktop: 3 columns, the first one spans 2.
+              sizes={
+                index === 0
+                  ? "(min-width: 1320px) 780px, (min-width: 860px) 62vw, 100vw"
+                  : index === shots.length - 1
+                    ? "(min-width: 1320px) 380px, (min-width: 860px) 30vw, 100vw"
+                    : "(min-width: 1320px) 380px, (min-width: 860px) 30vw, 50vw"
+              }
             />
             <span className="shot-n" aria-hidden="true">
               {String(index + 1).padStart(2, "0")}

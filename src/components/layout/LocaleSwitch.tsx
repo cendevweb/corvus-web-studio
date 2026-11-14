@@ -21,11 +21,12 @@ export function LocaleSwitch() {
           href={localizedPath(locale)}
           hrefLang={locale}
           lang={locale}
-          aria-label={`${NAMES[locale]} (${locale.toUpperCase()})`}
           aria-current={locale === current ? "true" : undefined}
           scroll={false}
         >
           {locale.toUpperCase()}
+          {/* No aria-label: the visible code stays in the accessible name ("FR Français"). */}
+          <span className="sr"> {NAMES[locale]}</span>
         </NextLink>
       ))}
     </div>

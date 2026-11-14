@@ -13,6 +13,19 @@ const orgId = `${site.url}/#organization`;
 
 const publicSocialUrls = () => socials.flatMap((s) => (s.url ? [s.url] : []));
 
+/**
+ * References to the studio and its founder. They carry a type and a name on top of the `@id`,
+ * so they stay valid on pages that do not embed the full Person / Organization nodes.
+ */
+export const personRef = { "@type": "Person", "@id": personId, name: site.author.name } as const;
+export const organizationRef = {
+  "@type": "Organization",
+  "@id": orgId,
+  name: site.name,
+  url: site.url,
+  logo: { "@type": "ImageObject", url: `${site.url}/images/brand/corbeau-logo.png` },
+} as const;
+
 export function personJsonLd(locale: Locale): JsonLdObject {
   return {
     "@context": "https://schema.org",
@@ -26,7 +39,7 @@ export function personJsonLd(locale: Locale): JsonLdObject {
       addressLocality: site.author.city,
       addressCountry: site.author.country,
     },
-    worksFor: { "@id": orgId },
+    worksFor: organizationRef,
     sameAs: publicSocialUrls(),
   };
 }
@@ -39,7 +52,7 @@ export function organizationJsonLd(locale: Locale): JsonLdObject {
     name: site.name,
     url: absoluteUrl("/", locale),
     logo: `${site.url}/images/brand/corbeau-logo.png`,
-    founder: { "@id": personId },
+    founder: personRef,
     sameAs: publicSocialUrls(),
   };
 }
@@ -51,7 +64,7 @@ export function websiteJsonLd(locale: Locale): JsonLdObject {
     name: site.name,
     url: absoluteUrl("/", locale),
     inLanguage: locale,
-    publisher: { "@id": orgId },
+    publisher: organizationRef,
   };
 }
 
@@ -68,10 +81,10 @@ export function videoGameJsonLd(game: Game, locale: Locale): JsonLdObject {
     gamePlatform: ["Web browser", "Desktop", "Mobile"],
     operatingSystem: "Any",
     applicationCategory: "Game",
-    playMode: game.slug === "iconic" ? "SinglePlayer" : "MultiPlayer",
+    playMode: `https://schema.org/${game.slug === "iconic" ? "SinglePlayer" : "MultiPlayer"}`,
     inLanguage: locale,
-    author: { "@id": personId },
-    publisher: { "@id": orgId },
+    author: personRef,
+    publisher: organizationRef,
     offers: { "@type": "Offer", price: "0", priceCurrency: "EUR", availability: "https://schema.org/InStock" },
     ...(game.media.trailer
       ? {

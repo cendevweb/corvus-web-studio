@@ -109,11 +109,12 @@ export default async function ContactPage({ params }: { params: LocaleParams }) 
                             href={social.url}
                             target="_blank"
                             rel="noopener"
-                            aria-label={header("newTab", { label: `${social.label} ${t(`aside.nets.${social.id}`)}` })}
                           >
                             <Icon name={social.id} />
                             {social.label}
                             <small>{t(`aside.nets.${social.id}`)}</small>
+                            {/* No aria-label: the visible text stays in the accessible name. */}
+                            <span className="sr">{header("newTab", { label: "" })}</span>
                           </a>
                         ) : (
                           <span className="off">

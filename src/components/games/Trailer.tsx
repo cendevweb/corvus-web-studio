@@ -63,7 +63,7 @@ export function TrailerPoster({ poster, playLabel, badge }: TrailerPosterProps) 
         width={poster.width}
         height={poster.height}
         alt={poster.alt}
-        sizes="(min-width: 1240px) 660px, (min-width: 920px) 55vw, 100vw"
+        sizes="(min-width: 1240px) 660px, (min-width: 920px) 55vw, calc(100vw - 80px)"
         loading="eager"
         fetchPriority="high"
       />

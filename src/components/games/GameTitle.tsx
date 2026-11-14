@@ -34,7 +34,16 @@ export function GameTitle({ game, as: Tag = "span", text, className, id }: GameT
   if (!text && logo) {
     return (
       <Tag id={id} className={className}>
-        <Image className="ic-logo" src={logo.src} width={logo.width} height={logo.height} alt={game.name} unoptimized />
+        <Image
+          className="ic-logo"
+          src={logo.src}
+          width={logo.width}
+          height={logo.height}
+          alt={game.name}
+          unoptimized
+          // As the page title the logo is above the fold.
+          loading={Tag === "h1" ? "eager" : "lazy"}
+        />
       </Tag>
     );
   }

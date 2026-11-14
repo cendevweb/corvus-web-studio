@@ -14,6 +14,8 @@ import { toggleTheme } from "@/lib/theme";
 interface CommandPaletteProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  /** Element that gets the focus back when the palette closes. */
+  returnFocus?: () => HTMLElement | null;
 }
 
 /** Lowercase, accent-insensitive. */
@@ -40,7 +42,7 @@ const PALETTE_SOCIALS = ["github", "youtube", "linkedin"] as const;
  * ⌘K / Ctrl K command palette (cmdk + Radix Dialog: focus trap, Escape, arrow keys, screen-reader labels).
  * No animation on purpose: it is opened from the keyboard.
  */
-export default function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
+export default function CommandPalette({ open, onOpenChange, returnFocus }: CommandPaletteProps) {
   const t = useTranslations("palette");
   const nav = useTranslations("nav");
   const locale = useLocale();
@@ -59,7 +61,16 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="kp-overlay" />
-        <Dialog.Content className="kp-box" aria-describedby={undefined}>
+        <Dialog.Content
+          className="kp-box"
+          aria-describedby={undefined}
+          onCloseAutoFocus={(event) => {
+            const target = returnFocus?.();
+            if (!target?.isConnected) return;
+            event.preventDefault();
+            target.focus();
+          }}
+        >
           <Dialog.Title className="sr">{t("label")}</Dialog.Title>
           <Command label={t("label")} filter={filter} loop>
             <div className="kp-in">

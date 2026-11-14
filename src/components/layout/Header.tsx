@@ -41,7 +41,16 @@ export function Header() {
   const burger = useRef<HTMLButtonElement>(null);
   const menu = useRef<HTMLDivElement>(null);
 
+  /** Where the focus goes back when the palette closes (Radix only knows about a Dialog.Trigger). */
+  const paletteReturn = useRef<HTMLElement | null>(null);
+  const rememberFocus = () => {
+    const current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    // The mobile menu closes behind the palette: its buttons are hidden by then, go back to the burger.
+    paletteReturn.current = current && menu.current?.contains(current) ? burger.current : current;
+  };
+
   const openPalette = () => {
+    rememberFocus();
     setMenuOpen(false);
     setPaletteLoaded(true);
     setPaletteOpen(true);
@@ -51,6 +60,8 @@ export function Header() {
     const onKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
+        // Only when opening: while the palette is open the focus is inside it.
+        if (!document.querySelector(".kp-box")) rememberFocus();
         setMenuOpen(false);
         setPaletteLoaded(true);
         setPaletteOpen((open) => !open);
@@ -68,7 +79,15 @@ export function Header() {
   const linkLabel = (label: string) => t("newTab", { label });
 
   return (
-    <header className={cn("hd", (stuck || menuOpen) && "is-stuck")}>
+    <header
+      className={cn("hd", (stuck || menuOpen) && "is-stuck")}
+      // Tabbing out of the open menu closes it, so the focus never sits on content hidden behind it.
+      onBlur={(event) => {
+        if (menuOpen && event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) {
+          setMenuOpen(false);
+        }
+      }}
+    >
       <div className="wrap hd-in">
         <Link className="brand" href="/" aria-label={t("brandLabel")} onClick={() => setMenuOpen(false)}>
           <Image src="/images/brand/corbeau-logo.png" width={51} height={38} alt="" unoptimized loading="eager" />
@@ -140,7 +159,9 @@ export function Header() {
         <SocialLinks ids={FEATURED_IDS} className="soc" label={t("networks")} linkLabel={linkLabel} />
       </div>
 
-      {paletteLoaded && <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />}
+      {paletteLoaded && (
+        <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} returnFocus={() => paletteReturn.current} />
+      )}
     </header>
   );
 }
