@@ -137,7 +137,7 @@ export function RoundTimerLab() {
         <button type="button" className="rt-btn a" onClick={toggle}>
           {running ? t("pause") : finished ? (round === ROUNDS ? t("replay") : t("next")) : t("start")}
         </button>
-        <button type="button" className="rt-btn w" onClick={validate} disabled={!running}>
+        <button type="button" className="rt-btn v" onClick={validate} disabled={!running}>
           {t("validate")}
         </button>
         <button type="button" className="rt-btn b" onClick={reset}>
