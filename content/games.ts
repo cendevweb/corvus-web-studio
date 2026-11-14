@@ -11,6 +11,8 @@ export type GameSlug = "one-piexel" | "fastr" | "iconic";
 /** Short key used by the skin classes (`.sk-op`, `.g-fa`, …). */
 export type GameSkinKey = "op" | "fa" | "ic";
 export type GameStatus = "released" | "beta" | "in-development";
+/** Icon shown next to a platform line of the game page hero. */
+export type PlatformIcon = "web" | "devices" | "gamepad" | "language" | "user" | "free";
 
 export interface GameImage {
   src: string;
@@ -38,6 +40,10 @@ export interface Game {
   statusLabel: Localized;
   /** Long status used in fact sheets. */
   statusDetail: Localized;
+  /** Short status used on the small cards ("SORTI · V3"). */
+  statusShort: Localized;
+  /** Title and description of the game page (search engines, sharing). */
+  seo: { title: Localized; description: Localized };
   /** Sub-title under the logo, home card and game page. */
   tagline: { card: Localized; page: Localized };
   genre: Localized;
@@ -47,7 +53,13 @@ export interface Game {
   /** Four KPIs on the game page. */
   kpis: Figure[];
   platforms: Localized<string[]>;
-  /** Fact sheet of the game page (label → value). */
+  /** One icon per platform line, same order. */
+  platformIcons: PlatformIcon[];
+  /**
+   * Fact sheet of the game page (label → value).
+   * Long texts of the game page (facts, section titles, paragraphs, challenge bodies) accept a light markup,
+   * rendered by `src/components/games/rich.tsx`: `*accent*`, `**strong**` and `` `code` ``.
+   */
   facts: Array<{ label: Localized; value: Localized }>;
   pitchSection: { title: Localized; paragraphs: Localized<string[]> };
   challenge: { title: Localized; lede: Localized; items: GameChallenge[] };
@@ -74,11 +86,25 @@ export interface Game {
     /** Image(s) shown on the home card. */
     card: GameImage[];
     logo?: { src: string; width: number; height: number };
-    trailer?: { src: string; duration: Localized; label: Localized };
+    trailer?: {
+      src: string;
+      duration: Localized;
+      label: Localized;
+      /** Caption under the playing video ("Trailer One Piexel · 1 min 39"). */
+      caption: Localized;
+      /** Accessible name of the play button, duration spelled out. */
+      playLabel: Localized;
+    };
     gallery: GameImage[];
     mini: string;
   };
   galleryTitle: Localized;
+  /** Where the screenshots come from ("Captures tirées du trailer."). */
+  galleryNote: Localized;
+  /** Title of the "news of the game" section. */
+  newsTitle: Localized;
+  /** Heading above the networks of the game page ("Suivre One Piexel"). */
+  follow: Localized;
   callToAction: { title: Localized; text: Localized };
   /** Networks listed on the game page, in order. */
   socials: SocialId[];
@@ -105,6 +131,17 @@ const onePiexel: Game = {
   status: "released",
   statusLabel: l("SORTI · V3 LE 14 NOV.", "RELEASED · V3 ON NOV 14"),
   statusDetail: l("Sorti · V3 le 14 novembre 2026", "Released · V3 on November 14, 2026"),
+  statusShort: l("SORTI · V3", "RELEASED · V3"),
+  seo: {
+    title: l(
+      "One Piexel — jeu de combat 2D en pixel art, versus en ligne",
+      "One Piexel — 2D pixel art fighting game, online versus",
+    ),
+    description: l(
+      "One Piexel : le jeu de combat One Piece sur navigateur, en pixel art. 51 combattants, versus en ligne, matchmaking classé. Fan game non officiel.",
+      "One Piexel: the One Piece fighting game in the browser, in pixel art. 51 fighters, online versus, ranked matchmaking. Unofficial fan game.",
+    ),
+  },
   tagline: { card: l("FIGHTING GAME", "FIGHTING GAME"), page: l("FIGHTING GAME", "FIGHTING GAME") },
   genre: l("Versus fighting 2D en pixel art, fan game", "2D pixel art versus fighting, fan game"),
   pitch: {
@@ -135,6 +172,7 @@ const onePiexel: Game = {
     ["Navigateur, sans installation", "Ordinateur et mobile", "Clavier, tactile, manette", "Gratuit"],
     ["Browser, nothing to install", "Desktop and mobile", "Keyboard, touch, gamepad", "Free"],
   ),
+  platformIcons: ["web", "devices", "gamepad", "free"],
   facts: [
     { label: l("GENRE", "GENRE"), value: l("Versus fighting 2D en pixel art, fan game", "2D pixel art versus fighting, fan game") },
     {
@@ -153,20 +191,20 @@ const onePiexel: Game = {
     { label: l("LANGUES", "LANGUAGES"), value: l("Français, anglais", "French, English") },
   ],
   pitchSection: {
-    title: l("Un vrai versus, sans rien installer.", "A real versus game, nothing to install."),
+    title: l("Un vrai versus, *sans rien installer*.", "A real versus game, *nothing to install*."),
     paragraphs: l(
       [
-        "One Piexel est un jeu de combat 2D en 1 contre 1, au meilleur des trois manches. Coups légers et lourds, spéciaux directionnels, chope, projection arrière, garde, parade, super armure, jauge, ultime et ultime max : la panoplie complète d'un versus sérieux.",
-        "Une partie amicale se lance avec un code de salon ; une partie classée fait grimper une prime en berries. Pendant la recherche d'adversaire, l'arcade et l'entraînement restent jouables.",
+        "One Piexel est un jeu de combat 2D en **1 contre 1, au meilleur des trois manches**. Coups légers et lourds, spéciaux directionnels, chope, projection arrière, garde, parade, super armure, jauge, ultime et ultime max : la panoplie complète d'un versus sérieux.",
+        "Une partie amicale se lance avec un code de salon ; une partie classée fait grimper une **prime en berries**. Pendant la recherche d'adversaire, l'arcade et l'entraînement restent jouables.",
       ],
       [
-        "One Piexel is a 1-on-1 2D fighting game, best of three rounds. Light and heavy attacks, directional specials, grab, back throw, guard, parry, super armor, meter, ultimate and max ultimate: the full toolkit of a serious versus game.",
-        "A casual match starts with a room code; a ranked match raises a bounty in berries. While searching for an opponent, arcade and training stay playable.",
+        "One Piexel is a 2D fighting game played **1 on 1, best of three rounds**. Light and heavy attacks, directional specials, grab, back throw, guard, parry, super armor, meter, ultimate and max ultimate: the full toolkit of a serious versus game.",
+        "A casual match starts with a room code; a ranked match raises a **bounty in berries**. While searching for an opponent, arcade and training stay playable.",
       ],
     ),
   },
   challenge: {
-    title: l("Un moteur de combat maison, dans un onglet.", "A home-made fighting engine, in a browser tab."),
+    title: l("Un moteur de combat maison, *dans un onglet*.", "A home-made fighting engine, *in a browser tab*."),
     lede: l(
       "Un jeu de combat en ligne ne pardonne rien : une image de retard, et le coup ne sort pas. Trois chantiers pour que tout tienne dans un navigateur : le moteur, le matchmaking, l'équilibrage.",
       "An online fighting game forgives nothing: one frame late and the move does not come out. Three workstreams to make it all fit in a browser: the engine, matchmaking, balancing.",
@@ -178,8 +216,8 @@ const onePiexel: Game = {
           "A deterministic fighting engine, built for rollback",
         ),
         body: l(
-          "Le moteur n'utilise ni Math.random, ni horloge, ni sinus : les trajectoires passent par des tables d'entiers. Le jeu peut donc prédire les entrées adverses, revenir jusqu'à 8 images en arrière et rejouer. La boucle tourne à 60 Hz fixe, même sur un écran 144 Hz.",
-          "The engine uses no Math.random, no clock and no sine: trajectories go through integer tables. The game can therefore predict the opponent's inputs, roll back up to 8 frames and replay. The loop runs at a fixed 60 Hz, even on a 144 Hz display.",
+          "Le moteur n'utilise ni `Math.random`, ni horloge, ni sinus : les trajectoires passent par des tables d'entiers. Le jeu peut donc prédire les entrées adverses, revenir jusqu'à 8 images en arrière et rejouer. La boucle tourne à 60 Hz fixe, même sur un écran 144 Hz.",
+          "The engine uses no `Math.random`, no clock and no sine: trajectories go through integer tables. The game can therefore predict the opponent's inputs, roll back up to 8 frames and replay. The loop runs at a fixed 60 Hz, even on a 144 Hz display.",
         ),
         figures: [
           { value: l("0,01 ms", "0.01 ms"), label: l("par pas de simulation", "per simulation step") },
@@ -211,7 +249,7 @@ const onePiexel: Game = {
     ],
   },
   role: {
-    title: l("Un seul auteur, du sprite au serveur.", "A single author, from sprite to server."),
+    title: l("Un seul auteur, *du sprite au serveur*.", "A single author, *from sprite to server*."),
     body: l(
       "Dylan a créé One Piexel seul : game design, direction artistique, développement. Le moteur de combat, le versus en ligne, le matchmaking et l'intégration de chaque combattant sortent du même clavier, et chaque patch note est livré avec ses tests.",
       "Dylan built One Piexel alone: game design, art direction, development. The fighting engine, online versus, matchmaking and the integration of every fighter come from the same keyboard, and every patch ships with its tests.",
@@ -300,6 +338,8 @@ const onePiexel: Game = {
       src: "/videos/one-piexel-trailer.mp4",
       duration: l("1 MIN 39", "1 MIN 39"),
       label: l("TRAILER", "TRAILER"),
+      caption: l("Trailer One Piexel · 1 min 39", "One Piexel trailer · 1 min 39"),
+      playLabel: l("Lire le trailer de One Piexel, 1 minute 39", "Play the One Piexel trailer, 1 minute 39"),
     },
     gallery: [
       img(
@@ -345,7 +385,10 @@ const onePiexel: Game = {
     ],
     mini: "/images/games/one-piexel/mini.jpg",
   },
-  galleryTitle: l("Le jeu, manette en main.", "The game, controller in hand."),
+  galleryTitle: l("Le jeu, *manette en main*.", "The game, *controller in hand*."),
+  galleryNote: l("Captures tirées du trailer et du jeu.", "Screenshots taken from the trailer and the game."),
+  newsTitle: l("Patch notes et *coulisses*.", "Patch notes and *behind the scenes*."),
+  follow: l("Suivre One Piexel", "Follow One Piexel"),
   callToAction: {
     title: l("PRÊT À COMBATTRE ?", "READY TO FIGHT?"),
     text: l(
@@ -365,8 +408,8 @@ const onePiexel: Game = {
     ),
   },
   teaser: l(
-    "Le jeu de combat One Piece sur navigateur, en pixel art : 51 combattants, versus en ligne.",
-    "The One Piece fighting game in the browser, in pixel art: 51 fighters, online versus.",
+    "Le jeu de combat One Piece sur navigateur, en pixel art : 51 combattants, versus en ligne classé.",
+    "The One Piece fighting game in the browser, in pixel art: 51 fighters, ranked online versus.",
   ),
 };
 
@@ -379,6 +422,14 @@ const fastr: Game = {
   status: "released",
   statusLabel: l("SORTI", "RELEASED"),
   statusDetail: l("Sorti", "Released"),
+  statusShort: l("SORTI", "RELEASED"),
+  seo: {
+    title: l("Fastr — course de mots multijoueur en temps réel", "Fastr — real-time multiplayer word race"),
+    description: l(
+      "Fastr : une course multijoueur pour trouver le plus vite possible des mots d'un thème, en 4 manches chronométrées. 175 000+ mots, 13 malus, Socket.IO.",
+      "Fastr: a multiplayer race to find words on a theme as fast as possible, over 4 timed rounds. 175,000+ words, 13 penalties, Socket.IO.",
+    ),
+  },
   tagline: {
     card: l("> course de mots multijoueur, en temps réel", "> multiplayer word race, in real time"),
     page: l("> course de mots, en temps réel", "> word race, in real time"),
@@ -409,6 +460,7 @@ const fastr: Game = {
     ["Navigateur, sans installation", "Ordinateur et mobile", "Sans compte : un pseudo, un lien", "Jeu en français"],
     ["Browser, nothing to install", "Desktop and mobile", "No account: a nickname, a link", "Game in French"],
   ),
+  platformIcons: ["web", "devices", "user", "language"],
   facts: [
     { label: l("GENRE", "GENRE"), value: l("Course de mots multijoueur, party game", "Multiplayer word race, party game") },
     {
@@ -419,30 +471,30 @@ const fastr: Game = {
     {
       label: l("THÈMES", "THEMES"),
       value: l(
-        "Pokémon, One Piece, Star Wars, Disney, Marvel, Cuisine, Géographie… 19 au total",
-        "Pokémon, One Piece, Star Wars, Disney, Marvel, Cooking, Geography… 19 in total",
+        "Pokémon, One Piece, Star Wars, Disney, Marvel, Cuisine, Géographie… *19 au total*",
+        "Pokémon, One Piece, Star Wars, Disney, Marvel, Cooking, Geography… *19 in total*",
       ),
     },
     { label: l("PLATEFORMES", "PLATFORMS"), value: l("Navigateur, ordinateur et mobile", "Browser, desktop and mobile") },
     { label: l("COMPTE", "ACCOUNT"), value: l("Aucun pour jouer", "None needed to play") },
   ],
   pitchSection: {
-    title: l("Un thème, 4 manches, zéro pitié.", "One theme, 4 rounds, zero mercy."),
+    title: l("Un thème, 4 manches, *zéro pitié*.", "One theme, 4 rounds, *zero mercy*."),
     paragraphs: l(
       [
-        "Fastr est une course de mots en temps réel. Un thème, un lien de lobby à partager, puis 4 manches de 2 minutes. Chaque mot validé rapporte 100 points plus un bonus de vitesse, et un mot ne compte qu'une seule fois par partie, tous joueurs confondus.",
-        "Tous les 3 mots validés, un malus part sur un adversaire. À 20 mots, la cible se choisit.",
+        "Fastr est une course de mots en temps réel. Un thème, un lien de lobby à partager, puis **4 manches de 2 minutes**. Chaque mot validé rapporte 100 points plus un bonus de vitesse, et un mot ne compte qu'une seule fois par partie, tous joueurs confondus.",
+        "Tous les 3 mots validés, **un malus part sur un adversaire**. À 20 mots, la cible se choisit.",
       ],
       [
-        "Fastr is a real-time word race. A theme, a lobby link to share, then 4 rounds of 2 minutes. Every validated word earns 100 points plus a speed bonus, and a word only counts once per game, across all players.",
-        "Every 3 validated words, a penalty flies to an opponent. At 20 words, the target can be chosen.",
+        "Fastr is a real-time word race. A theme, a lobby link to share, then **4 rounds of 2 minutes**. Every validated word earns 100 points plus a speed bonus, and a word only counts once per game, across all players.",
+        "Every 3 validated words, **a penalty flies to an opponent**. At 20 words, the target can be chosen.",
       ],
     ),
   },
   challenge: {
     title: l(
-      "Un game design nerveux, des dictionnaires automatisés.",
-      "Tense game design, automated dictionaries.",
+      "Un game design nerveux, *des dictionnaires automatisés*.",
+      "Tense game design, *automated dictionaries*.",
     ),
     lede: l(
       "Deux problèmes à résoudre : rendre une liste de mots aussi tendue qu'une course, et alimenter 19 thèmes sans saisir 175 000 mots à la main.",
@@ -488,7 +540,7 @@ const fastr: Game = {
     ],
   },
   role: {
-    title: l("Un seul auteur, des règles au serveur.", "A single author, from rules to server."),
+    title: l("Un seul auteur, *des règles au serveur*.", "A single author, *from rules to server*."),
     body: l(
       "Dylan a créé Fastr seul : game design, design d'interface, développement. Les règles de partie, le serveur temps réel, les malus, la fabrication des dictionnaires et le back-office viennent du même clavier.",
       "Dylan built Fastr alone: game design, interface design, development. Game rules, the real-time server, penalties, the dictionary pipeline and the back office come from the same keyboard.",
@@ -570,6 +622,8 @@ const fastr: Game = {
       src: "/videos/fastr-trailer.mp4",
       duration: l("1 MIN 32", "1 MIN 32"),
       label: l("Trailer", "Trailer"),
+      caption: l("Trailer Fastr · 1 min 32", "Fastr trailer · 1 min 32"),
+      playLabel: l("Lire le trailer de Fastr, 1 minute 32", "Play the Fastr trailer, 1 minute 32"),
     },
     gallery: [
       img(
@@ -577,41 +631,50 @@ const fastr: Game = {
         640,
         360,
         l("Une manche en cours : le malus Nuages envahissants recouvre les mots validés", "A round in progress: the Creeping Clouds penalty covers the validated words"),
+        l("Malus Nuages envahissants : 7 secondes sans voir les mots validés.", "Creeping Clouds penalty: 7 seconds without seeing the validated words."),
       ),
       img(
         "/images/games/fastr/fastr-12.jpg",
         640,
         360,
         l("Écran de choix du thème de la partie, Disney sélectionné", "Theme selection screen, Disney selected"),
+        l("Le choix du thème, avant de lancer la partie.", "Picking the theme, before starting the game."),
       ),
       img(
         "/images/games/fastr/fastr-22.jpg",
         640,
         360,
         l("Le lobby : pseudo, liste des joueurs et compte à rebours", "The lobby: nickname, player list and countdown"),
+        l("Le lobby : un pseudo, un lien à partager, et ça démarre.", "The lobby: a nickname, a link to share, and off it goes."),
       ),
       img(
         "/images/games/fastr/fastr-46.jpg",
         640,
         360,
         l("Manche sur le thème Pokémon, un malus actif sur la zone de saisie", "A round on the Pokémon theme, a penalty active on the input area"),
+        l("Thème Pokémon, un malus sur la saisie, le chrono qui tourne.", "Pokémon theme, a penalty on the input, the clock ticking."),
       ),
       img(
         "/images/games/fastr/fastr-78.jpg",
         640,
         360,
         l("Fin de manche : 20 mots validés et la liste des mots trouvés", "End of round: 20 validated words and the list of words found"),
+        l("Objectif atteint : 20 mots validés dans la manche.", "Goal reached: 20 validated words in the round."),
       ),
       img(
         "/images/games/fastr/fastr-70.jpg",
         640,
         360,
         l("Classement de la manche avant le round suivant", "Round ranking before the next round"),
+        l("Le classement par manche, juste avant la suivante.", "The ranking of the round, right before the next one."),
       ),
     ],
     mini: "/images/games/fastr/mini.jpg",
   },
-  galleryTitle: l("Une partie, du lobby au podium.", "A game, from lobby to podium."),
+  galleryTitle: l("Une partie, *du lobby au podium*.", "A game, *from lobby to podium*."),
+  galleryNote: l("Captures tirées du trailer.", "Screenshots taken from the trailer."),
+  newsTitle: l("Thèmes, trophées et *dictionnaires*.", "Themes, trophies and *dictionaries*."),
+  follow: l("Suivre le studio", "Follow the studio"),
   callToAction: {
     title: l("UN LOBBY, UN LIEN", "ONE LOBBY, ONE LINK"),
     text: l(
@@ -635,6 +698,17 @@ const iconic: Game = {
   status: "released",
   statusLabel: l("Sorti · nouveau set le 21 nov.", "Released · new set on Nov 21"),
   statusDetail: l("Sorti · nouveauté le 21 novembre", "Released · new content on November 21"),
+  statusShort: l("Sorti", "Released"),
+  seo: {
+    title: l(
+      "Iconic — quiz de culture pop, un objet culte à identifier",
+      "Iconic — pop culture quiz, one cult object to identify",
+    ),
+    description: l(
+      "Iconic : un quiz de culture pop. Une image, un objet culte, trois essais pour retrouver le personnage. 300+ icônes, collection, séries. Next.js, XState, MongoDB.",
+      "Iconic: a pop culture quiz. One image, one cult object, three tries to find the character. 300+ icons, collection, streaks. Next.js, XState, MongoDB.",
+    ),
+  },
   tagline: { card: l("Devine l'icône", "Guess the icon"), page: l("Quiz culture", "Culture quiz") },
   genre: l("Quiz culture, devinette d'icônes", "Culture quiz, icon guessing"),
   pitch: {
@@ -662,6 +736,7 @@ const iconic: Game = {
     ["Navigateur, sans installation", "Ordinateur et mobile", "Français, anglais", "3 sets gratuits"],
     ["Browser, nothing to install", "Desktop and mobile", "French, English", "3 free sets"],
   ),
+  platformIcons: ["web", "devices", "language", "free"],
   facts: [
     { label: l("GENRE", "GENRE"), value: l("Quiz culture, devinette d'icônes", "Culture quiz, icon guessing") },
     {
@@ -672,25 +747,25 @@ const iconic: Game = {
       ),
     },
     { label: l("SETS PAYANTS", "PAID SETS"), value: l("Méchants célèbres, Personnages de shonen", "Famous villains, Shonen characters") },
-    { label: l("À VENIR", "COMING"), value: l("Figures de l'histoire, Icônes de la musique", "Historical figures, Music icons") },
+    { label: l("À VENIR", "COMING"), value: l("*Figures de l'histoire*, Icônes de la musique", "*Historical figures*, Music icons") },
     { label: l("PLATEFORMES", "PLATFORMS"), value: l("Navigateur, ordinateur et mobile", "Browser, desktop and mobile") },
     { label: l("LANGUES", "LANGUAGES"), value: l("Français, anglais", "French, English") },
   ],
   pitchSection: {
-    title: l("Un objet culte, 3 essais, une collection.", "One cult object, 3 tries, one collection."),
+    title: l("Un objet culte, 3 essais, *une collection*.", "One cult object, 3 tries, *one collection*."),
     paragraphs: l(
       [
-        "Iconic affiche une carte illustrée : un objet ou un symbole lié à un personnage. Reste à taper son nom. 3 essais par icône, des indices à débloquer, et une série de bonnes réponses qui multiplie les ICoins.",
-        "Chaque icône trouvée rejoint la collection, et chaque set a ses propres succès à décrocher.",
+        "Iconic affiche une carte illustrée : un objet ou un symbole lié à un personnage. Reste à taper son nom. **3 essais par icône**, des indices à débloquer, et une série de bonnes réponses qui multiplie les ICoins.",
+        "Chaque icône trouvée rejoint **la collection**, et chaque set a ses propres succès à décrocher.",
       ],
       [
-        "Iconic shows an illustrated card: an object or a symbol tied to a character. All that is left is to type their name. 3 tries per icon, hints to unlock, and a streak of right answers that multiplies ICoins.",
-        "Every icon found joins the collection, and every set has its own achievements to earn.",
+        "Iconic shows an illustrated card: an object or a symbol tied to a character. All that is left is to type their name. **3 tries per icon**, hints to unlock, and a streak of right answers that multiplies ICoins.",
+        "Every icon found joins **the collection**, and every set has its own achievements to earn.",
       ],
     ),
   },
   challenge: {
-    title: l("Un jeu tout doux, trois sujets sérieux.", "A gentle game, three serious topics."),
+    title: l("Un jeu tout doux, *trois sujets sérieux*.", "A gentle game, *three serious topics*."),
     lede: l(
       "Ne jamais perdre une bonne réponse, ne jamais laisser fuiter la solution, et faire tourner une vraie économie de jeu. Le tout sans que ça se voie.",
       "Never lose a right answer, never leak the solution, and run a real game economy. All without it showing.",
@@ -732,7 +807,7 @@ const iconic: Game = {
     ],
   },
   role: {
-    title: l("Un seul auteur, de la carte au paiement.", "A single author, from card to payment."),
+    title: l("Un seul auteur, *de la carte au paiement*.", "A single author, *from card to payment*."),
     body: l(
       "Dylan a créé Iconic seul : game design, design, développement. Le jeu, les comptes, la boutique et la chaîne d'import des cartes sont pensés pour qu'un set entier s'ajoute sans toucher au code de la partie.",
       "Dylan built Iconic alone: game design, design, development. The game, accounts, shop and card import pipeline are designed so a whole set can be added without touching the game code.",
@@ -804,37 +879,53 @@ const iconic: Game = {
       ),
     ],
     logo: { src: "/images/games/iconic/iconic-logo.svg", width: 172, height: 36 },
+    trailer: {
+      src: "/videos/iconic-promo.mp4",
+      duration: l("49 s", "49 s"),
+      label: l("Vidéo", "Video"),
+      caption: l("Vidéo d'annonce Iconic · 49 s", "Iconic announcement video · 49 s"),
+      playLabel: l("Lire la vidéo d'annonce d'Iconic, 49 secondes", "Play the Iconic announcement video, 49 seconds"),
+    },
     gallery: [
       img(
         "/images/games/iconic/iconic-29.jpg", 1600, 900,
         l("Écran de jeu : une carte montrant une vis aérienne, le champ de réponse et le Tableau de mission", "Game screen: a card showing an aerial screw, the answer field and the Mission Board"),
+        l("L'écran de jeu : une carte, un champ, et le Tableau de mission à gauche.", "The game screen: a card, a field, and the Mission Board on the left."),
       ),
       img(
         "/images/games/iconic/iconic-41.jpg", 1600, 900,
         l("Une carte montrant un éléphant de guerre, série de 3 en cours avec multiplicateur 1,2", "A card showing a war elephant, a streak of 3 in progress with a 1.2 multiplier"),
+        l("Série de 3 en cours : le multiplicateur passe à ×1,2.", "A streak of 3 in progress: the multiplier goes up to ×1.2."),
       ),
       img(
         "/images/games/iconic/iconic-17.jpg", 1600, 900,
         l("Mauvaise réponse : la carte se couvre de corail avec une croix", "Wrong answer: the card turns coral with a cross"),
+        l("Mauvaise réponse : la carte vire au corail.", "Wrong answer: the card turns coral."),
       ),
       img(
         "/images/games/iconic/iconic-11.jpg", 1600, 900,
         l("La boutique : aperçu du set Figures de l'histoire avec ses cartes à découvrir", "The shop: preview of the Historical Figures set and its cards to discover"),
+        l("La boutique, avec l'aperçu d'un set avant de le lancer.", "The shop, with the preview of a set before starting it."),
       ),
       img(
         "/images/games/iconic/iconic-4.jpg", 1600, 900,
         l("Présentation du set Figures de l'histoire : six cartes illustrées", "Presentation of the Historical Figures set: six illustrated cards"),
+        l("Figures de l'histoire : le nouveau set, en six cartes.", "Historical Figures: the new set, in six cards."),
       ),
       img(
         "/images/games/iconic/iconic-47.jpg",
         1000,
         563,
         l("Annonce : disponible le 21 novembre", "Announcement: available November 21"),
+        l("Rendez-vous le 21 novembre.", "See you on November 21."),
       ),
     ],
     mini: "/images/games/iconic/mini.jpg",
   },
-  galleryTitle: l("Des cartes qui donnent envie de les garder.", "Cards worth keeping."),
+  galleryTitle: l("Des cartes *qui donnent envie de les garder*.", "Cards *worth keeping*."),
+  galleryNote: l("Captures tirées de la vidéo d'annonce.", "Screenshots taken from the announcement video."),
+  newsTitle: l("Nouveaux sets et *séries*.", "New sets and *streaks*."),
+  follow: l("Suivre le studio", "Follow the studio"),
   callToAction: {
     title: l("Une icône à deviner ?", "An icon to guess?"),
     text: l(

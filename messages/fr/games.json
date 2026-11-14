@@ -1,1 +1,180 @@
-{}
+{
+  "gamesPage": {
+    "list": {
+      "kicker": "Jeux",
+      "title": "Les <em>jeux</em> du studio.",
+      "lede": "Trois jeux, trois univers, zéro installation. Chacun se lance dans un onglet, sur ordinateur comme sur mobile, et chacun a sa fiche : trailer, captures, défi technique et démo jouable.",
+      "gamesLabel": "Les trois jeux",
+      "moreText": "Patch notes, devlogs et démos : la suite se passe du côté des news et du Nid.",
+      "moreNews": "Lire les news",
+      "moreNest": "Ouvrir le Nid"
+    },
+    "crumb": {
+      "label": "Fil d'Ariane",
+      "games": "Jeux"
+    },
+    "hero": {
+      "play": "Jouer",
+      "watchTrailer": "Voir le trailer",
+      "platforms": "Plateformes",
+      "figures": "{game} en chiffres"
+    },
+    "pitch": {
+      "kicker": "01 / Le pitch",
+      "sheet": "Fiche d'identité du jeu",
+      "status": "STATUT"
+    },
+    "gallery": {
+      "kicker": "02 / Captures",
+      "hint": "Cliquer pour agrandir, flèches du clavier pour naviguer.",
+      "dialog": "Captures de {game}",
+      "enlarge": "Agrandir :",
+      "close": "Fermer",
+      "prev": "Capture précédente",
+      "next": "Capture suivante",
+      "trailer": "Trailer"
+    },
+    "challenge": {
+      "kicker": "03 / Le défi",
+      "item": "DÉFI {number}"
+    },
+    "role": {
+      "kicker": "04 / Le rôle de Dylan",
+      "stack": "Stack technique"
+    },
+    "news": {
+      "kicker": "05 / News du jeu",
+      "all": "Tout le devlog {game}",
+      "moreKicker": "À SUIVRE",
+      "more": "Les prochains patch notes et devlogs de {game} arrivent dans les news du studio."
+    },
+    "play": {
+      "now": "Jouer maintenant"
+    },
+    "others": {
+      "kicker": "06 / Les autres jeux",
+      "title": "Encore <em>deux univers</em> à découvrir.",
+      "all": "Tous les jeux",
+      "see": "Voir la fiche"
+    },
+    "demos": {
+      "rollback": {
+        "title": "ROLLBACK, IMAGE PAR IMAGE",
+        "live": "DÉMO JOUABLE · RALENTI ×9",
+        "intro": "Cette démo donne le rôle de l'adversaire. Le coup envoyé met quelques images à traverser le réseau : en attendant, le jeu parie sur l'absence d'entrée. Quand la vraie entrée arrive, il remonte le temps, corrige et rejoue. À vitesse réelle, rien ne se voit.",
+        "inputs": "Entrées adverses",
+        "simulation": "Simulation",
+        "hit": "Envoyer un coup",
+        "play": "Lecture",
+        "pause": "Pause",
+        "latency": "Latence",
+        "latencyLabel": "Latence réseau, en images",
+        "frames": "{count} img",
+        "rollbacks": "Rollbacks",
+        "legendLabel": "Légende",
+        "legend": {
+          "pred": "entrée prédite",
+          "ok": "prédiction confirmée",
+          "hit": "vrai coup reçu",
+          "sim": "image simulée",
+          "undo": "image annulée",
+          "redo": "image rejouée"
+        },
+        "status": {
+          "ready": "Démo prête.",
+          "paused": "Démo en pause.",
+          "ok": "Image {frame} · 60 Hz · prédiction juste, rien à refaire",
+          "bad": "Erreur de prédiction : retour {frames} images en arrière",
+          "good": "{frames} images rejouées en {ms} ms. Invisible à l'œil nu.",
+          "announce": "Rollback de {frames} images corrigé."
+        }
+      },
+      "iconic": {
+        "title": "Mini-partie",
+        "live": "Démo jouable",
+        "intro": "Retrouver la figure historique rattachée à cette image. Trois essais, pas un de plus. Chaque étape déclenchée s'allume dans la machine à états, comme dans le jeu.",
+        "answer": "Réponse",
+        "placeholder": "Entrer un nom…",
+        "submit": "Valider",
+        "tries": "Essais",
+        "triesLeft": "{count, plural, =0 {Aucun essai restant} one {# essai restant} other {# essais restants}}",
+        "reward": "25 ICoins par bonne réponse",
+        "streak": "Série",
+        "machineLabel": "État courant de la machine à états",
+        "states": {
+          "draw": "tirage",
+          "input": "saisie",
+          "validation": "validation",
+          "result": "résultat",
+          "save": "sauvegarde"
+        },
+        "result": {
+          "found": "trouvé",
+          "missed": "raté"
+        },
+        "save": {
+          "pending": "sauvegarde : en attente",
+          "synced": "sauvegarde : synchronisé"
+        },
+        "found": "{name}, bien vu ! +{gain} ICoins.",
+        "foundStreak": "{name}, bien vu ! +{gain} ICoins (série de {streak}).",
+        "hint": "Raté. Indice offert pour la démo : {hint}. Dans le jeu, il coûte 100 ICoins et casse la série.",
+        "lost": "C'était {name}. Série remise à zéro, la carte reviendra plus tard.",
+        "cards": {
+          "screw": {
+            "alt": "Carte Iconic : une vis aérienne en bois et en toile, posée sur un socle de sable",
+            "question": "À qui appartient cette drôle de machine ?",
+            "name": "Léonard de Vinci",
+            "hint": "un génie de la Renaissance, peintre et inventeur"
+          },
+          "elephant": {
+            "alt": "Carte Iconic : un éléphant de guerre portant deux soldats, sur un sol enneigé",
+            "question": "Carte suivante : qui a fait passer ça par la montagne ?",
+            "name": "Hannibal",
+            "hint": "un général carthaginois qui a traversé les Alpes"
+          },
+          "bicorne": {
+            "alt": "Carte Iconic : un bicorne noir à cocarde tricolore",
+            "question": "Et ce chapeau, à qui est-il ?",
+            "name": "Napoléon",
+            "hint": "un empereur des Français"
+          }
+        }
+      },
+      "fastr": {
+        "title": "> TESTER UN MALUS",
+        "live": "DÉMO JOUABLE",
+        "intro": "Thème : Pokémon. Saisir un nom, valider avec Entrée. La reconnaissance tolère les accents et les petites fautes (« pikatchu » passe). Activer ensuite un malus et recommencer.",
+        "penaltyLabel": "Malus actif",
+        "penalties": {
+          "none": {
+            "name": "Aucun malus",
+            "text": "Aucun malus actif. Ça ne dure jamais."
+          },
+          "wall": {
+            "name": "Mur de briques",
+            "text": "Mur de briques : 4 caractères max. Restent les noms courts (Mew, Abra, Onix)."
+          },
+          "freeze": {
+            "name": "Gel mental",
+            "text": "Gel mental : chaque frappe arrive avec 650 ms de retard."
+          },
+          "clouds": {
+            "name": "Nuages envahissants",
+            "text": "Nuages envahissants : impossible de voir les mots déjà validés."
+          }
+        },
+        "inputLabel": "Mot sur le thème Pokémon",
+        "placeholder": "Un Pokémon…",
+        "submit": "Valider",
+        "listLabel": "Mots validés",
+        "empty": "Les mots validés s'affichent ici.",
+        "score": "Score",
+        "unknown": "« {word} » n'est pas dans le dictionnaire de la démo (une vingtaine de Pokémon de la première génération).",
+        "duplicate": "{word} est déjà validé : un mot ne compte qu'une fois par partie.",
+        "valid": "{word} validé : 100 points + {bonus} de bonus de vitesse.",
+        "validTypo": "{word} validé : 100 points + {bonus} de bonus de vitesse. Faute de frappe pardonnée."
+      }
+    }
+  }
+}
