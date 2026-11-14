@@ -1,0 +1,128 @@
+{
+  "servicesPage": {
+    "hero": {
+      "eyebrow": "Services · quote on request",
+      "title": "From prototype to product, <em>live</em>.",
+      "lede": "Four ways to work with <strong>Corvus Web Studio</strong>: web products and SaaS, games and interactive experiences, AI integration, components and design systems. One point of contact, from scoping to production.",
+      "cta": "Describe a project",
+      "ctaProcess": "See the process"
+    },
+    "index": {
+      "label": "Services overview",
+      "head": "> services"
+    },
+    "list": {
+      "kicker": "01 / Services",
+      "title": "Four crafts, <em>one workshop</em>.",
+      "techLabel": "Technologies",
+      "delivered": "> what you get",
+      "price": "Pricing: <b>quote on request</b>"
+    },
+    "items": {
+      "web": {
+        "short": "Web & SaaS",
+        "indexTitle": "Web development & SaaS products",
+        "indexNote": "Next.js, fullstack",
+        "title": "Web development & <em>SaaS products</em>",
+        "text": "Web apps, back offices and SaaS, from the data model to the interface. Nine years of product work in teams: ad tech, sports, creator tools.",
+        "proof": "<b>Done before.</b> A campaign module handling over a million euros, and a multi-repo to monorepo migration led end to end.",
+        "link": "See the career",
+        "d1": "Fullstack Next.js / React application, production ready",
+        "d2": "API and database: Node, NestJS, PostgreSQL, MongoDB",
+        "d3": "Authentication, Stripe payments, deployment on Vercel or AWS",
+        "d4": "Taking over and modernising an existing codebase"
+      },
+      "games": {
+        "short": "Games",
+        "indexTitle": "Games & interactive web experiences",
+        "indexNote": "real time, canvas",
+        "title": "Games & <em>interactive</em> web experiences",
+        "text": "Multiplayer browser games, branded mini-games, interactive experiences: real time, canvas, animation. Nothing to install, on desktop and mobile alike.",
+        "proof": "<b>Done before.</b> Three released games, designed and built solo: One Piexel, Iconic and Fastr.",
+        "link": "Discover the games",
+        "d1": "Game design and playable prototype",
+        "d2": "Real-time multiplayer: WebSocket or peer to peer",
+        "d3": "Canvas engine, sprite and animation integration",
+        "d4": "Accounts, leaderboards, matchmaking, balancing"
+      },
+      "ai": {
+        "short": "AI",
+        "indexTitle": "AI integration",
+        "indexNote": "MCP, Skills, agents, AI generation",
+        "title": "<em>AI</em> integration",
+        "text": "Plugging AI in where it serves the product: MCP servers, Skills, agents and content generation. With guardrails, evaluations and cost tracking.",
+        "proof": "<b>Done before.</b> GPT-4 built into TweetHunter: tweet completion, correction and optimisation. An agentic workflow used every day.",
+        "link": "Talk about an integration",
+        "d1": "MCP servers: exposing tools and data to an assistant",
+        "d2": "Skills and agentic workflows for a team",
+        "d3": "AI generation built into the product (text, image)",
+        "d4": "System prompts, evaluations, cost tracking"
+      },
+      "components": {
+        "short": "Components",
+        "indexTitle": "Components & design systems",
+        "indexNote": "React, accessibility, motion",
+        "title": "Components & <em>design systems</em>",
+        "text": "Polished, accessible, documented React components. Micro-interactions, animations, themes: a design system a team can pick up without a spoken manual.",
+        "proof": "<b>Done before.</b> The Nest demos, with copyable code under the MIT licence. This site is one of them.",
+        "link": "Open the Nest",
+        "d1": "React + Tailwind component library",
+        "d2": "Tokens and light / dark themes",
+        "d3": "Animations and micro-interactions, <code>prefers-reduced-motion</code> included",
+        "d4": "AA accessibility and usage documentation"
+      }
+    },
+    "process": {
+      "kicker": "02 / Process",
+      "title": "Four steps, <em>no surprises</em>.",
+      "steps": {
+        "s1": {
+          "title": "First contact",
+          "text": "One message is enough. A first conversation to pin down the need, the constraints and the deadline.",
+          "note": "> reply within 24 h"
+        },
+        "s2": {
+          "title": "Scoping & quote",
+          "text": "Scope, milestones and a detailed quote. Nothing starts without a written agreement.",
+          "note": "> written scope"
+        },
+        "s3": {
+          "title": "Build",
+          "text": "Short iterations, a demo at every milestone, access to the repository and to a test environment.",
+          "note": "> visible progress"
+        },
+        "s4": {
+          "title": "Delivery & follow-up",
+          "text": "Production release, documentation and handover. Maintenance available afterwards, on quote.",
+          "note": "> code and access handed over"
+        }
+      }
+    },
+    "formats": {
+      "kicker": "03 / Formats",
+      "title": "Three formats, <em>quoted on request</em>.",
+      "items": {
+        "fixed": {
+          "tag": "> fixed price",
+          "title": "Fixed-price project",
+          "text": "A defined scope, a price set per milestone. Suited to a website, a game, an MVP or a well-bounded AI integration."
+        },
+        "team": {
+          "tag": "> reinforcement",
+          "title": "Team reinforcement",
+          "text": "A Senior Fullstack engineer embedded in a product team, full time or part time, for an agreed period."
+        },
+        "short": {
+          "tag": "> short",
+          "title": "Prototype or audit",
+          "text": "A short format to validate an idea, audit an existing codebase or assess an AI integration lead."
+        }
+      }
+    },
+    "contact": {
+      "kicker": "04 / Contact",
+      "title": "A project <em>in mind</em>?",
+      "text": "A few lines describing the need are enough to get started. Reply within 24 h."
+    }
+  }
+}

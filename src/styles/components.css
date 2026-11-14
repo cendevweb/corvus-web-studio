@@ -1,0 +1,143 @@
+/* Reusable UI primitives shared by every page (buttons, links, chips, badges, cards, section headings…).
+   Class names match the validated mockups so page markup can be ported 1:1. */
+@layer components {
+  /* ───────── Buttons (components/ui/Button.tsx) ───────── */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;font-size:16px;white-space:nowrap;
+    transition:transform 160ms var(--ease-out),background-color 200ms ease,border-color 200ms ease,box-shadow 200ms ease,color 200ms ease}
+  .btn:active{transform:scale(.97)}
+  .btn svg{width:16px;height:16px;flex:none;transition:transform 200ms var(--ease-out)}
+  .btn-main{background:var(--bone);color:var(--bg);position:relative}
+  .btn-main::before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:var(--iris);z-index:-1;opacity:0;filter:blur(10px);transition:opacity 240ms ease}
+  .btn-ghost{border:1px solid var(--line-2);color:var(--bone)}
+  .btn-sm{min-height:40px;padding:0 16px;font-size:15px}
+  .link{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--bone);border-bottom:1px solid var(--line-2);padding-bottom:3px;transition:border-color 200ms ease}
+  .link svg{width:14px;height:14px;transition:transform 200ms var(--ease-out)}
+  @media (hover:hover) and (pointer:fine){
+    .btn-main:hover::before{opacity:.75}
+    .btn-ghost:hover{border-color:var(--bone);background:rgba(var(--ink-rgb),.06)}
+    .btn:hover svg.arr,.link:hover svg{transform:translateX(3px)}
+    .link:hover{border-color:var(--green)}
+  }
+
+  /* ───────── Sections + headings (components/ui/SectionHeading.tsx) ───────── */
+  .sec{padding:64px 0}
+  @media (min-width:1000px){.sec{padding:88px 0}}
+  .sec-hd{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 32px;margin-bottom:32px}
+  .sec-n{font-family:var(--pixel);letter-spacing:normal;font-size:16px;color:var(--violet-t);display:block;margin-bottom:12px}
+  .sec h2,.sec-title{font-size:clamp(2rem,4.6vw,3.5rem);line-height:1;letter-spacing:-.035em;font-weight:600;text-wrap:balance}
+  .sec h2 em,.sec-title em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+  /* Iridescent accent: the feather sheen on Instrument Serif italics */
+  .iris-text,.sec-title.is-iris em{background:var(--iris);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+  @media (min-width:1000px){.sec-hd{margin-bottom:48px}}
+
+  .eyebrow{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-family:var(--pixel);font-size:16px;color:var(--muted)}
+  .lede{font-size:clamp(1.02rem,1.5vw,1.2rem);color:var(--muted);max-width:33em}
+  .lede strong{color:var(--bone);font-weight:500}
+
+  /* ───────── Chips (filters, toggles) ───────── */
+  .chip{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line-2);font-size:14.5px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;
+    transition:transform 160ms var(--ease-out),color 180ms ease,background-color 180ms ease,border-color 180ms ease}
+  .chip:active{transform:scale(.97)}
+  .chip i{width:8px;height:8px;border-radius:2px;background:var(--c,var(--bone))}
+  .chip[aria-pressed=true]{background:var(--bone);color:var(--bg);border-color:var(--bone);font-weight:600}
+  @media (hover:hover) and (pointer:fine){.chip[aria-pressed=false]:hover{color:var(--bone);border-color:var(--bone)}}
+
+  /* ───────── Badges / status (components/ui/Badge.tsx) ───────── */
+  .avail{display:inline-flex;align-items:center;gap:9px;font-family:var(--pixel);font-size:16px;letter-spacing:.04em;line-height:1.2;color:var(--green);border:1px solid color-mix(in srgb,var(--green) 40%,transparent);background:color-mix(in srgb,var(--green) 9%,transparent);border-radius:999px;padding:6px 12px 6px 10px}
+  .avail i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px color-mix(in srgb,var(--green) 20%,transparent);animation:tw 2.4s ease-in-out infinite}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--pixel);font-size:15px;letter-spacing:.04em;line-height:1.2;border-radius:6px;padding:3px 9px;border:1px solid var(--line-2);color:var(--muted)}
+  .badge-soon{border-style:dashed;color:var(--faint)}
+  .badge-live{border-color:transparent;padding-inline:0;color:var(--green)}
+  .badge-live i{width:6px;height:6px;background:currentColor;animation:tw 1.8s ease-in-out infinite}
+  .badge-solid{background:rgba(14,14,18,.82);border-color:transparent;color:#E8E6E3}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .tags li{font-family:var(--pixel);font-size:14.5px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+
+  /* ───────── Card surface (components/ui/Card.tsx) ───────── */
+  .card{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color 220ms ease,background-color 220ms ease,transform 220ms var(--ease-out)}
+  @media (hover:hover) and (pointer:fine){
+    .card.is-hoverable:hover{border-color:var(--line-2)}
+    .card.is-lift:hover{transform:translateY(-3px)}
+  }
+
+  /* ───────── News card (components/news/NewsCard.tsx) ───────── */
+  .n{display:flex;flex-direction:column;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color 220ms ease,transform 220ms var(--ease-out)}
+  .n[hidden]{display:none}
+  .n-img{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#000}
+  .n-img img{width:100%;height:100%;object-fit:cover;transition:transform 300ms var(--ease-out)}
+  .n-play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(transparent 40%,rgba(14,14,18,.55))}
+  .n-play span{width:60px;height:60px;border-radius:50%;background:rgba(14,14,18,.72);border:1px solid rgba(232,230,227,.5);color:#E8E6E3;display:grid;place-items:center;backdrop-filter:blur(6px);transition:transform 200ms var(--ease-out),background-color 200ms ease}
+  .n-play svg{width:18px;height:18px;margin-left:3px}
+  .n-kind{position:absolute;left:12px;top:12px;font-family:var(--pixel);font-size:15px;line-height:1.55;background:rgba(14,14,18,.82);padding:4px 9px;border-radius:6px;color:#E8E6E3}
+  .n-b{padding:20px 20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .n-meta{display:flex;align-items:center;gap:12px;font-family:var(--pixel);font-size:15.5px;color:var(--muted)}
+  .n-tag{display:inline-flex;align-items:center;gap:7px;color:var(--bone)}
+  .n-tag i{width:8px;height:8px;border-radius:2px;background:var(--c)}
+  .n h3{font-size:21px;line-height:1.2;letter-spacing:-.02em;font-weight:600;text-wrap:balance}
+  .n p{font-size:15px;color:var(--muted)}
+  .n .link{align-self:flex-start;margin-top:auto;font-size:15px}
+  .n-empty{border:1px dashed var(--line-2);border-radius:18px;padding:36px 24px;color:var(--muted);text-align:center}
+  .n-empty[hidden]{display:none}
+  @media (hover:hover) and (pointer:fine){
+    .n:hover{border-color:var(--line-2);transform:translateY(-3px)}
+    .n:hover .n-img img{transform:scale(1.04)}
+    .n:hover .n-play span{transform:scale(1.08);background:var(--bone);color:var(--bg)}
+  }
+
+  /* ───────── Copy-code button (components/ui/CopyButton.tsx) ───────── */
+  .copy{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border:1px solid var(--line-2);border-radius:9px;font-size:14px;font-weight:500;color:var(--bone);
+    transition:transform 160ms var(--ease-out),border-color 180ms ease,background-color 180ms ease}
+  .copy:active{transform:scale(.97)}
+  .copy svg{width:14px;height:14px}
+  .copy small{font-family:var(--pixel);font-size:14.5px;letter-spacing:.04em;color:var(--faint);border-left:1px solid var(--line-2);padding-left:8px}
+  .copy .ok,.copy.done .cp{display:none}.copy.done .ok{display:block;color:var(--green)}
+  @media (hover:hover) and (pointer:fine){.copy:hover{border-color:var(--bone);background:rgba(var(--ink-rgb),.05)}}
+
+  /* Copy button with cross-faded labels (components/news/CopyAction.tsx) */
+  .cpy{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--line-2);font-size:14px;font-weight:500;color:var(--bone);
+    transition:transform 160ms var(--ease-out),border-color 200ms ease,background-color 200ms ease}
+  .cpy:active{transform:scale(.97)}
+  .cpy svg{width:15px;height:15px}
+  .cpy .def,.cpy .ok{display:inline-flex;align-items:center;gap:8px;transition:opacity 180ms ease,filter 180ms ease}
+  .cpy .ok{position:absolute;inset:0;justify-content:center;opacity:0;filter:blur(3px);color:var(--green)}
+  .cpy.done .def{opacity:0;filter:blur(3px)}
+  .cpy.done .ok{opacity:1;filter:none}
+  .cpy.done{border-color:color-mix(in srgb,var(--green) 50%,transparent)}
+  @media (hover:hover) and (pointer:fine){.cpy:hover{border-color:var(--bone);background:rgba(var(--ink-rgb),.06)}}
+  @media (prefers-reduced-motion:reduce){.cpy .def,.cpy .ok{transition:none}}
+
+  /* Code tokens (lib/highlight.tsx): code blocks stay dark in both themes */
+  .tk-c{color:#7d7b86;font-style:italic}.tk-s{color:#3DDC97}.tk-k{color:#B1A0FF}.tk-n{color:#f7b90f}
+
+  /* ───────── "LIVE" marker on interactive demos ───────── */
+  .live{position:absolute;left:12px;top:12px;z-index:3;font-family:var(--pixel);font-size:14.5px;color:var(--green);display:flex;align-items:center;gap:7px;pointer-events:none}
+  .live i{width:6px;height:6px;background:var(--green);animation:tw 1.8s ease-in-out infinite}
+
+  /* ───────── Video poster with on-demand loading (components/ui/VideoPoster.tsx) ───────── */
+  .vposter{position:relative;overflow:hidden;background:#000}
+  .vposter>img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 300ms var(--ease-out)}
+  .vposter video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;z-index:4}
+  .vplay{position:absolute;inset:0;display:grid;place-items:center;z-index:3;background:linear-gradient(transparent 45%,rgba(0,0,0,.45))}
+  .vplay[hidden]{display:none}
+  .vplay span{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;background:var(--bone);color:var(--bg);font-weight:600;font-size:15px;border-radius:999px;transition:transform 200ms var(--ease-out),background-color 200ms ease}
+  .vplay:active span{transform:scale(.97)}
+  @media (hover:hover) and (pointer:fine){.vplay:hover span{transform:scale(1.05)}}
+
+  /* ───────── Placeholder pages ("en construction") ───────── */
+  .ph{position:relative;padding:56px 0 96px;isolation:isolate;min-height:62vh}
+  .ph::before{content:"";position:absolute;z-index:-1;inset:-120px 0 0;pointer-events:none;background:
+    radial-gradient(60% 50% at 78% 38%,rgba(124,92,255,.13),transparent 70%),
+    radial-gradient(40% 40% at 92% 70%,rgba(61,220,151,.07),transparent 70%);
+    -webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+  .ph h1{font-size:clamp(2.4rem,7vw,4.6rem);line-height:.98;letter-spacing:-.035em;font-weight:600;margin:18px 0 20px;text-wrap:balance}
+  .ph h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;background:var(--iris);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+  .ph-wip{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:32px;padding:18px 20px;border:1px dashed var(--line-2);border-radius:18px;color:var(--muted);max-width:44em}
+  .ph-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+  @media (prefers-reduced-motion:reduce){
+    .avail i,.badge-live i,.live i{animation:none}
+    .n,.n-img img,.n-play span,.btn svg,.link svg,.vplay span,.vposter>img{transition:none}
+    .n:hover{transform:none}
+    .n:hover .n-img img{transform:none}
+  }
+}

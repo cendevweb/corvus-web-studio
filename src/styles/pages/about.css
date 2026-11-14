@@ -1,0 +1,70 @@
+/* About page. The inner-page hero it shares with Services lives in services.css.
+   Everything is scoped to .pg-about so generic class names cannot leak to other pages. */
+@layer components {
+  .pg-about{
+    /* Hero: the crow stage sits under the text on mobile, to the right on desktop */
+    .ph .stage{order:0;margin:8px auto 20px}
+    @media (min-width:1000px){.ph .stage{width:min(460px,100%)}}
+
+    /* Dylan: intro + timeline card */
+    .two{display:grid;gap:36px}
+    .two-l p{color:var(--muted);margin-top:18px;max-width:34em}
+    .two-l p strong{color:var(--bone);font-weight:500}
+    .facts li{letter-spacing:.04em}
+    .tl{padding:8px 22px}
+    .tl li{display:grid;grid-template-columns:86px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line);align-items:baseline}
+    .tl li:first-child{border-top:0}
+    .tl time{font-family:var(--pixel);font-size:15.5px;letter-spacing:.04em;color:var(--violet-t)}
+    .tl b{display:block;font-weight:600;font-size:16.5px;letter-spacing:-.01em}
+    .tl span{display:block;font-size:14.5px;color:var(--muted);margin-top:2px}
+    .tl-ft{display:flex;flex-wrap:wrap;gap:10px;padding:16px 0 14px;border-top:1px solid var(--line)}
+    @media (min-width:1000px){
+      .two{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+      .tl{padding:10px 30px}
+    }
+
+    /* What the studio does */
+    .does{display:grid;gap:16px}
+    .does>div{display:grid}
+    .do{padding:22px;display:flex;flex-direction:column;gap:8px;transition:border-color 220ms ease,background-color 220ms ease,transform 220ms var(--ease-out)}
+    .do b{font-family:var(--pixel);font-weight:400;font-size:15.5px;letter-spacing:.04em;color:var(--violet-t)}
+    .do h3{font-size:19px;letter-spacing:-.015em;font-weight:600;line-height:1.2}
+    .do p{font-size:14.5px;color:var(--muted)}
+    @media (hover:hover) and (pointer:fine){.do:hover{border-color:var(--line-2);background:var(--bg-3);transform:translateY(-3px)}}
+    @media (min-width:640px){.does{grid-template-columns:1fr 1fr}}
+    @media (min-width:1000px){.does{grid-template-columns:repeat(4,1fr);gap:20px}}
+
+    /* The crow, studio totem */
+    .totem{display:grid;gap:28px;align-items:center;padding:32px 22px;position:relative;overflow:hidden;isolation:isolate}
+    .totem::before{content:"";position:absolute;z-index:-1;width:420px;height:420px;left:-160px;bottom:-240px;border-radius:50%;background:conic-gradient(from 120deg,#7C5CFF,#3DDC97,#7C5CFF);filter:blur(90px);opacity:.22}
+    .totem-crow{width:160px;aspect-ratio:64/56;background:url(/images/brand/corbeau-vol.png) 0 0/300% 100% no-repeat;image-rendering:pixelated;margin-inline:auto;animation:about-flap 900ms steps(1) infinite;filter:brightness(1.35) drop-shadow(0 0 22px rgba(124,92,255,.5))}
+    .totem h2{font-size:clamp(1.9rem,4vw,3rem)}
+    .totem p{color:var(--muted);max-width:38em;margin-top:14px}
+    .totem p strong{color:var(--bone);font-weight:500}
+    @media (min-width:860px){
+      .totem{grid-template-columns:240px 1fr;gap:48px;padding:56px 64px}
+      .totem-crow{width:200px}
+    }
+
+    /* Values */
+    .vals{display:grid;gap:0;border-top:1px solid var(--line)}
+    .val{display:grid;gap:6px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+    .val b{font-family:var(--pixel);font-weight:400;font-size:16px;letter-spacing:.04em;color:var(--violet-t)}
+    .val h3{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.03em;font-weight:600;line-height:1.05}
+    .val p{color:var(--muted);font-size:15.5px;max-width:36em}
+    @media (min-width:860px){.val{grid-template-columns:70px minmax(0,.8fr) minmax(0,1.2fr);align-items:baseline;padding:28px 0}}
+
+    @media (prefers-reduced-motion:reduce){
+      .totem-crow{animation:none}
+      .do{transition:none}
+      .do:hover{transform:none}
+    }
+  }
+  :root[data-theme=light] .pg-about .totem-crow{filter:none}
+
+  @keyframes about-flap{
+    0%{background-position:0 0}
+    33%{background-position:50% 0}
+    66%{background-position:100% 0}
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "nestPage": {
+    "eyebrow": "Nest · {playable, plural, one {# playable experiment} other {# playable experiments}} · {soon} incubating",
+    "title": "The Nest: bits of games <em>to play with</em>.",
+    "lede": "This is where the crow keeps what shines. Each experiment comes out of one of the studio's games, stripped to the essentials: <strong>a playable demo, how it works, its code</strong> under the MIT licence, with no library.",
+    "filterLabel": "Filter experiments by tag",
+    "listLabel": "Experiments",
+    "all": "All",
+    "count": "{count, plural, =0 {no experiment} one {# experiment} other {# experiments}}",
+    "number": "EXP {n}",
+    "playable": "PLAYABLE",
+    "soon": "SOON",
+    "studio": "The studio",
+    "how": "How it works",
+    "licence": "MIT",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyCode": "Copy the code: {file} (MIT licence)",
+    "source": "Source code: {file}",
+    "soonTitle": "Incubating",
+    "visualSoon": "VISUAL COMING SOON",
+    "visuals": {
+      "rollback": "8 frames",
+      "brick-wall": "4 max"
+    },
+    "idea": {
+      "text": "An idea for an experiment, or a glitch <em>in the matrix</em>?",
+      "cta": "Write to the studio"
+    },
+    "crow": {
+      "live": "LIVE",
+      "label": "The crow's flying area. The cursor guides it, a click drops a seed, the arrow keys move it.",
+      "speed": "speed",
+      "seeds": "seeds",
+      "hint": "move the cursor, click to drop a seed",
+      "stiffness": "Stiffness",
+      "damping": "Damping"
+    },
+    "timer": {
+      "live": "LIVE",
+      "speedLabel": "Time speed",
+      "malus": "PENALTY SENT!",
+      "round": "Round {n} / 4",
+      "roundOver": "Round {n} / 4 over",
+      "points": "points",
+      "words": "words",
+      "bonus": "bonus",
+      "start": "▶ Start",
+      "pause": "❚❚ Pause",
+      "next": "▶ Next",
+      "replay": "▶ Play again",
+      "validate": "+ Validate a word",
+      "reset": "Reset"
+    },
+    "grid": {
+      "live": "LIVE",
+      "coins": "{n} ICoins",
+      "hidden": "Card {n}, face down",
+      "flipped": "{name}, card {n} flipped",
+      "done": "Collection complete!",
+      "flipAll": "Flip all",
+      "hideAll": "Hide all",
+      "shuffle": "Shuffle"
+    }
+  }
+}

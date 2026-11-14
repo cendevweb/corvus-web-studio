@@ -1,0 +1,66 @@
+{
+  "nestPage": {
+    "eyebrow": "Nid · {playable, plural, one {# expérience jouable} other {# expériences jouables}} · {soon} en couveuse",
+    "title": "Le Nid : des bouts de jeux <em>à toucher</em>.",
+    "lede": "C'est ici que le corbeau range ce qui brille. Chaque expérience sort d'un des jeux du studio, réduite à l'essentiel : <strong>une démo jouable, son fonctionnement, son code</strong> sous licence MIT, sans bibliothèque.",
+    "filterLabel": "Filtrer les expériences par tag",
+    "listLabel": "Expériences",
+    "all": "Tout",
+    "count": "{count, plural, =0 {aucune expérience} one {# expérience} other {# expériences}}",
+    "number": "EXP {n}",
+    "playable": "JOUABLE",
+    "soon": "BIENTÔT",
+    "studio": "Le studio",
+    "how": "Comment ça marche",
+    "licence": "MIT",
+    "copy": "Copier",
+    "copied": "Copié",
+    "copyCode": "Copier le code : {file} (licence MIT)",
+    "source": "Code source : {file}",
+    "soonTitle": "En couveuse",
+    "visualSoon": "VISUEL À VENIR",
+    "visuals": {
+      "rollback": "8 images",
+      "brick-wall": "4 max"
+    },
+    "idea": {
+      "text": "Une idée d'expérience, ou un bug <em>dans la matrice</em> ?",
+      "cta": "Écrire au studio"
+    },
+    "crow": {
+      "live": "LIVE",
+      "label": "Zone de vol du corbeau. Le curseur le guide, un clic lâche une graine, les flèches du clavier le déplacent.",
+      "speed": "vitesse",
+      "seeds": "graines",
+      "hint": "déplacer le curseur, cliquer pour lâcher une graine",
+      "stiffness": "Raideur",
+      "damping": "Amortissement"
+    },
+    "timer": {
+      "live": "LIVE",
+      "speedLabel": "Vitesse du temps",
+      "malus": "MALUS ENVOYÉ !",
+      "round": "Manche {n} / 4",
+      "roundOver": "Manche {n} / 4 terminée",
+      "points": "points",
+      "words": "mots",
+      "bonus": "bonus",
+      "start": "▶ Lancer",
+      "pause": "❚❚ Pause",
+      "next": "▶ Suivante",
+      "replay": "▶ Rejouer",
+      "validate": "+ Valider un mot",
+      "reset": "Reset"
+    },
+    "grid": {
+      "live": "LIVE",
+      "coins": "{n} ICoins",
+      "hidden": "Carte {n}, face cachée",
+      "flipped": "{name}, carte {n} retournée",
+      "done": "Collection complète !",
+      "flipAll": "Tout retourner",
+      "hideAll": "Tout cacher",
+      "shuffle": "Mélanger"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+/* Services page (+ the inner-page hero and small primitives it shares with the About page).
+   Everything is scoped to the page roots so generic class names cannot leak to other pages. */
+@layer components {
+  /* ───────── Inner-page hero and shared bits (Services, About) ───────── */
+  :is(.pg-services,.pg-about){
+    .ph{padding:20px 0 48px;min-height:0}
+    .ph-grid{display:grid;gap:36px;align-items:center}
+    .ph h1{font-size:clamp(2.55rem,10.6vw,5.5rem);line-height:.96;margin:18px 0 20px}
+    .eyebrow>i{width:8px;height:8px;background:var(--green);box-shadow:0 0 0 4px rgba(61,220,151,.16)}
+    .pxl{font-family:var(--pixel);letter-spacing:.04em}
+    .card{overflow:visible}
+    .cta-band .cta{margin-top:0}
+    @media (min-width:1000px){
+      .ph{padding:44px 0 72px}
+      .ph-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:56px}
+      .ph h1{font-size:clamp(3.4rem,5.6vw,5.2rem)}
+    }
+  }
+
+  .pg-services{
+    .ticks{display:grid;gap:10px}
+    .ticks li{position:relative;padding-left:22px;font-size:15.5px;color:var(--muted)}
+    .ticks li::before{content:"";position:absolute;left:0;top:.52em;width:8px;height:8px;background:var(--iris)}
+    .ticks code{font-family:var(--mono);font-size:.9em}
+
+    /* Hero index */
+    .idx{padding:10px}
+    .idx-h{display:flex;justify-content:space-between;font-family:var(--pixel);font-size:15.5px;letter-spacing:.04em;color:var(--faint);padding:10px 14px 12px}
+    .idx a{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;min-height:64px;padding:8px 14px;border-radius:12px;border-top:1px solid var(--line);transition:background-color 200ms ease}
+    .idx a b{font-family:var(--pixel);font-weight:400;font-size:17px;letter-spacing:.04em;color:var(--violet-t)}
+    .idx a span{font-weight:600;font-size:17px;letter-spacing:-.015em;line-height:1.25}
+    .idx a small{display:block;font-weight:400;font-size:13.5px;color:var(--muted);letter-spacing:0;margin-top:2px}
+    .idx a svg{width:16px;height:16px;color:var(--muted);transition:transform 200ms var(--ease-out),color 200ms ease}
+    @media (hover:hover) and (pointer:fine){
+      .idx a:hover{background:rgba(var(--ink-rgb),.05)}
+      .idx a:hover svg{transform:translateX(3px);color:var(--green)}
+    }
+
+    /* Service sheets */
+    .svs{display:grid;gap:20px}
+    .sv{display:grid;gap:0;overflow:hidden;scroll-margin-top:92px;transition:border-color 220ms ease,opacity var(--duration-reveal) var(--ease-out),transform var(--duration-reveal) var(--ease-out)}
+    .sv-a{padding:26px 22px 24px;display:flex;flex-direction:column;align-items:flex-start}
+    .sv-n{font-family:var(--pixel);font-size:16px;letter-spacing:.04em;color:var(--violet-t);display:flex;gap:10px;align-items:center}
+    .sv-n i{width:8px;height:8px;background:var(--iris)}
+    .sv h3{font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.02;letter-spacing:-.03em;font-weight:600;margin:14px 0 14px;text-wrap:balance}
+    .sv h3 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+    .sv-a>p{color:var(--muted);max-width:34em}
+    .sv-a .tags{margin:20px 0 22px}
+    .sv-a .tags li{letter-spacing:.04em}
+    .sv-a .proofline{margin-bottom:26px;max-width:36em}
+    .sv-foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:auto}
+    .price{font-family:var(--pixel);font-size:16px;letter-spacing:.04em;border:1px solid var(--line-2);border-radius:8px;padding:6px 12px}
+    .price b{font-weight:400;background:var(--iris);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sv-b{padding:22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:20px;background:rgba(var(--ink-rgb),.018)}
+    .sv-b h4{margin:0 0 12px;font-family:var(--pixel);font-weight:400;font-size:15.5px;letter-spacing:.04em;color:var(--faint)}
+    .w-vis{aspect-ratio:16/7}
+    .w-vis svg{width:74%}
+    .proofline{font-size:14.5px;color:var(--muted);border-left:2px solid var(--violet);padding:2px 0 2px 14px}
+    .proofline b{color:var(--bone);font-weight:500}
+    @media (hover:hover) and (pointer:fine){
+      .sv:hover{border-color:var(--line-2)}
+      .sv:hover .flow{animation:dash 900ms linear infinite}
+    }
+    @media (min-width:900px){
+      .sv{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+      .sv-a{padding:40px}
+      .sv-b{padding:32px 36px;border-top:0;border-left:1px solid var(--line)}
+    }
+
+    /* Process */
+    .steps{display:grid;gap:0;position:relative}
+    .steps::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--line)}
+    .steps::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--iris);transform:scaleY(0);transform-origin:top;transition:transform 1400ms var(--ease-in-out)}
+    .steps[data-r="in"]::after{transform:none}
+    .step{position:relative;padding:0 0 30px 26px}
+    .step::before{content:"";position:absolute;left:-4px;top:6px;width:10px;height:10px;background:var(--bg);border:2px solid var(--violet-t)}
+    .step b{font-family:var(--pixel);font-weight:400;font-size:16px;letter-spacing:.04em;color:var(--violet-t)}
+    .step h3{font-size:22px;letter-spacing:-.02em;font-weight:600;margin:6px 0 8px}
+    .step p{font-size:15px;color:var(--muted);max-width:30em}
+    .step small{display:inline-block;margin-top:12px;font-family:var(--pixel);font-size:14.5px;letter-spacing:.04em;color:var(--green)}
+    @media (min-width:900px){
+      .steps{grid-template-columns:repeat(4,1fr);gap:28px}
+      .steps::before,.steps::after{left:0;right:0;top:4px;bottom:auto;width:auto;height:2px}
+      .steps::after{transform:scaleX(0);transform-origin:left}
+      .step{padding:34px 0 0}
+      .step::before{left:0;top:0}
+    }
+
+    /* Formats */
+    .fmts{display:grid;gap:16px}
+    .fmt{padding:24px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+    .fmt h3{font-size:21px;letter-spacing:-.02em;font-weight:600}
+    .fmt p{font-size:15px;color:var(--muted)}
+    .fmt .price{margin-top:auto}
+    .fmt .pxl{font-size:15.5px;color:var(--violet-t)}
+    @media (min-width:860px){
+      .fmts{grid-template-columns:repeat(3,1fr);gap:24px}
+      .fmt{padding:28px;gap:12px}
+      .fmt p{margin-bottom:10px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .steps::after{transition:none}
+      .sv:hover .flow{animation:none}
+    }
+  }
+}

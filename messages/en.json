@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "siteName": "Corvus Web Studio",
+    "titleTemplate": "%s · Corvus Web Studio",
+    "home": {
+      "title": "Corvus Web Studio — online games, bespoke web and AI services",
+      "description": "Corvus Web Studio, the independent studio of Dylan Tuna, Senior Fullstack Engineer: multiplayer browser games (One Piexel, Iconic, Fastr), web components and experiences, client projects and AI services."
+    },
+    "games": {
+      "title": "Games",
+      "description": "The studio's three games, playable in the browser: One Piexel, Fastr and Iconic."
+    },
+    "game": {
+      "description": "{name}, a game by Corvus Web Studio: {pitch}"
+    },
+    "services": {
+      "title": "Services",
+      "description": "Bespoke web and SaaS, games and web experiences, AI integration (MCP, Skills, AI generation), components."
+    },
+    "news": {
+      "title": "News",
+      "description": "Patch notes, technical devlogs, announcements, behind the scenes and videos from the studio's three games."
+    },
+    "career": {
+      "title": "Career",
+      "description": "Dylan Tuna, Senior Fullstack Engineer focused on Product AI: 9+ years of SaaS in teams, six in-company achievements, timeline and résumé."
+    },
+    "nest": {
+      "title": "Nest",
+      "description": "The Nest: interactive experiments taken from the studio's games, with a playable demo and MIT-licensed code."
+    },
+    "about": {
+      "title": "About",
+      "description": "Dylan Tuna, the studio and the story behind the name Corvus."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Write to the studio: hiring, freelance work, press or player. Reply within 24 hours."
+    },
+    "legal": {
+      "title": "Legal notice",
+      "description": "Legal notice of Corvus Web Studio."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "This page does not exist or has moved to another branch."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "services": "Services",
+    "news": "News",
+    "career": "Career",
+    "nest": "Nest",
+    "about": "About",
+    "contact": "Contact",
+    "legal": "Legal notice"
+  },
+  "header": {
+    "skip": "Skip to content",
+    "brandLabel": "Corvus Web Studio, home",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "openPalette": "Open the command palette",
+    "search": "Search",
+    "language": "Site language",
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode",
+    "networks": "Studio networks",
+    "newTab": "{label} (new tab)"
+  },
+  "palette": {
+    "label": "Command palette",
+    "placeholder": "Go to a page, a game, an action…",
+    "inputLabel": "Search for a page or an action",
+    "empty": "No results. The crow found nothing.",
+    "navigate": "navigate",
+    "open": "open",
+    "close": "close",
+    "groups": {
+      "pages": "Pages",
+      "games": "Games",
+      "actions": "Actions",
+      "networks": "Networks"
+    },
+    "hints": {
+      "services": "on quote",
+      "news": "patch notes, devlogs",
+      "career": "full-stack and AI",
+      "nest": "components and demos",
+      "about": "Dylan, the studio",
+      "contact": "reply within 24 h",
+      "one-piexel": "online 2D fighting",
+      "iconic": "culture quiz",
+      "fastr": "word race"
+    },
+    "keywords": {
+      "home": "home studio accueil",
+      "games": "games jeux",
+      "services": "freelance work pricing ai mcp skills saas",
+      "news": "blog announcements updates",
+      "career": "cv resume experience parcours",
+      "nest": "lab playground code mit nid",
+      "about": "about crow values",
+      "contact": "write email message",
+      "one-piexel": "fighting pixel versus",
+      "iconic": "guess icon character",
+      "fastr": "multiplayer party",
+      "theme": "dark light mode night day",
+      "language": "english français language",
+      "cv": "resume curriculum",
+      "github": "source code",
+      "youtube": "videos trailers",
+      "linkedin": "hiring"
+    },
+    "actions": {
+      "theme": "Toggle light / dark theme",
+      "language": "Switch language: FR / EN",
+      "cv": "Download the résumé (PDF)"
+    }
+  },
+  "footer": {
+    "nav": "Footer",
+    "copyright": "© Corvus Web Studio {year}",
+    "fanGame": "One Piexel is an unofficial fan game, with no connection to the rights holders of the licence it is inspired by."
+  },
+  "common": {
+    "play": "Play",
+    "discoverGame": "Discover the game",
+    "available": "Available for work",
+    "writeToStudio": "Write to the studio",
+    "copyCode": "Copy the code",
+    "copied": "Copied",
+    "copyFailed": "Copy failed",
+    "live": "LIVE",
+    "visualSoon": "VISUAL COMING SOON",
+    "cvPdf": "Résumé PDF",
+    "playTrailer": "Play the {game} trailer",
+    "trailerPlaying": "Playing: {game} trailer",
+    "backHome": "Back to home",
+    "seeGames": "See the games"
+  },
+  "wip": {
+    "eyebrow": "Page under construction",
+    "badge": "UNDER CONSTRUCTION",
+    "text": "This page is coming soon. In the meantime, the games are playable and the studio replies within 24 hours."
+  },
+  "pages": {
+    "games": { "title": "The studio's <em>games</em>.", "lede": "Three games, three worlds, zero install: One Piexel, Fastr and Iconic." },
+    "game": { "lede": "The detailed page for {name} is coming soon." },
+    "services": { "title": "Bespoke <em>services</em>.", "lede": "Web and SaaS, games and web experiences, AI integration (MCP, Skills, AI generation), components." },
+    "news": { "title": "The devlog, <em>unfiltered</em>.", "lede": "Patch notes, technical devlogs, announcements, behind the scenes and videos from the studio's three games." },
+    "article": { "lede": "The full article is coming soon." },
+    "career": { "title": "Full-stack and AI, <em>from schema to button</em>.", "lede": "9+ years building SaaS in teams: six achievements, the timeline and the résumé." },
+    "nest": { "title": "The Nest: bits of games <em>to play with</em>.", "lede": "This is where the crow keeps what shines: playable demos, how they work, their MIT-licensed code." },
+    "about": { "title": "About the <em>studio</em>.", "lede": "Dylan Tuna, the studio and the story behind the name Corvus." },
+    "contact": { "title": "Write to the <em>studio</em>.", "lede": "Hiring, freelance work, press or player: a reply within 24 hours, from a human." },
+    "legal": { "title": "Legal <em>notice</em>.", "lede": "Publisher, hosting and intellectual property." }
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "The crow <em>has flown away</em>.",
+    "text": "This page does not exist, or it has moved to another branch."
+  },
+  "news": {
+    "types": {
+      "video": "VIDEO",
+      "patch-note": "PATCH NOTES",
+      "announcement": "ANNOUNCEMENT",
+      "devlog": "DEVLOG",
+      "behind-the-scenes": "BEHIND THE SCENES"
+    },
+    "upcoming": "COMING SOON",
+    "cta": {
+      "video": "Watch the video",
+      "patch-note": "Read the patch notes",
+      "announcement": "See the announcement",
+      "devlog": "Read the devlog",
+      "behind-the-scenes": "Read the article"
+    },
+    "studio": "Studio",
+    "filterAll": "All"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Indie studio · Nancy, France · 3 games released",
+      "title": "Online games <em>by night</em>, SaaS products <em>by day</em>.",
+      "lede": "<strong>Corvus Web Studio</strong> is the independent studio of <strong>Dylan Tuna</strong>, Senior Fullstack Engineer. Multiplayer browser games, web components and experiences, client projects and <strong>AI services</strong> (MCP, Skills, AI generation), with the same care from the netcode down to the button.",
+      "crowAlt": "Pixel art crow perched on a branch",
+      "crowReplay": "Replay the crow's landing",
+      "crowCaption": "click: replay the landing",
+      "proofLabel": "The studio in numbers",
+      "proof": {
+        "games": { "value": "3", "label": "games released, playable in the browser" },
+        "ranked": { "value": "600+", "label": "ranked matches on One Piexel" },
+        "words": { "value": "175,000+", "label": "words in Fastr's dictionaries" },
+        "years": { "value": "9+ yrs", "label": "of SaaS products built in teams" }
+      },
+      "live": "Live",
+      "playersOnline": "players online",
+      "githubStars": "GitHub stars",
+      "liveSoon": "live counters: hookup coming soon"
+    },
+    "games": {
+      "kicker": "01 / Featured games",
+      "title": "Three games, <em>three worlds</em>,<br></br>zero install.",
+      "link": "Discover the games"
+    },
+    "news": {
+      "kicker": "02 / Latest news",
+      "title": "Patch notes, devlogs,<br></br><em>behind the scenes</em>.",
+      "filterLabel": "Filter news by game",
+      "empty": "No {game} news among the last three. The next themes are in the works:",
+      "emptyLink": "see all the news"
+    },
+    "career": {
+      "kicker": "03 / Career in brief",
+      "title": "By day, I ship <em>product</em>.",
+      "text": "Over nine years building SaaS in teams, <strong>full-stack and AI</strong>: adTech, sports, tools for creators. From the database schema to the form the user never even notices, because it works.",
+      "facts": {
+        "years": "<b>9+ years</b> of experience",
+        "senior": "<b>Senior</b> Fullstack",
+        "ai": "<b>AI</b> & agents",
+        "aws": "AWS Developer"
+      },
+      "cta": "See the career",
+      "ai": "<b>Full-stack and AI.</b> GPT-4 integration in TweetHunter, then MCP, Skills and agents (Claude Code, Codex) every day. This site is the demo."
+    },
+    "nest": {
+      "kicker": "04 / Nest",
+      "title": "Bits of games <em>to play with</em>.",
+      "link": "The whole Nest"
+    },
+    "contact": {
+      "kicker": "05 / Contact",
+      "title": "A job, a project, <em>a rematch</em>?",
+      "text": "A question, a project, a bug? Write to the studio: a reply within 24 hours, from a human. No bots, except the ones coded here.",
+      "whoLabel": "Type of request",
+      "who": {
+        "recruiting": { "chip": "Hiring", "cta": "Talk about a role" },
+        "mission": { "chip": "Freelance", "cta": "Propose a project" },
+        "press": { "chip": "Press", "cta": "Write to the studio" },
+        "player": { "chip": "Player", "cta": "Report a bug or say GG" }
+      },
+      "netsLabel": "Studio networks",
+      "starsSoon": "Star counter coming soon",
+      "subsSoon": "Subscriber counter coming soon",
+      "subscribers": "subscribers"
+    }
+  },
+  "demos": {
+    "crow": {
+      "hint": "move the cursor here (or touch the screen)"
+    },
+    "timer": {
+      "round": "Round {n} / 4",
+      "start": "▶ Start",
+      "pause": "❚❚ Pause",
+      "next": "▶ Next",
+      "reset": "Reset"
+    },
+    "grid": {
+      "hidden": "Card {n}, face down",
+      "flipped": "{name}, card flipped",
+      "icons": {
+        "crown": "Crown",
+        "sword": "Sword",
+        "bolt": "Lightning bolt",
+        "moon": "Moon",
+        "star": "Star",
+        "anchor": "Anchor",
+        "heart": "Heart",
+        "flag": "Flag"
+      }
+    }
+  }
+}

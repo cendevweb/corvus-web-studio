@@ -1,0 +1,128 @@
+{
+  "servicesPage": {
+    "hero": {
+      "eyebrow": "Services · tarifs sur devis",
+      "title": "Du prototype au produit <em>en ligne</em>.",
+      "lede": "Quatre façons de travailler avec <strong>Corvus Web Studio</strong> : produits web et SaaS, jeux et expériences interactives, intégration IA, composants et design systems. Un seul interlocuteur, du cadrage à la mise en production.",
+      "cta": "Décrire un projet",
+      "ctaProcess": "Voir le process"
+    },
+    "index": {
+      "label": "Sommaire des services",
+      "head": "> services"
+    },
+    "list": {
+      "kicker": "01 / Services",
+      "title": "Quatre métiers, <em>un seul atelier</em>.",
+      "techLabel": "Technologies",
+      "delivered": "> ce qui est livré",
+      "price": "Tarif : <b>sur devis</b>"
+    },
+    "items": {
+      "web": {
+        "short": "Web & SaaS",
+        "indexTitle": "Développement web & produits SaaS",
+        "indexNote": "Next.js, fullstack",
+        "title": "Développement web & <em>produits SaaS</em>",
+        "text": "Applications web, back-offices et SaaS, du schéma de données à l'interface. Neuf ans de produit en équipe : ad-tech, sport, outils pour créateurs.",
+        "proof": "<b>Déjà fait.</b> Un module de campagnes gérant plus d'un million d'euros, une migration multi-repo vers monorepo menée de bout en bout.",
+        "link": "Voir le parcours",
+        "d1": "Application fullstack Next.js / React, prête pour la production",
+        "d2": "API et base de données : Node, NestJS, PostgreSQL, MongoDB",
+        "d3": "Authentification, paiement Stripe, déploiement Vercel ou AWS",
+        "d4": "Reprise et modernisation d'un code existant"
+      },
+      "games": {
+        "short": "Jeux",
+        "indexTitle": "Jeux & expériences web interactives",
+        "indexNote": "temps réel, canvas",
+        "title": "Jeux & expériences web <em>interactives</em>",
+        "text": "Jeux multijoueurs sur navigateur, mini-jeux de marque, expériences interactives : temps réel, canvas, animation. Sans installation, sur desktop comme sur mobile.",
+        "proof": "<b>Déjà fait.</b> Trois jeux sortis, conçus et développés en solo : One Piexel, Iconic et Fastr.",
+        "link": "Découvrir les jeux",
+        "d1": "Game design et prototype jouable",
+        "d2": "Multijoueur temps réel : WebSocket ou pair à pair",
+        "d3": "Moteur Canvas, intégration des sprites et des animations",
+        "d4": "Comptes, classements, matchmaking, équilibrage"
+      },
+      "ai": {
+        "short": "IA",
+        "indexTitle": "Intégration IA",
+        "indexNote": "MCP, Skills, agents, génération IA",
+        "title": "Intégration <em>IA</em>",
+        "text": "Brancher l'IA là où elle sert le produit : serveurs MCP, Skills, agents et génération de contenu. Avec des garde-fous, des évaluations et un suivi des coûts.",
+        "proof": "<b>Déjà fait.</b> GPT-4 intégré à TweetHunter : complétion, correction et optimisation de tweets. Un workflow agentique utilisé au quotidien.",
+        "link": "Parler d'une intégration",
+        "d1": "Serveurs MCP : exposer outils et données à un assistant",
+        "d2": "Skills et workflows agentiques pour une équipe",
+        "d3": "Génération IA intégrée au produit (texte, image)",
+        "d4": "Prompts système, évaluations, suivi des coûts"
+      },
+      "components": {
+        "short": "Composants",
+        "indexTitle": "Composants & design systems",
+        "indexNote": "React, accessibilité, motion",
+        "title": "Composants & <em>design systems</em>",
+        "text": "Des composants React soignés, accessibles et documentés. Micro-interactions, animations, thèmes : un design system qu'une équipe peut reprendre sans mode d'emploi oral.",
+        "proof": "<b>Déjà fait.</b> Les démos du Nid, avec leur code copiable sous licence MIT. Ce site en fait partie.",
+        "link": "Ouvrir le Nid",
+        "d1": "Bibliothèque de composants React + Tailwind",
+        "d2": "Tokens et thèmes clair / sombre",
+        "d3": "Animations et micro-interactions, <code>prefers-reduced-motion</code> compris",
+        "d4": "Accessibilité AA et documentation d'usage"
+      }
+    },
+    "process": {
+      "kicker": "02 / Process",
+      "title": "Quatre étapes, <em>sans surprise</em>.",
+      "steps": {
+        "s1": {
+          "title": "Échange",
+          "text": "Un message suffit. Premier échange pour cerner le besoin, les contraintes et l'échéance.",
+          "note": "> réponse sous 24 h"
+        },
+        "s2": {
+          "title": "Cadrage & devis",
+          "text": "Périmètre, jalons et devis détaillé. Rien ne démarre sans accord écrit.",
+          "note": "> périmètre écrit"
+        },
+        "s3": {
+          "title": "Fabrication",
+          "text": "Itérations courtes, une démo à chaque jalon, accès au dépôt et à un environnement de test.",
+          "note": "> avancement visible"
+        },
+        "s4": {
+          "title": "Livraison & suivi",
+          "text": "Mise en production, documentation et passation. Maintenance possible ensuite, sur devis.",
+          "note": "> code et accès remis"
+        }
+      }
+    },
+    "formats": {
+      "kicker": "03 / Formats",
+      "title": "Trois formats, <em>sur devis</em>.",
+      "items": {
+        "fixed": {
+          "tag": "> forfait",
+          "title": "Projet au forfait",
+          "text": "Un périmètre défini, un prix fixé par jalon. Adapté à un site, un jeu, un MVP ou une intégration IA bien délimitée."
+        },
+        "team": {
+          "tag": "> renfort",
+          "title": "Renfort d'équipe",
+          "text": "Un Senior Fullstack intégré à une équipe produit, à temps plein ou partiel, pour une durée convenue."
+        },
+        "short": {
+          "tag": "> court",
+          "title": "Prototype ou audit",
+          "text": "Un format court pour valider une idée, auditer un code existant ou évaluer une piste d'intégration IA."
+        }
+      }
+    },
+    "contact": {
+      "kicker": "04 / Contact",
+      "title": "Un projet <em>en tête</em> ?",
+      "text": "Décrire le besoin en quelques lignes suffit pour démarrer. Réponse sous 24 h."
+    }
+  }
+}

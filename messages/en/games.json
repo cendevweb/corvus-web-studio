@@ -1,0 +1,180 @@
+{
+  "gamesPage": {
+    "list": {
+      "kicker": "Games",
+      "title": "The studio's <em>games</em>.",
+      "lede": "Three games, three worlds, nothing to install. Each one opens in a browser tab, on desktop and mobile alike, and each has its own page: trailer, screenshots, technical challenge and playable demo.",
+      "gamesLabel": "The three games",
+      "moreText": "Patch notes, devlogs and demos: the rest happens in the news and in the Nest.",
+      "moreNews": "Read the news",
+      "moreNest": "Open the Nest"
+    },
+    "crumb": {
+      "label": "Breadcrumb",
+      "games": "Games"
+    },
+    "hero": {
+      "play": "Play",
+      "watchTrailer": "Watch the trailer",
+      "platforms": "Platforms",
+      "figures": "{game} in numbers"
+    },
+    "pitch": {
+      "kicker": "01 / The pitch",
+      "sheet": "Game fact sheet",
+      "status": "STATUS"
+    },
+    "gallery": {
+      "kicker": "02 / Screenshots",
+      "hint": "Click to enlarge, arrow keys to navigate.",
+      "dialog": "{game} screenshots",
+      "enlarge": "Enlarge:",
+      "close": "Close",
+      "prev": "Previous screenshot",
+      "next": "Next screenshot",
+      "trailer": "Trailer"
+    },
+    "challenge": {
+      "kicker": "03 / The challenge",
+      "item": "CHALLENGE {number}"
+    },
+    "role": {
+      "kicker": "04 / Dylan's role",
+      "stack": "Tech stack"
+    },
+    "news": {
+      "kicker": "05 / Game news",
+      "all": "All {game} devlogs",
+      "moreKicker": "STAY TUNED",
+      "more": "The next {game} patch notes and devlogs will land in the studio news."
+    },
+    "play": {
+      "now": "Play now"
+    },
+    "others": {
+      "kicker": "06 / The other games",
+      "title": "<em>Two more worlds</em> to explore.",
+      "all": "All games",
+      "see": "View the game page"
+    },
+    "demos": {
+      "rollback": {
+        "title": "ROLLBACK, FRAME BY FRAME",
+        "live": "PLAYABLE DEMO · 9× SLOW MOTION",
+        "intro": "In this demo you play the opponent. The hit you send takes a few frames to cross the network: in the meantime, the game bets on no input at all. When the real input arrives, it rewinds, corrects and replays. At full speed, nothing shows.",
+        "inputs": "Opponent inputs",
+        "simulation": "Simulation",
+        "hit": "Send a hit",
+        "play": "Play",
+        "pause": "Pause",
+        "latency": "Latency",
+        "latencyLabel": "Network latency, in frames",
+        "frames": "{count} fr",
+        "rollbacks": "Rollbacks",
+        "legendLabel": "Legend",
+        "legend": {
+          "pred": "predicted input",
+          "ok": "prediction confirmed",
+          "hit": "real hit received",
+          "sim": "simulated frame",
+          "undo": "discarded frame",
+          "redo": "replayed frame"
+        },
+        "status": {
+          "ready": "Demo ready.",
+          "paused": "Demo paused.",
+          "ok": "Frame {frame} · 60 Hz · prediction was right, nothing to redo",
+          "bad": "Misprediction: rolling back {frames} frames",
+          "good": "{frames} frames replayed in {ms} ms. Invisible to the naked eye.",
+          "announce": "Rollback of {frames} frames corrected."
+        }
+      },
+      "iconic": {
+        "title": "Mini game",
+        "live": "Playable demo",
+        "intro": "Find the historical figure tied to this image. Three tries, not one more. Every step that fires lights up in the state machine, just like in the game.",
+        "answer": "Answer",
+        "placeholder": "Type a name…",
+        "submit": "Submit",
+        "tries": "Tries",
+        "triesLeft": "{count, plural, =0 {No tries left} one {# try left} other {# tries left}}",
+        "reward": "25 ICoins per right answer",
+        "streak": "Streak",
+        "machineLabel": "Current state of the state machine",
+        "states": {
+          "draw": "draw",
+          "input": "input",
+          "validation": "validation",
+          "result": "result",
+          "save": "save"
+        },
+        "result": {
+          "found": "found",
+          "missed": "missed"
+        },
+        "save": {
+          "pending": "save: pending",
+          "synced": "save: synced"
+        },
+        "found": "{name}, well spotted! +{gain} ICoins.",
+        "foundStreak": "{name}, well spotted! +{gain} ICoins (streak of {streak}).",
+        "hint": "Missed. Free hint for the demo: {hint}. In the game, it costs 100 ICoins and breaks the streak.",
+        "lost": "It was {name}. Streak reset, the card will come back later.",
+        "cards": {
+          "screw": {
+            "alt": "Iconic card: an aerial screw made of wood and canvas, standing on a base of sand",
+            "question": "Who does this odd machine belong to?",
+            "name": "Leonardo da Vinci",
+            "hint": "a Renaissance genius, painter and inventor"
+          },
+          "elephant": {
+            "alt": "Iconic card: a war elephant carrying two soldiers, on snowy ground",
+            "question": "Next card: who took this across the mountains?",
+            "name": "Hannibal",
+            "hint": "a Carthaginian general who crossed the Alps"
+          },
+          "bicorne": {
+            "alt": "Iconic card: a black bicorne hat with a tricolour cockade",
+            "question": "And this hat, whose is it?",
+            "name": "Napoleon",
+            "hint": "an Emperor of the French"
+          }
+        }
+      },
+      "fastr": {
+        "title": "> TRY A PENALTY",
+        "live": "PLAYABLE DEMO",
+        "intro": "Theme: Pokémon. Type a name, press Enter to submit. Matching tolerates accents and small typos (“pikatchu” goes through). Then switch a penalty on and try again.",
+        "penaltyLabel": "Active penalty",
+        "penalties": {
+          "none": {
+            "name": "No penalty",
+            "text": "No active penalty. It never lasts."
+          },
+          "wall": {
+            "name": "Brick wall",
+            "text": "Brick wall: 4 characters max. Only short names are left (Mew, Abra, Onix)."
+          },
+          "freeze": {
+            "name": "Brain freeze",
+            "text": "Brain freeze: every keystroke lands 650 ms late."
+          },
+          "clouds": {
+            "name": "Creeping clouds",
+            "text": "Creeping clouds: no way to see the words already validated."
+          }
+        },
+        "inputLabel": "Word on the Pokémon theme",
+        "placeholder": "A Pokémon…",
+        "submit": "Submit",
+        "listLabel": "Validated words",
+        "empty": "Validated words show up here.",
+        "score": "Score",
+        "unknown": "“{word}” is not in the demo dictionary (about twenty first-generation Pokémon).",
+        "duplicate": "{word} is already validated: a word only counts once per game.",
+        "valid": "{word} validated: 100 points + {bonus} speed bonus.",
+        "validTypo": "{word} validated: 100 points + {bonus} speed bonus. Typo forgiven."
+      }
+    }
+  }
+}

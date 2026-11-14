@@ -1,0 +1,133 @@
+/* Base element styles, grain overlay, a11y helpers */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--bone);
+    font-family: var(--display);
+    font-size: 17px;
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Film grain over everything */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.085;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  :root[data-theme="light"] body::after {
+    filter: invert(1);
+    mix-blend-mode: multiply;
+    opacity: 0.05;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--violet);
+    color: #fff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .wrap {
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding-inline: var(--pad);
+  }
+
+  .sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .skip {
+    position: absolute;
+    left: 12px;
+    top: -60px;
+    background: var(--bone);
+    color: #111;
+    padding: 10px 14px;
+    border-radius: 8px;
+    z-index: 100;
+  }
+  .skip:focus {
+    top: 12px;
+  }
+
+  /* Scroll reveal (components/ui/Reveal.tsx, driven by the inline head script in lib/theme-script.ts).
+     Only what is off screen is hidden ("wait"); the transition lives on the revealed state so hiding is instant. */
+  html.js [data-r="wait"] {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  html.js [data-r="in"] {
+    transition:
+      opacity var(--duration-reveal) var(--ease-out),
+      transform var(--duration-reveal) var(--ease-out);
+    transition-delay: var(--d, 0ms);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html.js [data-r="wait"] {
+      transform: none;
+    }
+    html.js [data-r="in"] {
+      transition: opacity 200ms ease;
+      transition-delay: 0ms;
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes tw {
+    0%,
+    100% {
+      opacity: 0.12;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -20;
+    }
+  }
+}

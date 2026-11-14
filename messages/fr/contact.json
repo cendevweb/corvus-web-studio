@@ -1,0 +1,167 @@
+{
+  "contactPage": {
+    "hero": {
+      "eyebrow": "Contact · réponse sous 24 h",
+      "title": "Un poste, un projet, <em>une revanche</em> ?",
+      "lede": "Une question, une mission, un retour de joueur ? Écrire au studio : chaque message est lu par une vraie personne. <strong>Pas de bot</strong>, à part ceux codés ici."
+    },
+    "sectionLabel": "Formulaire de contact et informations",
+    "form": {
+      "steps": {
+        "request": "01 / La demande",
+        "details": "02 / Coordonnées",
+        "message": "03 / Le message"
+      },
+      "typeLegend": "Type de demande",
+      "optional": "facultatif",
+      "types": {
+        "recruiting": {
+          "name": "Recrutement",
+          "hint": "Un poste, une équipe à rejoindre",
+          "submit": "Parler recrutement",
+          "namePlaceholder": "Prénom Nom",
+          "tip": "Le poste, l'équipe, la stack : tout ce qui semble utile.",
+          "messagePlaceholder": "Bonjour, nous cherchons un Senior Fullstack pour…",
+          "delay": "Un recrutement ? La réponse propose un créneau pour en parler de vive voix.",
+          "ok": "Le message est bien parti. La réponse proposera un créneau pour en parler de vive voix."
+        },
+        "freelance": {
+          "name": "Freelance",
+          "hint": "Une mission, un devis",
+          "submit": "Parler d'une mission",
+          "namePlaceholder": "Prénom Nom",
+          "tip": "Le besoin, le contexte, le budget s'il est connu.",
+          "messagePlaceholder": "Bonjour, nous avons un projet de…",
+          "delay": "Une mission ? La réponse arrive avec des questions précises, ou un créneau.",
+          "ok": "Le message est bien parti. La réponse arrivera avec des questions précises, ou un créneau pour en discuter."
+        },
+        "press": {
+          "name": "Presse",
+          "hint": "Une interview, des visuels",
+          "submit": "Écrire au studio",
+          "namePlaceholder": "Prénom Nom",
+          "tip": "L'angle, les besoins en visuels, la date limite.",
+          "messagePlaceholder": "Bonjour, un sujet est en préparation sur…",
+          "delay": "Presse ? Visuels et informations sont joints à la réponse.",
+          "ok": "Le message est bien parti. Visuels et informations suivront dans la réponse."
+        },
+        "player": {
+          "name": "Joueur",
+          "hint": "Un bug, une idée, un GG",
+          "submit": "Envoyer le retour",
+          "namePlaceholder": "Pseudo en jeu",
+          "tip": "Pour un bug : l'action en cours, l'appareil, le navigateur.",
+          "messagePlaceholder": "Bonjour, en partie classée il s'est passé…",
+          "delay": "Un bug ? Les retours de joueurs sont tous lus, les bugs passent en premier.",
+          "ok": "Merci pour ce retour. Tous sont lus, et les bugs passent en premier."
+        }
+      },
+      "extras": {
+        "company": { "label": "Entreprise", "placeholder": "Nom de la société" },
+        "offer": { "label": "Lien vers l'offre", "placeholder": "https://" },
+        "project": {
+          "label": "Type de projet",
+          "options": {
+            "saas": "Un produit SaaS",
+            "game": "Un jeu web",
+            "realtime": "Du temps réel ou du multijoueur",
+            "ai": "Une intégration IA",
+            "other": "Autre chose"
+          }
+        },
+        "deadline": { "label": "Échéance", "placeholder": "Dès que possible, début 2027…" },
+        "media": { "label": "Média", "placeholder": "Site, chaîne, podcast…" },
+        "pressDeadline": { "label": "Date limite", "placeholder": "Date de bouclage" },
+        "game": {
+          "label": "Jeu concerné",
+          "options": {
+            "one-piexel": "One Piexel",
+            "fastr": "Fastr",
+            "iconic": "Iconic",
+            "all": "Les trois"
+          }
+        },
+        "topic": {
+          "label": "Nature du retour",
+          "options": {
+            "bug": "Un bug",
+            "idea": "Une idée",
+            "gg": "Juste un GG"
+          }
+        }
+      },
+      "fields": {
+        "name": "Nom",
+        "nameAlt": "ou pseudo en jeu",
+        "email": "E-mail",
+        "emailPlaceholder": "nom@exemple.fr",
+        "message": "Message"
+      },
+      "counter": "{count} / {max}",
+      "honeypot": "Champ à laisser vide",
+      "sending": "Envoi en cours",
+      "privacy": "Le message part vers la boîte du studio. Les informations servent uniquement à répondre : pas de liste de diffusion, pas de revente.",
+      "errors": {
+        "nameMissing": "Nom manquant : il sert à adresser la réponse.",
+        "handleMissing": "Pseudo manquant : il sert à adresser la réponse.",
+        "emailMissing": "E-mail manquant : c'est là que la réponse arrivera.",
+        "emailNoTld": "Il manque la fin de l'adresse, par exemple « .fr ».",
+        "emailInvalid": "Cette adresse ne ressemble pas à un e-mail, par exemple nom@exemple.fr.",
+        "messageShort": "Message trop court : {min} caractères minimum, il en manque {missing}.",
+        "summary": "{count, plural, one {# champ à corriger avant l'envoi} other {# champs à corriger avant l'envoi}}"
+      },
+      "failure": {
+        "title": "Le message n'est pas parti",
+        "send_failed": "L'envoi a échoué de notre côté. Rien n'est effacé : réessayer dans un instant, ou passer par l'un des réseaux du studio.",
+        "not_configured": "L'envoi par formulaire est momentanément indisponible. Rien n'est effacé : en attendant, le studio répond aussi sur ses réseaux.",
+        "rate_limited": "Trop de messages envoyés en peu de temps. Réessayer dans quelques minutes.",
+        "invalid": "Le message n'a pas pu être validé. Vérifier les champs, puis réessayer."
+      }
+    },
+    "ok": {
+      "title": "Message envoyé. <em>Le corbeau est en route.</em>",
+      "crowAlt": "Le corbeau se pose sur sa branche",
+      "announce": "Message envoyé.",
+      "request": "Demande",
+      "replyTo": "Réponse à",
+      "delay": "Délai",
+      "delayValue": "sous 24 h",
+      "again": "Envoyer un autre message"
+    },
+    "aside": {
+      "label": "Disponibilité, délai de réponse et réseaux",
+      "availability": {
+        "title": "Disponibilité",
+        "text": "Produits SaaS full-stack, jeux et expériences web, temps réel, implémentation et services IA (MCP, Skills, génération IA).",
+        "base": "Base",
+        "baseValue": "Nancy, France",
+        "experience": "Expérience",
+        "experienceValue": "9+ ans, Senior Fullstack",
+        "meeting": "Rendez-vous",
+        "meetingValue": "prise de créneau en ligne, bientôt"
+      },
+      "delay": {
+        "title": "Délai de réponse",
+        "value": "24 h",
+        "note": "quel que soit le type de demande"
+      },
+      "nets": {
+        "title": "Les réseaux du studio",
+        "github": "le code",
+        "youtube": "Directs et trailers",
+        "linkedin": "le parcours",
+        "x": "les annonces",
+        "twitch": "les lives",
+        "tiktok": "One Piexel",
+        "instagram": "lien à venir"
+      }
+    },
+    "notFound": {
+      "caption": "<b>ERREUR 404</b> · branche vide",
+      "title": "Le corbeau s'est envolé. <em>La page aussi.</em>",
+      "text": "Cette adresse n'existe pas, ou plus. Rien de cassé côté navigateur : retour à l'accueil, ou direction les jeux.",
+      "recall": "rappeler le corbeau",
+      "urlLabel": "Adresse demandée"
+    }
+  }
+}

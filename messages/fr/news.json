@@ -1,0 +1,91 @@
+{
+  "newsPage": {
+    "eyebrow": "Devlog · {count, plural, one {# publication} other {# publications}} · {games, plural, one {# jeu} other {# jeux}}",
+    "title": "Le devlog, <em>sans filtre</em>.",
+    "lede": "Patch notes, devlogs techniques, annonces, coulisses et vidéos des trois jeux du studio, dans l'ordre de sortie. Articles longs et posts courts, filtrables par jeu.",
+    "youtube": "Chaîne YouTube",
+    "last": "Dernière publication :",
+    "filterLabel": "Filtrer les news par jeu",
+    "count": "{count, plural, one {# publication} other {# publications}}",
+    "kinds": {
+      "video": "Vidéo",
+      "patch-note": "Patch note",
+      "announcement": "Annonce",
+      "devlog": "Devlog",
+      "behind-the-scenes": "Coulisses"
+    },
+    "featured": {
+      "label": "À la une",
+      "flag": "À LA UNE",
+      "program": "Au programme",
+      "watch": "Regarder la vidéo",
+      "read": "Lire l'article",
+      "gameLink": "La fiche du jeu"
+    },
+    "list": {
+      "title": "Toutes les publications, de la plus récente à la plus ancienne",
+      "readingTime": "{n} min de lecture",
+      "end": "> fin du devlog. Le début, c'était le {date}.",
+      "top": "Remonter"
+    },
+    "subscribe": {
+      "label": "Suivre le devlog",
+      "letter": {
+        "badge": "PLUS TARD",
+        "title": "Une lettre à chaque sortie, <em>pas avant</em>.",
+        "text": "Un e-mail par vraie nouveauté : un patch, un set, un thème. Pas de relance, pas de pistage, désinscription en un clic.",
+        "field": "Adresse e-mail",
+        "placeholder": "nom@exemple.fr",
+        "button": "Inscription à venir",
+        "note": "L'inscription n'est pas encore ouverte. En attendant, les sorties sont annoncées sur YouTube et sur X."
+      },
+      "follow": {
+        "badge": "EN ATTENDANT",
+        "title": "Suivre le studio",
+        "youtube": "Corvus Direct, trailers, patchs en vidéo",
+        "github": "Le code du Nid et des outils",
+        "x": "Les annonces, au fil de l'eau",
+        "tiktok": "Les clips de One Piexel"
+      }
+    },
+    "article": {
+      "breadcrumb": "Fil d'Ariane",
+      "news": "News",
+      "readingTime": "{n} min de lecture",
+      "creator": "créateur de {game}",
+      "studio": "Corvus Web Studio",
+      "copyLink": "Copier le lien",
+      "copyLinkLabel": "Copier le lien de l'article",
+      "copy": "Copier",
+      "copied": "Copié",
+      "copyCode": "Copier le code",
+      "copyChanges": "Copier la liste des changements",
+      "playVideo": "Lire la vidéo",
+      "playHero": "Lire la vidéo de l'article : {title}",
+      "video": "VIDÉO",
+      "toc": "Sommaire",
+      "allNews": "Tout le devlog",
+      "published": "Publié le {date}",
+      "play": "Jouer",
+      "share": "Partager",
+      "shareX": "Partager sur X",
+      "shareLinkedIn": "Partager sur LinkedIn",
+      "related": {
+        "kicker": "À lire ensuite",
+        "title": "La suite, <em>dans l'ordre</em>.",
+        "sequel": "> la suite directe",
+        "sequelPatch": "> la suite directe de ce patch",
+        "sameGameVideo": "> même jeu, en vidéo",
+        "sameGame": "> même jeu",
+        "elsewhere": "> ailleurs dans le studio",
+        "latest": "> dernière publication"
+      },
+      "nav": {
+        "label": "Article précédent et suivant",
+        "back": "Retour",
+        "next": "Article suivant",
+        "previous": "Article précédent"
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+/* ─────────────────────────────────────────────────────────────
+   Design tokens — "Nuit de corbeau" (extracted from the validated mockups)
+
+   1. Semantic CSS variables (--bg, --bone, …) switch with [data-theme].
+   2. `@theme` exposes them to Tailwind (bg-bg, text-bone, rounded-card,
+      shadow-palette, ease-out, font-pixel, …).
+   Raw CSS in src/styles/*.css uses the semantic variables directly.
+   ───────────────────────────────────────────────────────────── */
+
+@theme static {
+  /* Breakpoints used by the mockups */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 860px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1140px;
+  --breakpoint-2xl: 1280px;
+
+  /* Raw palette (theme independent) */
+  --color-night-950: #07070a;
+  --color-night-900: #0e0e12;
+  --color-night-800: #13131a;
+  --color-night-700: #191922;
+  --color-paper-100: #faf9f5;
+  --color-paper-200: #f2f0eb;
+  --color-paper-300: #ece9e2;
+  --color-iris-violet: #7c5cff;
+  --color-iris-blue: #5e9be0;
+  --color-iris-green: #3ddc97;
+
+  /* Radii */
+  --radius-tag: 6px;
+  --radius-ctl: 9px;
+  --radius-media: 10px;
+  --radius-tile: 14px;
+  --radius-card: 18px;
+  --radius-panel: 28px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-palette: 0 30px 80px rgba(0, 0, 0, 0.5);
+  --shadow-media: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 12px 28px rgba(30, 30, 30, 0.16);
+
+  /* Motion: easings (override Tailwind's defaults with the brand curves) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* Motion: durations */
+  --duration-press: 160ms;
+  --duration-fast: 200ms;
+  --duration-base: 240ms;
+  --duration-reveal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Layout */
+  --container-wrap: 1240px;
+}
+
+@theme inline {
+  /* Semantic colors (follow the active theme) */
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-bg-3: var(--bg-3);
+  --color-well: var(--well);
+  --color-bone: var(--bone);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-violet: var(--violet);
+  --color-violet-t: var(--violet-t);
+  --color-green: var(--green);
+
+  /* Fonts (CSS variables injected by next/font, see src/lib/fonts.ts) */
+  --font-sans: var(--display);
+  --font-display: var(--display);
+  --font-serif: var(--serif);
+  --font-pixel: var(--pixel);
+  --font-mono: var(--mono);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --bg: #0e0e12;
+    --bg-2: #13131a;
+    --bg-3: #191922;
+    --well: #101016;
+    --bone: #e8e6e3;
+    --muted: #a5a3ac;
+    --faint: #888692;
+    --violet: #7c5cff;
+    --violet-t: #b1a0ff;
+    --green: #3ddc97;
+    --bg-rgb: 14, 14, 18;
+    --ink-rgb: 232, 230, 227;
+    --line: rgba(var(--ink-rgb), 0.1);
+    --line-2: rgba(var(--ink-rgb), 0.18);
+    --iris: linear-gradient(100deg, #7c5cff 0%, #5e9be0 48%, #3ddc97 100%);
+
+    --display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+    --serif: var(--font-instrument), Georgia, serif;
+    --pixel: var(--font-jersey), var(--font-pixelify, ui-monospace), ui-monospace, monospace;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+
+    --wrap: 1240px;
+    --pad: 20px;
+    --header-h: 68px;
+  }
+
+  @media (min-width: 800px) {
+    :root {
+      --pad: 40px;
+    }
+  }
+
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f2f0eb;
+    --bg-2: #faf9f5;
+    --bg-3: #ffffff;
+    --well: #ece9e2;
+    --bone: #15151b;
+    --muted: #55535e;
+    --faint: #65636e;
+    --violet: #5b3fe0;
+    --violet-t: #5236d6;
+    --green: #0a7a4e;
+    --bg-rgb: 242, 240, 235;
+    --ink-rgb: 21, 21, 27;
+    --iris: linear-gradient(100deg, #5b3fe0 0%, #2c6fbf 48%, #0a8a58 100%);
+  }
+
+  /* Areas that stay nocturnal in both themes */
+  .night {
+    --bone: #e8e6e3;
+    --muted: #a5a3ac;
+    --faint: #8c8a95;
+    --green: #3ddc97;
+    --violet-t: #b1a0ff;
+    --ink-rgb: 232, 230, 227;
+  }
+}
