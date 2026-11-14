@@ -15,6 +15,8 @@ content/            Typed content, no UI
   types.ts          Localized<T>, l(), pick()
 messages/           UI strings: fr.json and en.json (same keys)
 public/             images/, videos/ (trailers), cv/, og/
+scripts/            Notion news sync (notion-sync.mjs) and its tests
+docs/               CONTENU.md (editing guide), NOTION.md (news sync)
 src/
   app/[locale]/     Routes; layout.tsx is the root layout
   app/sitemap.ts, robots.ts
@@ -46,10 +48,10 @@ src/
   wrong during static generation of English dynamic routes.
 - **Texts.** UI strings go in `messages/*.json`; editorial data goes in
   `content/` as `l("fr", "en")` pairs read with `pick(value, locale)`.
-- **News.** `content/news/<locale>/<slug>.md` with frontmatter `title`, `date`,
-  `jeu`, `type`, `langue` (+ optional `home`, `teaser`, `featured`,
-  `upcoming`). Loaded by `src/lib/news.ts`. The format matches a future Notion
-  export. No Markdown renderer is wired yet: the article page is a skeleton.
+- **News.** `content/news/<locale>/<slug>.md` with frontmatter (required `title`, `excerpt`, `game`,
+  `date`, `type`, `lang`; many optional fields), loaded by `src/lib/news.ts` and rendered by
+  `src/components/news/` and `src/lib/markdown/`. Schema: `content/news/README.md`. Files can be generated
+  from Notion with `npm run news:sync` (`docs/NOTION.md`).
 - **Styles.** Design tokens live in `src/styles/tokens.css` (`@theme`) and
   switch on `html[data-theme]`. Component classes keep the names of the
   validated mockups, inside `@layer components`; Tailwind utilities are
