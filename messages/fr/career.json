@@ -1,1 +1,67 @@
-{}
+{
+  "careerPage": {
+    "intro": {
+      "eyebrow": "Parcours · Dylan Tuna · Nancy",
+      "title": "Full-stack et IA, <em>du schéma</em> au <em>bouton</em>.",
+      "lede": "<strong>Dylan Tuna</strong>, Senior Fullstack Engineer orienté <strong>Product AI</strong>. Plus de 9 ans à construire des SaaS en équipe : adTech, sport, outils pour créateurs. Plutôt qu'une liste de postes, six réalisations : le problème de départ, la contribution, le choix qui a compté, le résultat.",
+      "downloadCv": "Télécharger le CV (PDF)",
+      "pillars": {
+        "fullstack": {
+          "title": "Full-stack",
+          "tag": "9+ ans",
+          "text": "TypeScript, React, Node. Du schéma de base de données jusqu'à l'interface."
+        },
+        "ai": {
+          "title": "IA",
+          "tag": "Product AI",
+          "text": "GPT-4 intégré en production, workflow agentique, MCP et Skills."
+        }
+      },
+      "indexLabel": "Les six réalisations",
+      "indexTitle": "Six réalisations",
+      "indexRange": "2018 → 2026"
+    },
+    "works": {
+      "kicker": "01 / Réalisations en entreprise",
+      "title": "Six problèmes, <em>six réponses</em>.",
+      "sub": "Les démos sont des illustrations rejouables, aux données fictives. Chaque emplacement accueillera une reproduction neutre du composant, sans logo ni capture d'entreprise.",
+      "slot": "Emplacement",
+      "problem": "Problème de départ",
+      "contribution": "Contribution",
+      "keyChoice": "Choix technique clé",
+      "result": "Résultat",
+      "stack": "Stack"
+    },
+    "ai": {
+      "kicker": "02 / Product AI et agentic",
+      "title": "L'IA <em>dans le produit</em>,<br></br>et dans la façon de livrer.",
+      "draft": "Un bon outil, c'est celui <del>qu'on oublie pas</del> <ins>qu'on oublie</ins> qu'on utilise. <mark>Le reste, c'est du bruit.</mark>",
+      "terminal": {
+        "brief": { "key": "brief", "value": "une page, un objectif, des contraintes" },
+        "agents": { "key": "agents", "value": "plusieurs pages en parallèle" },
+        "hooks": { "key": "hooks", "value": "lint · tests · captures" },
+        "review": { "key": "relecture", "value": "validé, on merge" }
+      },
+      "note": "Ce site est construit comme ça : il en est la démo.",
+      "servicesLabel": "Services IA"
+    },
+    "timeline": {
+      "kicker": "03 / Chronologie",
+      "title": "Le fil, <em>dans l'ordre</em>.",
+      "sub": "Pour une lecture par dates. Le détail figure dans le <cv>CV PDF</cv>."
+    },
+    "skills": {
+      "kicker": "04 / Compétences",
+      "title": "La boîte à outils, <em>sans le remplissage</em>.",
+      "sub": "Uniquement ce qui sert en production."
+    },
+    "education": {
+      "kicker": "05 / Formation et certification",
+      "title": "Les <em>papiers</em>."
+    },
+    "contact": {
+      "title": "Un poste, un projet, <em>une question ?</em>",
+      "text": "Recrutement d'un Senior Fullstack, produit à construire ou intégration IA : un message au studio, une réponse sous 24 h."
+    }
+  }
+}

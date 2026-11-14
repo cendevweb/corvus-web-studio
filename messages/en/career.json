@@ -1,1 +1,67 @@
-{}
+{
+  "careerPage": {
+    "intro": {
+      "eyebrow": "Career · Dylan Tuna · Nancy, France",
+      "title": "Full-stack and AI, <em>from schema</em> to <em>button</em>.",
+      "lede": "<strong>Dylan Tuna</strong>, Senior Fullstack Engineer with a <strong>Product AI</strong> focus. Over 9 years building SaaS products in teams: adTech, sports, tools for creators. Rather than a list of job titles, six achievements: the starting problem, the contribution, the choice that mattered, the result.",
+      "downloadCv": "Download the CV (PDF)",
+      "pillars": {
+        "fullstack": {
+          "title": "Full-stack",
+          "tag": "9+ years",
+          "text": "TypeScript, React, Node. From the database schema all the way to the interface."
+        },
+        "ai": {
+          "title": "AI",
+          "tag": "Product AI",
+          "text": "GPT-4 shipped to production, agentic workflow, MCP and Skills."
+        }
+      },
+      "indexLabel": "The six achievements",
+      "indexTitle": "Six achievements",
+      "indexRange": "2018 → 2026"
+    },
+    "works": {
+      "kicker": "01 / In-company achievements",
+      "title": "Six problems, <em>six answers</em>.",
+      "sub": "The demos are replayable illustrations built on fictional data. Each slot will host a neutral reproduction of the component, with no company logo or screenshot.",
+      "slot": "Slot",
+      "problem": "Starting problem",
+      "contribution": "Contribution",
+      "keyChoice": "Key technical choice",
+      "result": "Result",
+      "stack": "Stack"
+    },
+    "ai": {
+      "kicker": "02 / Product AI and agentic",
+      "title": "AI <em>in the product</em>,<br></br>and in the way of shipping.",
+      "draft": "A good tool is one <del>you forgot</del> <ins>you forget</ins> you are using. <mark>The rest is noise.</mark>",
+      "terminal": {
+        "brief": { "key": "brief", "value": "one page, one goal, constraints" },
+        "agents": { "key": "agents", "value": "several pages in parallel" },
+        "hooks": { "key": "hooks", "value": "lint · tests · screenshots" },
+        "review": { "key": "review", "value": "approved, merging" }
+      },
+      "note": "This site is built that way: it is its own demo.",
+      "servicesLabel": "AI services"
+    },
+    "timeline": {
+      "kicker": "03 / Timeline",
+      "title": "The thread, <em>in order</em>.",
+      "sub": "For a date-by-date read. The details are in the <cv>PDF CV</cv>."
+    },
+    "skills": {
+      "kicker": "04 / Skills",
+      "title": "The toolbox, <em>without the filler</em>.",
+      "sub": "Only what gets used in production."
+    },
+    "education": {
+      "kicker": "05 / Education and certification",
+      "title": "The <em>paperwork</em>."
+    },
+    "contact": {
+      "title": "A role, a project, <em>a question?</em>",
+      "text": "Hiring a Senior Fullstack, a product to build or an AI integration: one message to the studio, a reply within 24 hours."
+    }
+  }
+}

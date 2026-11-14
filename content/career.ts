@@ -3,6 +3,8 @@ import { l, type Localized } from "./types";
 /**
  * Career content ("Parcours"): six in-company achievements shown as feature cards,
  * then the timeline, skills and education. Texts come from the validated mockups.
+ * `result` and timeline `body` accept light markup (see src/components/career/RichText.tsx):
+ * `**bold**`, `[label](#anchor)` / `[label](/route)` links, and `[… à confirmer]` markers.
  * Visuals are neutral reproductions (no company logo or screenshot): see `visual`.
  */
 
@@ -21,6 +23,10 @@ export interface Work {
   title: Localized;
   /** Compact card (home page). */
   card: { company: string; tag: Localized; summary: Localized };
+  /** Entry of the page index: short title and company. */
+  short: { title: Localized; company: string };
+  /** Longer heading of the case study when it differs from `title`. */
+  fullTitle?: Localized;
   /** Full case study (career page). */
   company: Localized;
   period: Localized;
@@ -33,7 +39,33 @@ export interface Work {
   stack: string[];
   /** What is still to be confirmed in the stack list. */
   stackNote?: Localized;
-  visual: { kind: Localized; ratio: string; brief: Localized };
+  visual: WorkVisualSlot;
+}
+
+/**
+ * Visual slot of a case study. While `media` is absent the career page shows the replayable
+ * demo registered for the work (src/components/career/demos) with a "visual to come" label.
+ * To publish the real visual, drop the file in `public/images/career/` and fill `media`:
+ * the demo and the placeholder caption are replaced, nothing else changes.
+ * To swap in a custom component instead, replace the work's entry in the demo registry.
+ */
+export interface WorkVisualSlot {
+  kind: Localized;
+  /** Expected ratio, "16:9" style. */
+  ratio: string;
+  /** Brief of the visual to produce (shown under the slot until `media` is set). */
+  brief: Localized;
+  media?: WorkMedia;
+}
+
+export interface WorkMedia {
+  type: "image" | "video";
+  src: string;
+  width: number;
+  height: number;
+  alt: Localized;
+  /** Poster image of a video. */
+  poster?: string;
 }
 
 export const works: readonly Work[] = [
@@ -49,6 +81,7 @@ export const works: readonly Work[] = [
         "A tweet goes in, a clean capture comes out: image and video pipeline.",
       ),
     },
+    short: { title: l("Bot de screenshots Twitter/X", "Twitter/X screenshot bot"), company: "TweetHunter" },
     company: l("Lempire · TweetHunter", "Lempire · TweetHunter"),
     period: l("avr. 2023 – août 2024", "Apr 2023 – Aug 2024"),
     pitch: l(
@@ -94,6 +127,7 @@ export const works: readonly Work[] = [
         "If/then rules that update a live preview.",
       ),
     },
+    short: { title: l("Builder d'entités conditionnel", "Conditional entity builder"), company: "SportsDynamics" },
     company: l("SportsDynamics", "SportsDynamics"),
     period: l("juil. 2025 – juil. 2026", "Jul 2025 – Jul 2026"),
     pitch: l(
@@ -139,6 +173,7 @@ export const works: readonly Work[] = [
         "N repositories converging, one CI, a single build time.",
       ),
     },
+    short: { title: l("Migration multi-repo → monorepo", "Multi-repo → monorepo migration"), company: "Weblib" },
     company: l("Weblib", "Weblib"),
     period: l("déc. 2021 – avr. 2023", "Dec 2021 – Apr 2023"),
     pitch: l(
@@ -184,6 +219,7 @@ export const works: readonly Work[] = [
         "Audience targeting, creative studio, campaign settings.",
       ),
     },
+    short: { title: l("Formulaires avancés adTech", "Advanced adTech forms"), company: "Paragone, ex-MakeMeReach" },
     company: l("Paragone, ex-MakeMeReach", "Paragone, formerly MakeMeReach"),
     period: l("avr. 2019 – mai 2021", "Apr 2019 – May 2021"),
     pitch: l(
@@ -229,6 +265,7 @@ export const works: readonly Work[] = [
         "A new schema under a module tracking over a million euros of campaigns.",
       ),
     },
+    short: { title: l("Refonte de structure de BDD", "Database structure redesign"), company: "Paragone · Pernod Ricard" },
     company: l("Paragone · Pernod Ricard", "Paragone · Pernod Ricard"),
     period: l("2018 – 2021", "2018 – 2021"),
     pitch: l(
@@ -248,8 +285,8 @@ export const works: readonly Work[] = [
       "Normalise the model first, then migrate the data in verified batches, rather than an overnight switch.",
     ),
     result: l(
-      "Un module de reporting qui suit plus de 1 M€ de campagnes. Gain sur les temps de requête : [chiffre à confirmer].",
-      "A reporting module tracking over €1M of campaigns. Query time improvement: [figure to be confirmed].",
+      "Un module de reporting qui suit plus de **1 M€** de campagnes. Gain sur les temps de requête : [chiffre à confirmer].",
+      "A reporting module tracking over **€1M** of campaigns. Query time improvement: [figure to be confirmed].",
     ),
     stack: ["PostgreSQL", "MongoDB", "Node.js", "ETL", "Data lake"],
     stackNote: l("stack à confirmer", "stack to be confirmed"),
@@ -274,6 +311,8 @@ export const works: readonly Work[] = [
         "Event, queue, lambda, hook: a flow that absorbs traffic spikes.",
       ),
     },
+    short: { title: l("Système serverless", "Serverless system"), company: "SportsDynamics" },
+    fullTitle: l("Système serverless : Lambdas, queues, hooks", "Serverless system: Lambdas, queues, hooks"),
     company: l("SportsDynamics", "SportsDynamics"),
     period: l("juil. 2025 – juil. 2026", "Jul 2025 – Jul 2026"),
     pitch: l(
@@ -369,8 +408,8 @@ export const timeline: readonly TimelineEntry[] = [
     period: l("En continu", "Ongoing"),
     title: l("Corvus Web Studio", "Corvus Web Studio"),
     body: l(
-      "Le studio indé de Dylan Tuna : trois jeux web sortis, One Piexel, Fastr et Iconic.",
-      "Dylan Tuna's indie studio: three web games released, One Piexel, Fastr and Iconic.",
+      "Le studio indé de Dylan Tuna : trois jeux web sortis, [One Piexel, Fastr et Iconic](/jeux).",
+      "Dylan Tuna's indie studio: three web games released, [One Piexel, Fastr and Iconic](/jeux).",
     ),
     current: true,
   },
@@ -378,8 +417,8 @@ export const timeline: readonly TimelineEntry[] = [
     period: l("juil. 2025 – juil. 2026", "Jul 2025 – Jul 2026"),
     title: l("SportsDynamics · Senior Fullstack", "SportsDynamics · Senior Fullstack"),
     body: l(
-      "SaaS sport : interfaces riches en données, APIs sport tierces, conditional entity studio, automatisation AWS Lambda et Web Workers.",
-      "Sports SaaS: data-rich interfaces, third-party sports APIs, conditional entity studio, AWS Lambda and Web Workers automation.",
+      "SaaS sport : interfaces riches en données, APIs sport tierces, [conditional entity studio](#cas-2), [automatisation AWS Lambda et Web Workers](#cas-6).",
+      "Sports SaaS: data-rich interfaces, third-party sports APIs, [conditional entity studio](#cas-2), [AWS Lambda and Web Workers automation](#cas-6).",
     ),
     works: ["entity-builder", "serverless"],
   },
@@ -387,8 +426,8 @@ export const timeline: readonly TimelineEntry[] = [
     period: l("avr. 2023 – août 2024", "Apr 2023 – Aug 2024"),
     title: l("Lempire, TweetHunter · Senior Fullstack", "Lempire, TweetHunter · Senior Fullstack"),
     body: l(
-      "GPT-4 dans le produit, automatisation de contenu, pipelines de screenshots et de vidéos Twitter/X, CI/CD et observabilité.",
-      "GPT-4 in the product, content automation, Twitter/X screenshot and video pipelines, CI/CD and observability.",
+      "GPT-4 dans le produit, automatisation de contenu, [pipelines de screenshots et de vidéos Twitter/X](#cas-1), CI/CD et observabilité.",
+      "GPT-4 in the product, content automation, [Twitter/X screenshot and video pipelines](#cas-1), CI/CD and observability.",
     ),
     works: ["screenshot-bot"],
   },
@@ -396,8 +435,8 @@ export const timeline: readonly TimelineEntry[] = [
     period: l("déc. 2021 – avr. 2023", "Dec 2021 – Apr 2023"),
     title: l("Weblib · Fullstack", "Weblib · Fullstack"),
     body: l(
-      "Migration multi-repo vers monorepo de bout en bout, modernisation du legacy.",
-      "End-to-end multi-repo to monorepo migration, legacy modernisation.",
+      "[Migration multi-repo vers monorepo](#cas-3) de bout en bout, modernisation du legacy.",
+      "End-to-end [multi-repo to monorepo migration](#cas-3), legacy modernisation.",
     ),
     works: ["monorepo"],
   },
@@ -405,8 +444,8 @@ export const timeline: readonly TimelineEntry[] = [
     period: l("avr. 2019 – mai 2021", "Apr 2019 – May 2021"),
     title: l("Paragone, ex-MakeMeReach · Fullstack", "Paragone, formerly MakeMeReach · Fullstack"),
     body: l(
-      "Plateforme ad-tech : ciblage d'audience, studio de créas, analytics, refonte de schémas BDD, ETL et reporting.",
-      "Ad-tech platform: audience targeting, creative studio, analytics, database schema redesign, ETL and reporting.",
+      "Plateforme ad-tech : [ciblage d'audience, studio de créas](#cas-4), analytics, [refonte de schémas BDD](#cas-5), ETL et reporting.",
+      "Ad-tech platform: [audience targeting, creative studio](#cas-4), analytics, [database schema redesign](#cas-5), ETL and reporting.",
     ),
     works: ["adtech-forms", "db-redesign"],
   },
@@ -414,8 +453,8 @@ export const timeline: readonly TimelineEntry[] = [
     period: l("mars 2018 – mars 2019", "Mar 2018 – Mar 2019"),
     title: l("Pernod Ricard · Consultant", "Pernod Ricard · Consultant"),
     body: l(
-      "Plateforme data connectée à un data lake, refonte de la BDD utilisateurs.",
-      "Data platform connected to a data lake, user database redesign.",
+      "Plateforme data connectée à un data lake, [refonte de la BDD utilisateurs](#cas-5).",
+      "Data platform connected to a data lake, [user database redesign](#cas-5).",
     ),
     works: ["db-redesign"],
   },
