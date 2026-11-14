@@ -386,7 +386,7 @@ export function OtherGames({ game, locale }: SectionProps) {
               </div>
               <div className="mini-b">
                 <StatusChip>{other.statusShort[locale]}</StatusChip>
-                <GameTitle game={other} className="t" />
+                <GameTitle game={other} className="mini-t" />
                 <p>{other.teaser[locale]}</p>
                 <span className="mini-go">
                   {t("see")}
