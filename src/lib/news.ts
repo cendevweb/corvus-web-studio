@@ -36,6 +36,32 @@ export interface NewsMeta {
   video?: string;
   /** Shorter wording for compact cards. */
   teaser?: { title?: string; excerpt?: string };
+  /** Short programme shown on the featured card of the news page. */
+  highlights: string[];
+  /** Wording of the main button on the featured card ("Regarder le Direct"). */
+  ctaLabel?: string;
+  /** Illustrated poster replacing the cover at the top of the article. */
+  hero?: NewsHero;
+  /** Call to action closing the article ("Kaido attend." + play button). */
+  cta?: NewsCta;
+}
+
+export interface NewsHero {
+  /** Big pixel title drawn on the poster. */
+  title: string;
+  label?: string;
+  caption?: string;
+  alt?: string;
+  /** Cut-out illustrations, in order: left, right, centre (front). */
+  cutouts: string[];
+}
+
+export interface NewsCta {
+  title: string;
+  note?: string;
+  label?: string;
+  /** Defaults to the game's URL. */
+  href?: string;
 }
 
 export interface NewsArticle extends NewsMeta {
@@ -73,6 +99,10 @@ function parse(file: string, locale: Locale): NewsArticle {
   if (str("lang") !== locale) fail(file, `\`lang\` must be "${locale}"`);
 
   const teaser = data.teaser as { title?: unknown; excerpt?: unknown } | undefined;
+  const text = (value: unknown): string | undefined => (typeof value === "string" && value ? value : undefined);
+  const strings = (value: unknown): string[] => (Array.isArray(value) ? value.map(String) : []);
+  const hero = data.hero as Record<string, unknown> | undefined;
+  const cta = data.cta as Record<string, unknown> | undefined;
 
   return {
     slug: path.basename(file, path.extname(file)),
@@ -96,6 +126,22 @@ function parse(file: string, locale: Locale): NewsArticle {
           excerpt: typeof teaser.excerpt === "string" ? teaser.excerpt : undefined,
         }
       : undefined,
+    highlights: strings(data.highlights),
+    ctaLabel: optStr("ctaLabel"),
+    hero:
+      hero && text(hero.title)
+        ? {
+            title: text(hero.title)!,
+            label: text(hero.label),
+            caption: text(hero.caption),
+            alt: text(hero.alt),
+            cutouts: strings(hero.cutouts),
+          }
+        : undefined,
+    cta:
+      cta && text(cta.title)
+        ? { title: text(cta.title)!, note: text(cta.note), label: text(cta.label), href: text(cta.href) }
+        : undefined,
     body: content.trim(),
   };
 }
