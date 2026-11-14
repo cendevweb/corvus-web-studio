@@ -1,1 +1,119 @@
-{}
+{
+  "aboutPage": {
+    "hero": {
+      "eyebrow": "À propos · Dylan Tuna · Nancy",
+      "title": "Un développeur, <em>un corbeau</em>, trois jeux.",
+      "lede": "<strong>Corvus Web Studio</strong> est le studio indépendant de <strong>Dylan Tuna</strong>, Senior Fullstack Engineer. Neuf ans de produits SaaS en équipe, et des jeux en ligne conçus, développés et dessinés en solo.",
+      "cta": "Voir le parcours",
+      "crowAlt": "Corbeau en pixel art posé sur une branche",
+      "crowReplay": "Rejouer l'atterrissage du corbeau",
+      "crowCaption": "corvus, animal totem",
+      "proofLabel": "Le studio en chiffres",
+      "proof": {
+        "years": { "value": "9+ ans", "label": "de produits SaaS en équipe" },
+        "games": { "value": "3", "label": "jeux sortis, en solo" },
+        "fighters": { "value": "51", "label": "combattants dans One Piexel" },
+        "icons": { "value": "300+", "label": "icônes à trouver dans Iconic" }
+      }
+    },
+    "dylan": {
+      "kicker": "01 / Dylan Tuna",
+      "title": "Full-stack <em>et IA</em>, côté produit.",
+      "p1": "Senior Fullstack Engineer basé à Nancy. Depuis 2016, Dylan construit des SaaS en équipe : ad-tech, sport, outils pour créateurs. <strong>Du schéma de base de données à l'interface</strong>, avec un goût marqué pour les détails que personne ne remarque quand ils fonctionnent.",
+      "p2": "En parallèle, il conçoit, développe et dessine seul les jeux du studio. L'IA fait partie de l'outillage quotidien : <strong>GPT-4 intégré à TweetHunter</strong>, puis MCP, Skills et agents.",
+      "facts": {
+        "years": "<b>9+ ans</b> d'expérience",
+        "senior": "<b>Senior</b> Fullstack",
+        "ai": "<b>IA</b> & agents",
+        "stack": "TypeScript · React · Next.js"
+      },
+      "timelineLabel": "Repères du parcours",
+      "timeline": {
+        "t1": {
+          "period": "2025-26",
+          "title": "SportsDynamics",
+          "text": "Senior Fullstack · SaaS sport, interfaces riches en données, AWS Lambda"
+        },
+        "t2": {
+          "period": "2023-24",
+          "title": "Lempire · TweetHunter",
+          "text": "Senior Fullstack · GPT-4, automatisation de contenu, pipelines image et vidéo"
+        },
+        "t3": {
+          "period": "2021-23",
+          "title": "Weblib",
+          "text": "Fullstack · migration multi-repo vers monorepo"
+        },
+        "t4": {
+          "period": "2019-21",
+          "title": "Paragone",
+          "text": "Fullstack · plateforme ad-tech, refonte de schémas, reporting"
+        },
+        "t5": {
+          "period": "2016-19",
+          "title": "Formiris, Pernod Ricard",
+          "text": "CMS, plateforme data, refonte de base utilisateurs"
+        }
+      },
+      "fullCareer": "Parcours complet"
+    },
+    "studio": {
+      "kicker": "02 / Le studio",
+      "title": "Ce que fait <em>le studio</em>.",
+      "link": "Voir les services",
+      "items": {
+        "games": {
+          "title": "Des jeux en ligne",
+          "text": "One Piexel, Iconic, Fastr : trois jeux sortis, jouables dans le navigateur, sur desktop et mobile."
+        },
+        "web": {
+          "title": "Des produits web",
+          "text": "Sites, applications et SaaS pour des clients, en fullstack Next.js."
+        },
+        "ai": {
+          "title": "Des services IA",
+          "text": "Serveurs MCP, Skills, agents et génération IA intégrés à un produit."
+        },
+        "components": {
+          "title": "Des composants",
+          "text": "Composants et expériences web, publiés dans le Nid avec leur code."
+        }
+      }
+    },
+    "crow": {
+      "kicker": "03 / Le corbeau",
+      "title": "Pourquoi <em>Corvus</em> ?",
+      "alt": "Corbeau en pixel art, en vol",
+      "p1": "Pas de légende fondatrice. Le corbeau est <strong>l'animal totem de Dylan</strong>, et le nom du studio en découle : <em>corvus</em>, en latin.",
+      "p2": "Il reste comme signature : un logo animé, quelques pixels, une présence discrète sur chaque page."
+    },
+    "values": {
+      "kicker": "04 / Valeurs",
+      "title": "Quatre principes, <em>tenus</em>.",
+      "items": {
+        "precision": {
+          "title": "Précision",
+          "text": "Du netcode au bouton, chaque détail est traité, y compris ceux que personne ne remarque."
+        },
+        "sobriety": {
+          "title": "Sobriété",
+          "text": "Peu d'effets, aucun superflu. L'interface sert le projet, jamais l'inverse."
+        },
+        "autonomy": {
+          "title": "Autonomie",
+          "text": "Conception, développement, design : une seule personne porte le produit de bout en bout."
+        },
+        "transparency": {
+          "title": "Transparence",
+          "text": "Patch notes, devlogs, code ouvert quand c'est possible : le travail se montre."
+        }
+      }
+    },
+    "links": {
+      "kicker": "05 / Liens",
+      "title": "Suivre <em>le studio</em>.",
+      "text": "Le code est sur GitHub, les trailers et devlogs sur YouTube. Une question ? Écrire au studio : réponse sous 24 h.",
+      "services": "Voir les services"
+    }
+  }
+}

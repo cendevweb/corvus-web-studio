@@ -1,1 +1,66 @@
-{}
+{
+  "legalPage": {
+    "hero": {
+      "eyebrow": "Legal notice",
+      "title": "Legal <em>notice</em>.",
+      "lede": "Who publishes this site, who hosts it, what it does with data and what is protected."
+    },
+    "tocLabel": "Legal notice contents",
+    "todo": "[to be completed]",
+    "publisher": {
+      "title": "Publisher",
+      "intro": "The Corvus Web Studio website is published by:",
+      "name": "Name",
+      "nameValue": "<todo></todo>",
+      "tradeName": "Trade name",
+      "tradeNameValue": "Corvus Web Studio",
+      "status": "Legal status",
+      "statusValue": "<todo></todo>",
+      "siret": "SIRET (French business ID)",
+      "siretValue": "<todo></todo>",
+      "address": "Address",
+      "addressValue": "<todo></todo>",
+      "director": "Publication director",
+      "directorValue": "<todo></todo>",
+      "contact": "Contact",
+      "contactValue": "through the <link>contact form</link>"
+    },
+    "host": {
+      "title": "Hosting provider",
+      "intro": "The site is hosted by:",
+      "name": "Company",
+      "nameValue": "Vercel Inc.",
+      "address": "Address",
+      "addressValue": "440 N Barranca Avenue #4133, Covina, CA 91723, United States",
+      "site": "Website",
+      "siteValue": "vercel.com"
+    },
+    "data": {
+      "title": "Personal data",
+      "p1": "The site requires no account and no sign-up. The only personal data processed is what you enter in the <link>contact form</link>: name or in-game name, email address, message and, depending on the type of request, a few optional details.",
+      "items": {
+        "purpose": "<b>Purpose.</b> Replying to the request, and nothing else: no mailing list, no marketing, no resale.",
+        "basis": "<b>Legal basis.</b> The publisher's legitimate interest in replying to the messages it receives.",
+        "recipients": "<b>Recipients.</b> The publisher of the site. The message is delivered by the email service Resend and the site is served by Vercel, both acting as processors.",
+        "retention": "<b>Retention.</b> For as long as it takes to handle the request and the conversation that follows. The site itself keeps no copy of the message.",
+        "rights": "<b>Your rights.</b> Access, rectification, erasure, restriction and objection, under the GDPR and the French Data Protection Act. You can exercise them through the <link>contact form</link>. You may also lodge a complaint with the French data protection authority, the CNIL (cnil.fr)."
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "p1": "This site sets <b>no cookies</b>: no advertising, tracking or social network cookies. That is why there is no consent banner.",
+      "p2": "Your light or dark theme choice is saved in the browser's local storage. That preference stays on your device and is never transmitted."
+    },
+    "analytics": {
+      "title": "Audience measurement",
+      "p1": "Traffic is measured with a <b>cookieless</b> tool that only collects aggregated, anonymous statistics (page views, referrer, device type). No visitor is identified or tracked from one site to another."
+    },
+    "ip": {
+      "title": "Intellectual property",
+      "p1": "Unless stated otherwise, the texts, interfaces, illustrations, animations, the crow logo and the code of this site belong to the publisher. Any reproduction or reuse without prior agreement is prohibited, apart from the exceptions provided for by the French Intellectual Property Code.",
+      "p2": "The code snippets published in the Nest are released under the MIT licence: they may be reused under the terms of that licence.",
+      "p3": "<b>One Piexel is an unofficial fan game</b>, free and non-commercial, with no connection to the rights holders of the licence it is inspired by. The characters, names and universes it refers to belong to their respective owners. Any rights holder can request a takedown through the <link>contact form</link>.",
+      "p4": "The other trademarks and logos mentioned on this site belong to their respective owners."
+    }
+  }
+}
