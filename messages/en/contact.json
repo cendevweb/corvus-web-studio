@@ -1,1 +1,167 @@
-{}
+{
+  "contactPage": {
+    "hero": {
+      "eyebrow": "Contact · reply within 24 h",
+      "title": "A role, a project, <em>a rematch</em>?",
+      "lede": "A question, a project, some player feedback? Write to the studio: every message is read by a real person. <strong>No bots</strong>, apart from the ones coded here."
+    },
+    "sectionLabel": "Contact form and information",
+    "form": {
+      "steps": {
+        "request": "01 / The request",
+        "details": "02 / Contact details",
+        "message": "03 / The message"
+      },
+      "typeLegend": "Type of request",
+      "optional": "optional",
+      "types": {
+        "recruiting": {
+          "name": "Recruiting",
+          "hint": "A role, a team to join",
+          "submit": "Talk recruiting",
+          "namePlaceholder": "First name Last name",
+          "tip": "The role, the team, the stack: anything that seems useful.",
+          "messagePlaceholder": "Hello, we are looking for a Senior Fullstack engineer to…",
+          "delay": "Recruiting? The reply offers a time slot to talk it through.",
+          "ok": "The message is on its way. The reply will offer a time slot to talk it through."
+        },
+        "freelance": {
+          "name": "Freelance",
+          "hint": "A project, a quote",
+          "submit": "Talk about a project",
+          "namePlaceholder": "First name Last name",
+          "tip": "The need, the context, the budget if known.",
+          "messagePlaceholder": "Hello, we have a project to…",
+          "delay": "A project? The reply comes with precise questions, or a time slot.",
+          "ok": "The message is on its way. The reply will come with precise questions, or a time slot to discuss it."
+        },
+        "press": {
+          "name": "Press",
+          "hint": "An interview, visuals",
+          "submit": "Write to the studio",
+          "namePlaceholder": "First name Last name",
+          "tip": "The angle, the visuals needed, the deadline.",
+          "messagePlaceholder": "Hello, we are preparing a piece on…",
+          "delay": "Press? Visuals and information come attached to the reply.",
+          "ok": "The message is on its way. Visuals and information will follow in the reply."
+        },
+        "player": {
+          "name": "Player",
+          "hint": "A bug, an idea, a GG",
+          "submit": "Send the feedback",
+          "namePlaceholder": "In-game name",
+          "tip": "For a bug: what you were doing, the device, the browser.",
+          "messagePlaceholder": "Hello, during a ranked match this happened…",
+          "delay": "A bug? All player feedback is read, and bugs come first.",
+          "ok": "Thanks for the feedback. All of it is read, and bugs come first."
+        }
+      },
+      "extras": {
+        "company": { "label": "Company", "placeholder": "Company name" },
+        "offer": { "label": "Link to the job offer", "placeholder": "https://" },
+        "project": {
+          "label": "Type of project",
+          "options": {
+            "saas": "A SaaS product",
+            "game": "A web game",
+            "realtime": "Real time or multiplayer",
+            "ai": "An AI integration",
+            "other": "Something else"
+          }
+        },
+        "deadline": { "label": "Timeline", "placeholder": "As soon as possible, early 2027…" },
+        "media": { "label": "Outlet", "placeholder": "Website, channel, podcast…" },
+        "pressDeadline": { "label": "Deadline", "placeholder": "Publication deadline" },
+        "game": {
+          "label": "Game",
+          "options": {
+            "one-piexel": "One Piexel",
+            "fastr": "Fastr",
+            "iconic": "Iconic",
+            "all": "All three"
+          }
+        },
+        "topic": {
+          "label": "Kind of feedback",
+          "options": {
+            "bug": "A bug",
+            "idea": "An idea",
+            "gg": "Just a GG"
+          }
+        }
+      },
+      "fields": {
+        "name": "Name",
+        "nameAlt": "or in-game name",
+        "email": "Email",
+        "emailPlaceholder": "name@example.com",
+        "message": "Message"
+      },
+      "counter": "{count} / {max}",
+      "honeypot": "Leave this field empty",
+      "sending": "Sending",
+      "privacy": "The message goes to the studio's inbox. Your details are only used to reply: no mailing list, no resale.",
+      "errors": {
+        "nameMissing": "Name missing: it is used to address the reply.",
+        "handleMissing": "In-game name missing: it is used to address the reply.",
+        "emailMissing": "Email missing: that is where the reply will arrive.",
+        "emailNoTld": "The end of the address is missing, for example “.com”.",
+        "emailInvalid": "This does not look like an email address, for example name@example.com.",
+        "messageShort": "Message too short: {min} characters minimum, {missing} more to go.",
+        "summary": "{count, plural, one {# field to fix before sending} other {# fields to fix before sending}}"
+      },
+      "failure": {
+        "title": "The message was not sent",
+        "send_failed": "Sending failed on our side. Nothing was erased: try again in a moment, or use one of the studio's networks.",
+        "not_configured": "Sending through the form is temporarily unavailable. Nothing was erased: meanwhile, the studio also replies on its networks.",
+        "rate_limited": "Too many messages in a short time. Try again in a few minutes.",
+        "invalid": "The message could not be validated. Check the fields, then try again."
+      }
+    },
+    "ok": {
+      "title": "Message sent. <em>The crow is on its way.</em>",
+      "crowAlt": "The crow lands on its branch",
+      "announce": "Message sent.",
+      "request": "Request",
+      "replyTo": "Reply to",
+      "delay": "Reply time",
+      "delayValue": "within 24 h",
+      "again": "Send another message"
+    },
+    "aside": {
+      "label": "Availability, reply time and networks",
+      "availability": {
+        "title": "Availability",
+        "text": "Full-stack SaaS products, games and web experiences, real time, AI implementation and services (MCP, Skills, AI generation).",
+        "base": "Based in",
+        "baseValue": "Nancy, France",
+        "experience": "Experience",
+        "experienceValue": "9+ years, Senior Fullstack",
+        "meeting": "Meetings",
+        "meetingValue": "online booking, coming soon"
+      },
+      "delay": {
+        "title": "Reply time",
+        "value": "24 h",
+        "note": "whatever the type of request"
+      },
+      "nets": {
+        "title": "The studio's networks",
+        "github": "the code",
+        "youtube": "Streams and trailers",
+        "linkedin": "the career",
+        "x": "announcements",
+        "twitch": "live streams",
+        "tiktok": "One Piexel",
+        "instagram": "link coming soon"
+      }
+    },
+    "notFound": {
+      "caption": "<b>ERROR 404</b> · empty branch",
+      "title": "The crow has flown away. <em>So has the page.</em>",
+      "text": "This address does not exist, or no longer does. Nothing is broken on the browser side: head back home, or over to the games.",
+      "recall": "call the crow back",
+      "urlLabel": "Requested address"
+    }
+  }
+}

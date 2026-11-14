@@ -1,27 +1,32 @@
 import { useTranslations } from "next-intl";
+import { NotFoundScene } from "@/components/contact/NotFoundScene";
+import { ContactIcon } from "@/components/contact/icons";
 import { ButtonLink } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 
-/** 404. Skeleton: the "crow flies away" scene is previewed in the contact mockup (pages-a/contact). */
+/** 404: the crow takes off from the "0" and leaves the frame (scene validated in the contact mockup). */
 export default function NotFound() {
-  const t = useTranslations("notFound");
+  const t = useTranslations("contactPage.notFound");
   const common = useTranslations("common");
 
   return (
-    <section className="ph">
+    <section className="pg-404">
       <div className="wrap">
-        <p className="eyebrow">{t("eyebrow")}</p>
-        <h1>{t.rich("title", { em: (chunks) => <em>{chunks}</em> })}</h1>
-        <p className="lede">{t("text")}</p>
-        <div className="ph-cta">
-          <ButtonLink href="/">
-            {common("backHome")}
-            <Icon name="arrow" className="arr" />
-          </ButtonLink>
-          <ButtonLink href="/jeux" variant="ghost">
-            {common("seeGames")}
-          </ButtonLink>
-        </div>
+        <NotFoundScene recallLabel={t("recall")} urlLabel={t("urlLabel")}>
+          <p className="nf-cap">{t.rich("caption", { b: (chunks) => <b>{chunks}</b> })}</p>
+          <h1>{t.rich("title", { em: (chunks) => <em>{chunks}</em> })}</h1>
+          <p className="d">{t("text")}</p>
+          <div className="nf-act">
+            <ButtonLink href="/">
+              <ContactIcon name="back" />
+              {common("backHome")}
+            </ButtonLink>
+            <ButtonLink href="/jeux" variant="ghost">
+              <Icon name="play" />
+              {common("seeGames")}
+            </ButtonLink>
+          </div>
+        </NotFoundScene>
       </div>
     </section>
   );
