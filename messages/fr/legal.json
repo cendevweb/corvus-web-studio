@@ -1,1 +1,66 @@
-{}
+{
+  "legalPage": {
+    "hero": {
+      "eyebrow": "Mentions légales",
+      "title": "Mentions <em>légales</em>.",
+      "lede": "Qui édite ce site, qui l'héberge, ce qu'il fait des données et ce qui est protégé."
+    },
+    "tocLabel": "Sommaire des mentions légales",
+    "todo": "[à compléter]",
+    "publisher": {
+      "title": "Éditeur du site",
+      "intro": "Le site Corvus Web Studio est édité par :",
+      "name": "Nom",
+      "nameValue": "<todo></todo>",
+      "tradeName": "Nom commercial",
+      "tradeNameValue": "Corvus Web Studio",
+      "status": "Statut",
+      "statusValue": "<todo></todo>",
+      "siret": "SIRET",
+      "siretValue": "<todo></todo>",
+      "address": "Adresse",
+      "addressValue": "<todo></todo>",
+      "director": "Directeur de la publication",
+      "directorValue": "<todo></todo>",
+      "contact": "Contact",
+      "contactValue": "par le <link>formulaire de contact</link>"
+    },
+    "host": {
+      "title": "Hébergeur",
+      "intro": "Le site est hébergé par :",
+      "name": "Société",
+      "nameValue": "Vercel Inc.",
+      "address": "Adresse",
+      "addressValue": "440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis",
+      "site": "Site",
+      "siteValue": "vercel.com"
+    },
+    "data": {
+      "title": "Données personnelles",
+      "p1": "Le site ne demande ni compte ni inscription. Les seules données personnelles traitées sont celles saisies dans le <link>formulaire de contact</link> : nom ou pseudo, adresse e-mail, message et, selon le type de demande, quelques précisions facultatives.",
+      "items": {
+        "purpose": "<b>Finalité.</b> Répondre à la demande, et rien d'autre : pas de liste de diffusion, pas de prospection, pas de revente.",
+        "basis": "<b>Base légale.</b> L'intérêt légitime de l'éditeur à répondre aux messages qui lui sont adressés.",
+        "recipients": "<b>Destinataires.</b> L'éditeur du site. Le message est acheminé par le service d'envoi d'e-mails Resend et le site est servi par Vercel, tous deux en qualité de sous-traitants.",
+        "retention": "<b>Durée de conservation.</b> Le temps de traiter la demande et de l'échange qui s'ensuit. Le site lui-même ne conserve aucune copie du message.",
+        "rights": "<b>Vos droits.</b> Accès, rectification, effacement, limitation et opposition, conformément au RGPD et à la loi Informatique et Libertés. Ils s'exercent par le <link>formulaire de contact</link>. Une réclamation peut aussi être adressée à la CNIL (cnil.fr)."
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "p1": "<b>Aucun cookie</b> n'est déposé par ce site : ni publicitaire, ni de suivi, ni de réseau social. Il n'y a donc pas de bandeau de consentement.",
+      "p2": "Le choix du thème clair ou sombre est mémorisé dans le stockage local du navigateur. Cette préférence reste sur l'appareil et n'est jamais transmise."
+    },
+    "analytics": {
+      "title": "Mesure d'audience",
+      "p1": "La fréquentation est mesurée par un outil <b>sans cookie</b>, qui ne collecte que des statistiques agrégées et anonymes (pages vues, provenance, type d'appareil). Aucun visiteur n'est identifié ni suivi d'un site à l'autre."
+    },
+    "ip": {
+      "title": "Propriété intellectuelle",
+      "p1": "Sauf mention contraire, les textes, interfaces, illustrations, animations, le logo au corbeau et le code de ce site sont la propriété de l'éditeur. Toute reproduction ou réutilisation sans accord préalable est interdite, en dehors des exceptions prévues par le Code de la propriété intellectuelle.",
+      "p2": "Les extraits de code publiés dans le Nid sont diffusés sous licence MIT : ils peuvent être réutilisés dans les conditions de cette licence.",
+      "p3": "<b>One Piexel est un fan game non officiel</b>, gratuit et sans but commercial, sans lien avec les ayants droit de la licence dont il s'inspire. Les personnages, noms et univers auxquels il fait référence appartiennent à leurs propriétaires respectifs. Tout ayant droit peut demander un retrait par le <link>formulaire de contact</link>.",
+      "p4": "Les autres marques et logos cités sur ce site appartiennent à leurs propriétaires respectifs."
+    }
+  }
+}
