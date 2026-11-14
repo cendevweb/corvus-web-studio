@@ -51,16 +51,17 @@ const hasClass = (node: Node | undefined, name: string) => isElement(node) && cl
 
 function transformParagraph(node: Element): Element {
   const children = significant(node.children);
-  const only = children.length === 1 ? children[0] : undefined;
+  const first = children.length === 1 ? children[0] : undefined;
+  const only = isElement(first) ? first : undefined;
 
-  if (isElement(only, "img")) {
+  if (only?.tagName === "img") {
     const { title, ...properties } = only.properties;
     const figure = el("figure", {}, [el("div", { className: ["shot"] }, [{ ...only, properties }])]);
     if (typeof title === "string" && title) figure.children.push(el("figcaption", {}, [{ type: "text", value: title }]));
     return figure;
   }
 
-  if (isElement(only, "a")) {
+  if (only?.tagName === "a") {
     const href = String(only.properties.href ?? "");
     if (parseVideo(href)) {
       const label = textOf(only).trim();
@@ -68,7 +69,7 @@ function transformParagraph(node: Element): Element {
     }
   }
 
-  if (isElement(only, "em")) return el("p", { className: ["cap"] }, only.children);
+  if (only?.tagName === "em") return el("p", { className: ["cap"] }, only.children);
 
   return node;
 }
@@ -192,19 +193,20 @@ export function rehypeArticle() {
       });
 
     const output: ElementContent[] = [];
-    let section: { id: string; children: ElementContent[] } | null = null;
+    const open: { section: { id: string; children: ElementContent[] } | null } = { section: null };
     let number = 0;
     const close = () => {
+      const { section } = open;
       if (!section) return;
       output.push(
-        el("section", { id: section.id, ariaLabelledBy: `h-${section.id}` }, finishSection(section.children, section.id)),
+        el("section", { id: section.id, ariaLabelledBy: [`h-${section.id}`] }, finishSection(section.children, section.id)),
       );
-      section = null;
+      open.section = null;
     };
 
     for (const block of blocks) {
       if (block.tagName !== "h2") {
-        if (section) section.children.push(block);
+        if (open.section) open.section.children.push(block);
         else output.push(reveal(block));
         continue;
       }
@@ -217,7 +219,7 @@ export function rehypeArticle() {
         el("span", {}, [{ type: "text", value: label }]),
         { type: "text", value: title },
       ]);
-      section = { id, children: [heading] };
+      open.section = { id, children: [heading] };
     }
     close();
 

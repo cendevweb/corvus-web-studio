@@ -1,1 +1,91 @@
-{}
+{
+  "newsPage": {
+    "eyebrow": "Devlog · {count, plural, one {# post} other {# posts}} · {games, plural, one {# game} other {# games}}",
+    "title": "The devlog, <em>unfiltered</em>.",
+    "lede": "Patch notes, technical devlogs, announcements, behind-the-scenes and videos from the studio's three games, in release order. Long reads and short posts, filterable by game.",
+    "youtube": "YouTube channel",
+    "last": "Latest post:",
+    "filterLabel": "Filter news by game",
+    "count": "{count, plural, one {# post} other {# posts}}",
+    "kinds": {
+      "video": "Video",
+      "patch-note": "Patch notes",
+      "announcement": "Announcement",
+      "devlog": "Devlog",
+      "behind-the-scenes": "Behind the scenes"
+    },
+    "featured": {
+      "label": "Featured",
+      "flag": "FEATURED",
+      "program": "On the programme",
+      "watch": "Watch the video",
+      "read": "Read the article",
+      "gameLink": "The game's page"
+    },
+    "list": {
+      "title": "All posts, from newest to oldest",
+      "readingTime": "{n} min read",
+      "end": "> end of the devlog. It all started on {date}.",
+      "top": "Back to top"
+    },
+    "subscribe": {
+      "label": "Follow the devlog",
+      "letter": {
+        "badge": "LATER",
+        "title": "One letter per release, <em>not before</em>.",
+        "text": "One email per real update: a patch, a set, a theme. No nagging, no tracking, one-click unsubscribe.",
+        "field": "Email address",
+        "placeholder": "name@example.com",
+        "button": "Sign-up coming soon",
+        "note": "Sign-up is not open yet. In the meantime, releases are announced on YouTube and on X."
+      },
+      "follow": {
+        "badge": "IN THE MEANTIME",
+        "title": "Follow the studio",
+        "youtube": "Corvus Direct, trailers, patches on video",
+        "github": "The code of the Nest and the tools",
+        "x": "Announcements, as they come",
+        "tiktok": "One Piexel clips"
+      }
+    },
+    "article": {
+      "breadcrumb": "Breadcrumb",
+      "news": "News",
+      "readingTime": "{n} min read",
+      "creator": "creator of {game}",
+      "studio": "Corvus Web Studio",
+      "copyLink": "Copy link",
+      "copyLinkLabel": "Copy the link to this article",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copyCode": "Copy the code",
+      "copyChanges": "Copy the changelog",
+      "playVideo": "Play the video",
+      "playHero": "Play the article's video: {title}",
+      "video": "VIDEO",
+      "toc": "Contents",
+      "allNews": "The whole devlog",
+      "published": "Published on {date}",
+      "play": "Play",
+      "share": "Share",
+      "shareX": "Share on X",
+      "shareLinkedIn": "Share on LinkedIn",
+      "related": {
+        "kicker": "Read next",
+        "title": "What comes next, <em>in order</em>.",
+        "sequel": "> the direct follow-up",
+        "sequelPatch": "> the direct follow-up to this patch",
+        "sameGameVideo": "> same game, on video",
+        "sameGame": "> same game",
+        "elsewhere": "> elsewhere in the studio",
+        "latest": "> latest post"
+      },
+      "nav": {
+        "label": "Previous and next article",
+        "back": "Back",
+        "next": "Next article",
+        "previous": "Previous article"
+      }
+    }
+  }
+}
