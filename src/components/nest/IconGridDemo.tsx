@@ -5,7 +5,7 @@ import { useState } from "react";
 import { cn } from "@/lib/cn";
 import { skinFontVariables } from "@/lib/fonts-skins";
 
-const ICONS = [
+export const ICONS = [
   { key: "crown", d: "M3 18h18l1-10-5 4-5-8-5 8-5-4z" },
   { key: "sword", d: "M19 2l3 0 0 3-11 11 2 2-2 2-3-3-4 4-2-2 4-4-3-3 2-2 2 2z" },
   { key: "bolt", d: "M14 1 4 14h6l-2 9 12-14h-7z" },

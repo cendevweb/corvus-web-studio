@@ -11,6 +11,8 @@ export interface Spring {
   set(x: number, y: number): void;
   /** Cancel the running frame (call on unmount). */
   stop(): void;
+  /** Change stiffness and/or damping on the fly. */
+  tune(settings: { stiffness?: number; damping?: number }): void;
 }
 
 export function createSpring(apply: SpringApply, stiffness = 0.12, damping = 0.78): Spring {
@@ -47,6 +49,10 @@ export function createSpring(apply: SpringApply, stiffness = 0.12, damping = 0.7
     stop() {
       if (raf) cancelAnimationFrame(raf);
       raf = 0;
+    },
+    tune(settings) {
+      stiffness = settings.stiffness ?? stiffness;
+      damping = settings.damping ?? damping;
     },
   };
 }
