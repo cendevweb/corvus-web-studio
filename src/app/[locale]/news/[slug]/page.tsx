@@ -180,7 +180,7 @@ export default async function NewsArticlePage({ params }: { params: Params }) {
             </Reveal>
             <div className="ah-in">
               <Reveal as="p" className="a-meta">
-                <span className="kind">{article.upcoming ? news("upcoming") : news(`types.${article.type}`)}</span>
+                <span className="kind">{news(`types.${article.type}`)}</span>
                 <span className="n-tag" style={{ "--c": color } as CSSProperties}>
                   <i aria-hidden="true" />
                   {gameName}
@@ -321,7 +321,7 @@ export default async function NewsArticlePage({ params }: { params: Params }) {
                 locale={locale}
                 delay={index * 60}
                 date={shortDate(item.date)}
-                kind={item.upcoming ? news("upcoming") : news(`types.${item.type}`)}
+                kind={news(`types.${item.type}`)}
                 studio={news("studio")}
                 why={t(`related.${reason}`)}
               />

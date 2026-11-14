@@ -90,7 +90,8 @@ export async function toFeedItems(items: readonly NewsArticle[], locale: Locale)
       isVideo: item.type === "video",
       upcoming: item.upcoming,
       upcomingLabel: news("upcoming"),
-      readingLabel: item.readingTime ? t("list.readingTime", { n: item.readingTime }) : undefined,
+      // Only long reads announce their reading time in the list.
+      readingLabel: item.readingTime && item.readingTime >= 3 ? t("list.readingTime", { n: item.readingTime }) : undefined,
       tags: item.tags,
       cover:
         item.cover && size
