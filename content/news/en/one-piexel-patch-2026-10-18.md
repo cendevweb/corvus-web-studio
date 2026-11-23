@@ -8,7 +8,6 @@ lang: en
 cover: /images/games/one-piexel/op-22.jpg
 coverAlt: "One Piexel: a fighter's entrance screen in front of the Baratie"
 readingTime: 4
-home: 2
 tags: [12 fighters, 4 mechanics, ranked]
 video: /videos/one-piexel-trailer.mp4
 teaser:

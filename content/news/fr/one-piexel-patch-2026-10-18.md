@@ -8,7 +8,6 @@ lang: fr
 cover: /images/games/one-piexel/op-22.jpg
 coverAlt: "One Piexel : écran d'entrée en scène d'un combattant devant le Baratie"
 readingTime: 4
-home: 2
 tags: [12 combattants, 4 mécaniques, classé]
 video: /videos/one-piexel-trailer.mp4
 teaser:
