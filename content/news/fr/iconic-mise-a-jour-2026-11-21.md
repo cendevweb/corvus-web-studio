@@ -31,9 +31,9 @@ C'était annoncé, c'est en ligne depuis le 21 novembre : Iconic reçoit son hui
 
 ## Set 8 | Figures de l'histoire | Le set 8
 
-Le set 8 réunit 50 figures qui ont marqué leur époque. Comme toujours, chacune est résumée par un objet sur une carte illustrée : une vis aérienne, un télescope, un pommier, une combinaison d'astronaute… et il reste trois essais pour trouver le nom de la figure.
+Le set 8 réunit 50 figures qui ont marqué leur époque. Comme toujours, chacune est résumée par un objet sur une carte illustrée : une vis aérienne, un télescope, un pommier, une combinaison d'astronaute… Les essais sont illimités pour trouver le nom de la figure, mais le streak et son bonus ne tiennent que si la bonne réponse arrive dans les trois premiers essais.
 
-Une erreur ? La carte vire au corail : tu changes d'icône et tu retentes.
+Une erreur ? La carte vire au corail, et tu retentes sur la même icône.
 
 ## ICoins | Les sets se débloquent en jouant | Sets en ICoins
 

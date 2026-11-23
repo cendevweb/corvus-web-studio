@@ -31,9 +31,9 @@ It was announced, and it has been live since November 21: Iconic gets its eighth
 
 ## Set 8 | Historical Figures | Set 8
 
-Set 8 brings together 50 figures who left their mark on their era. As always, each one is summed up by an object on an illustrated card: an aerial screw, a telescope, an apple tree, a space suit… and you have three tries to find the figure's name.
+Set 8 brings together 50 figures who left their mark on their era. As always, each one is summed up by an object on an illustrated card: an aerial screw, a telescope, an apple tree, a space suit… Tries are unlimited to find the figure's name, but the streak and its bonus only hold if the right answer comes within the first three tries.
 
-Made a mistake? The card turns coral: switch to another icon and try again.
+Made a mistake? The card turns coral, and you try again on the same icon.
 
 ## ICoins | Sets unlock as you play | Sets for ICoins
 
