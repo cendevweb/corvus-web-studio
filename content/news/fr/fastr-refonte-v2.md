@@ -76,13 +76,9 @@ Les nouveaux venus n'ont plus besoin qu'on leur explique les règles. Dans le lo
 
 Ces aides peuvent être coupées dans les paramètres, avec l'option « Aide aux débutants ».
 
-## En jeu | Bonus, malus et bilans | En jeu
+## Bilans | Podium et résultats détaillés | Bilans
 
-Pendant la manche, chaque effet s'annonce dans un bandeau au-dessus de la saisie, et la précision s'affiche en direct. Tous les bonus et malus sont comptés dans tes statistiques de partie.
-
-Quand tu as fini ta manche, c'est toi qui choisis la cible de ton malus. Entre deux manches, un écran de bilan affiche le podium, ton rang, tes points, ta précision, ta meilleure série, les malus envoyés et reçus, et le classement général.
-
-En fin de partie, l'écran des résultats détaille tout : ta place manche par manche, tes bonus et malus, les malus bloqués et les trophées gagnés. Il ne reste qu'à relancer un lobby ou à partager le résultat.
+Entre deux manches, un nouvel écran affiche le podium, ton bilan de la manche et le classement général. En fin de partie, les résultats détaillent ta place manche par manche, tes bonus et malus, et les trophées gagnés.
 
 ## Paramètres | Réglé pour toi | Paramètres
 

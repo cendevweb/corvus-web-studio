@@ -76,13 +76,9 @@ Newcomers no longer need someone to walk them through the rules. In the lobby, a
 
 These aids can be turned off in the settings, with the "Beginner help" option.
 
-## In game | Bonuses, penalties and recaps | In game
+## Recaps | Podium and detailed results | Recaps
 
-During a round, every effect is announced in a banner above the input, and your accuracy is shown live. All bonuses and penalties are counted in your game stats.
-
-Once you have finished your round, you choose who gets your penalty. Between rounds, a recap screen shows the podium, your rank, your points, your accuracy, your best streak, the penalties sent and received, and the overall standings.
-
-At the end of the game, the results screen breaks everything down: your place round by round, your bonuses and penalties, the penalties blocked and the trophies won. All that is left is to start a new lobby or share the result.
+Between rounds, a new screen shows the podium, your round recap and the overall standings. At the end of the game, the results break down your place round by round, your bonuses and penalties, and the trophies won.
 
 ## Settings | Tuned for you | Settings
 
