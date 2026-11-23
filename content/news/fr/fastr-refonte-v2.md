@@ -27,7 +27,7 @@ La refonte V2 de Fastr est en ligne. Nouvelle interface, nouveaux écrans, nouve
 
 - **5** préréglages de partie, de Classique à Perso
 - **22** thèmes à chercher et filtrer par catégorie
-- **10** bonus, **13** malus et **17** trophées expliqués dans le codex
+- **40** éléments expliqués dans le codex : bonus, malus et trophées, tout y est
 
 ## Accueil et lobby | Une seule porte d'entrée, un lobby tout neuf | Lobby
 
@@ -55,7 +55,7 @@ L'hôte règle désormais la partie à sa façon, en partant de cinq préréglag
 - **Puriste.** Sans bonus ni malus.
 - **Perso.** Tes propres réglages.
 
-Tout se règle : le nombre de manches, leur durée (de 1 à 3 minutes), le nombre de mots pour finir (10, 15, 20 ou 30), un thème fixe ou tiré au sort à chaque manche, la fréquence des bonus et des malus, et même la liste des effets en jeu.
+Tout se règle : le nombre de manches, leur durée (de 1 à 3 minutes), le nombre de mots pour finir (10, 15, 20 ou 30), un thème fixe ou tiré au sort à chaque manche, la fréquence des bonus et des malus, et même la liste des effets en jeu. Par défaut, un malus part tous les 2 mots trouvés, et un bonus tombe toutes les 3 bonnes réponses d'affilée.
 
 ## Codex | Chaque effet expliqué | Codex
 
@@ -100,7 +100,7 @@ Un nouvel écran de paramètres réunit le son (musique, effets sonores, musique
 - **AJOUT** Page d'invitation avec le thème, les joueurs et les règles.
 - **AJOUT** Choix du thème avec recherche, catégories, nombre de mots et thème surprise.
 - **AJOUT** Règles personnalisables et cinq préréglages : Classique, Sprint, Chaos, Puriste, Perso.
-- **AJOUT** Codex des règles : 10 bonus, 13 malus et 17 trophées expliqués.
+- **AJOUT** Codex des règles : 40 bonus, malus et trophées expliqués.
 - **AJOUT** Démo animée dans le lobby et premier round guidé.
 - **AJOUT** Bilan entre les manches et résultats détaillés.
 - **CONFORT** Paramètres de son, d'identité et de confort, dont les effets de malus atténués.

@@ -27,7 +27,7 @@ Fastr's V2 redesign is live. New interface, new screens, new guide: from the hom
 
 - **5** game presets, from Classic to Custom
 - **22** themes to search and filter by category
-- **10** bonuses, **13** penalties and **17** trophies explained in the codex
+- **40** items explained in the codex: bonuses, penalties and trophies, it's all there
 
 ## Home and lobby | One way in, a brand-new lobby | Lobby
 
@@ -55,7 +55,7 @@ The host can now set up the game their way, starting from five presets:
 - **Purist.** No bonuses, no penalties.
 - **Custom.** Your own settings.
 
-Everything can be adjusted: the number of rounds, their length (1 to 3 minutes), the number of words to finish (10, 15, 20 or 30), a fixed theme or a random one each round, how often bonuses and penalties trigger, and even the list of effects in play.
+Everything can be adjusted: the number of rounds, their length (1 to 3 minutes), the number of words to finish (10, 15, 20 or 30), a fixed theme or a random one each round, how often bonuses and penalties trigger, and even the list of effects in play. By default, a penalty flies every 2 words found, and a bonus drops every 3 correct answers in a row.
 
 ## Codex | Every effect explained | Codex
 
@@ -100,7 +100,7 @@ A new settings screen brings together sound (music, sound effects, music lowered
 - **NEW** Invitation page with the theme, the players and the rules.
 - **NEW** Theme picker with search, categories, word counts and a surprise theme.
 - **NEW** Custom rules and five presets: Classic, Sprint, Chaos, Purist, Custom.
-- **NEW** Rules codex: 10 bonuses, 13 penalties and 17 trophies explained.
+- **NEW** Rules codex: 40 bonuses, penalties and trophies explained.
 - **NEW** Animated demo in the lobby and a guided first round.
 - **NEW** Recap between rounds and detailed results.
 - **COMFORT** Sound, identity and comfort settings, including toned-down penalty effects.
