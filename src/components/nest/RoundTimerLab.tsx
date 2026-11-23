@@ -14,7 +14,7 @@ const SPEEDS = [1, 8, 30] as const;
 
 /**
  * Nid experiment 02, full version: Fastr's round timer with the game's real scoring rule
- * (100 points + a speed bonus that melts with every word, a penalty sent every three words)
+ * (100 points + a speed bonus that melts with every word, a penalty sent every two words)
  * and a speed selector. The home page keeps the compact `RoundTimerDemo`.
  */
 export function RoundTimerLab() {
@@ -73,7 +73,7 @@ export function RoundTimerLab() {
     setScore((value) => value + 100 + Math.max(0, 119 - words));
     const count = words + 1;
     setWords(count);
-    if (count % 3 === 0) {
+    if (count % 2 === 0) {
       setMalus(true);
       clearTimeout(malusTimer.current);
       malusTimer.current = setTimeout(() => setMalus(false), 1100);

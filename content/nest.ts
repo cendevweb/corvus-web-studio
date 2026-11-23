@@ -110,7 +110,7 @@ let words = 0, score = 0;
 const validate = () => {
   score += 100 + Math.max(0, 119 - words);
   words += 1;
-  if (words % 3 === 0) sendMalus(); // tous les 3 mots
+  if (words % 2 === 0) sendMalus(); // tous les 2 mots
 };`;
 
 const flipShort = `/* Carte à retourner : deux faces, une rotation (MIT) */
@@ -206,8 +206,8 @@ export const experiments: readonly Experiment[] = [
         "120 seconds per round, the last ten in the red. Sped up ×8 here, to spare the wait.",
       ),
       page: l(
-        "120 secondes par manche, quatre manches, les dix dernières secondes dans le rouge. Chaque mot validé rapporte 100 points plus un bonus de vitesse qui fond : 119 pour le premier, 118 pour le suivant. Tous les trois mots, un malus part chez l'adversaire.",
-        "120 seconds per round, four rounds, the last ten seconds in the red. Every validated word earns 100 points plus a melting speed bonus: 119 for the first, 118 for the next. Every three words, a penalty flies to the opponent.",
+        "120 secondes par manche, quatre manches, les dix dernières secondes dans le rouge. Chaque mot validé rapporte 100 points plus un bonus de vitesse qui fond : 119 pour le premier, 118 pour le suivant. Tous les deux mots, un malus part chez l'adversaire.",
+        "120 seconds per round, four rounds, the last ten seconds in the red. Every validated word earns 100 points plus a melting speed bonus: 119 for the first, 118 for the next. Every two words, a penalty flies to the opponent.",
       ),
     },
     tags: {
