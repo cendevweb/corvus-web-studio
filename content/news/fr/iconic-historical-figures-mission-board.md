@@ -7,8 +7,7 @@ type: announcement
 lang: fr
 cover: /images/games/iconic/iconic-47.jpg
 coverAlt: "Annonce Iconic : disponible le 21 novembre, set Figures de l'histoire et Tableau de mission"
-upcoming: true
-home: 3
+upcoming: false
 tags: [50 icônes, nouveau set, missions]
 teaser:
   title: "Iconic : set Figures de l'histoire + Tableau de mission, le 21 novembre"

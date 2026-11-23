@@ -7,8 +7,7 @@ type: announcement
 lang: en
 cover: /images/games/iconic/iconic-47.jpg
 coverAlt: "Iconic announcement: available November 21, Historical Figures set and Mission Board"
-upcoming: true
-home: 3
+upcoming: false
 tags: [50 icons, new set, missions]
 teaser:
   title: "Iconic: Historical Figures set + Mission Board, on November 21"
