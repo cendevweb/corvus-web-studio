@@ -705,20 +705,20 @@ const iconic: Game = {
       "Iconic — pop culture quiz, one cult object to identify",
     ),
     description: l(
-      "Iconic : un quiz de culture pop. Une image, un objet culte, trois essais pour retrouver le personnage. 300+ icônes, collection, séries. Next.js, XState, MongoDB.",
-      "Iconic: a pop culture quiz. One image, one cult object, three tries to find the character. 300+ icons, collection, streaks. Next.js, XState, MongoDB.",
+      "Iconic : un quiz de culture pop. Une image, un objet culte, un personnage à retrouver. 300+ icônes, collection, séries. Next.js, XState, MongoDB.",
+      "Iconic: a pop culture quiz. One image, one cult object, one character to find. 300+ icons, collection, streaks. Next.js, XState, MongoDB.",
     ),
   },
   tagline: { card: l("Devine l'icône", "Guess the icon"), page: l("Quiz culture", "Culture quiz") },
   genre: l("Quiz culture, devinette d'icônes", "Culture quiz, icon guessing"),
   pitch: {
     card: l(
-      "Une image, un objet culte, trois essais : deviner le personnage qui se cache derrière, et compléter la collection set après set.",
-      "One image, one cult object, three tries: guess the character hiding behind it, and complete the collection set after set.",
+      "Une image, un objet culte : deviner le personnage qui se cache derrière, et compléter la collection set après set.",
+      "One image, one cult object: guess the character hiding behind it, and complete the collection set after set.",
     ),
     page: l(
-      "Un quiz de culture pop : une image, un objet culte, trois essais pour retrouver le personnage qui se cache derrière. Chaque icône trouvée rejoint la collection.",
-      "A pop culture quiz: one image, one cult object, three tries to find the character hiding behind it. Every icon found joins the collection.",
+      "Un quiz de culture pop : une image, un objet culte, et le personnage qui se cache derrière à retrouver. Chaque icône trouvée rejoint la collection.",
+      "A pop culture quiz: one image, one cult object, and the character hiding behind it to find. Every icon found joins the collection.",
     ),
   },
   cardStats: [
@@ -752,14 +752,14 @@ const iconic: Game = {
     { label: l("LANGUES", "LANGUAGES"), value: l("Français, anglais", "French, English") },
   ],
   pitchSection: {
-    title: l("Un objet culte, 3 essais, *une collection*.", "One cult object, 3 tries, *one collection*."),
+    title: l("Un objet culte, un nom, *une collection*.", "One cult object, one name, *one collection*."),
     paragraphs: l(
       [
-        "Iconic affiche une carte illustrée : un objet ou un symbole lié à un personnage. Reste à taper son nom. **3 essais par icône**, des indices à débloquer, et une série de bonnes réponses qui multiplie les ICoins.",
+        "Iconic affiche une carte illustrée : un objet ou un symbole lié à un personnage. Reste à taper son nom : les essais sont illimités, mais **trouver en 3 essais maximum** garde la série, qui multiplie les ICoins. Des indices sont aussi à débloquer.",
         "Chaque icône trouvée rejoint **la collection**, et chaque set a ses propres succès à décrocher.",
       ],
       [
-        "Iconic shows an illustrated card: an object or a symbol tied to a character. All that is left is to type their name. **3 tries per icon**, hints to unlock, and a streak of right answers that multiplies ICoins.",
+        "Iconic shows an illustrated card: an object or a symbol tied to a character. All that is left is to type their name: tries are unlimited, but **finding it within 3 tries** keeps the streak going, which multiplies ICoins. Hints can be unlocked too.",
         "Every icon found joins **the collection**, and every set has its own achievements to earn.",
       ],
     ),
@@ -935,8 +935,8 @@ const iconic: Game = {
   },
   socials: ["youtube", "twitch", "x", "github"],
   teaser: l(
-    "Un quiz de culture pop : un objet culte, trois essais pour retrouver le personnage.",
-    "A pop culture quiz: one cult object, three tries to find the character.",
+    "Un quiz de culture pop : un objet culte, un personnage à retrouver.",
+    "A pop culture quiz: one cult object, one character to find.",
   ),
 };
 
