@@ -133,9 +133,10 @@ export function IconicQuizDemo() {
       input.current?.select();
       return;
     }
-    patch({ tries: 0, streak: 0, state: "result", result: "missed", locked: true, message: { key: "lost" } });
-    await wait(1500);
-    return next(index);
+    // Tries are unlimited: missing the first three only breaks the streak, the card stays.
+    patch({ tries: 0, state: "input", message: { key: tries === 1 ? "lost" : "hint" }, ...(tries === 1 && { streak: 0 }) });
+    busy.current = false;
+    input.current?.select();
   };
 
   const name = t(`cards.${card.id}.name`);
@@ -147,7 +148,7 @@ export function IconicQuizDemo() {
         ? t(`cards.${card.id}.question`)
         : message.key === "hint"
           ? t("hint", { hint: t(`cards.${card.id}.hint`) })
-          : t("lost", { name });
+          : t("lost", { hint: t(`cards.${card.id}.hint`) });
 
   const stateLabel = (state: MachineState) => {
     if (state === "result" && view.result !== "pending") return t(`result.${view.result}`);

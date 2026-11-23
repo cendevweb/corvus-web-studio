@@ -20,6 +20,6 @@ Le 21 novembre, Iconic reçoit un nouveau set et une nouvelle façon de progress
 - **Figures de l'histoire.** Un set de 50 icônes à deviner : des figures qui ont marqué leur époque, chacune résumée par un objet.
 - **Tableau de mission.** Des missions pour avancer à son rythme. Rien ne se réinitialise : ce qui est commencé reste acquis.
 
-Le principe ne change pas : une carte illustrée montre un objet lié à un personnage, et il reste trois essais pour trouver son nom.
+Le principe ne change pas : une carte illustrée montre un objet lié à un personnage, et il faut retrouver son nom, en autant d'essais que nécessaire.
 
 Rendez-vous le 21 novembre sur [iconic-game.gg](https://iconic-game.gg).

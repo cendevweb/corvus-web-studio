@@ -92,12 +92,12 @@
       "iconic": {
         "title": "Mini game",
         "live": "Playable demo",
-        "intro": "Find the historical figure tied to this image. Three tries, not one more. Every step that fires lights up in the state machine, just like in the game.",
+        "intro": "Find the historical figure tied to this image. Tries are unlimited, but the streak only holds if the answer lands within the first three. Every step that fires lights up in the state machine, just like in the game.",
         "answer": "Answer",
         "placeholder": "Type a name…",
         "submit": "Submit",
-        "tries": "Tries",
-        "triesLeft": "{count, plural, =0 {No tries left} one {# try left} other {# tries left}}",
+        "tries": "Streak tries",
+        "triesLeft": "{count, plural, =0 {Streak lost for this card, unlimited tries} one {# try left to keep the streak} other {# tries left to keep the streak}}",
         "reward": "25 ICoins per right answer",
         "streak": "Streak",
         "machineLabel": "Current state of the state machine",
@@ -119,7 +119,7 @@
         "found": "{name}, well spotted! +{gain} ICoins.",
         "foundStreak": "{name}, well spotted! +{gain} ICoins (streak of {streak}).",
         "hint": "Missed. Free hint for the demo: {hint}. In the game, it costs 100 ICoins and breaks the streak.",
-        "lost": "It was {name}. Streak reset, the card will come back later.",
+        "lost": "Three misses: streak reset. The card stays, keep trying. Hint: {hint}.",
         "cards": {
           "screw": {
             "alt": "Iconic card: an aerial screw made of wood and canvas, standing on a base of sand",

@@ -92,12 +92,12 @@
       "iconic": {
         "title": "Mini-partie",
         "live": "Démo jouable",
-        "intro": "Retrouver la figure historique rattachée à cette image. Trois essais, pas un de plus. Chaque étape déclenchée s'allume dans la machine à états, comme dans le jeu.",
+        "intro": "Retrouver la figure historique rattachée à cette image. Les essais sont illimités, mais la série ne tient que si la réponse tombe dans les trois premiers. Chaque étape déclenchée s'allume dans la machine à états, comme dans le jeu.",
         "answer": "Réponse",
         "placeholder": "Entrer un nom…",
         "submit": "Valider",
-        "tries": "Essais",
-        "triesLeft": "{count, plural, =0 {Aucun essai restant} one {# essai restant} other {# essais restants}}",
+        "tries": "Essais pour la série",
+        "triesLeft": "{count, plural, =0 {Série perdue pour cette carte, essais illimités} one {# essai restant pour garder la série} other {# essais restants pour garder la série}}",
         "reward": "25 ICoins par bonne réponse",
         "streak": "Série",
         "machineLabel": "État courant de la machine à états",
@@ -119,7 +119,7 @@
         "found": "{name}, bien vu ! +{gain} ICoins.",
         "foundStreak": "{name}, bien vu ! +{gain} ICoins (série de {streak}).",
         "hint": "Raté. Indice offert pour la démo : {hint}. Dans le jeu, il coûte 100 ICoins et casse la série.",
-        "lost": "C'était {name}. Série remise à zéro, la carte reviendra plus tard.",
+        "lost": "Trois ratés : série remise à zéro. La carte reste, essaie encore. Indice : {hint}.",
         "cards": {
           "screw": {
             "alt": "Carte Iconic : une vis aérienne en bois et en toile, posée sur un socle de sable",
