@@ -7,8 +7,8 @@ import type { GameSlug } from "./games";
  * The demo components live in src/components/nest/ and are looked up by `demo`.
  */
 
-export type ExperimentId = "crow-follow" | "round-timer" | "icon-grid" | "rollback" | "brick-wall" | "typo-tolerance";
-export type ExperimentDemo = "crow-follow" | "round-timer" | "icon-grid";
+export type ExperimentId = "da-generator" | "crow-follow" | "round-timer" | "icon-grid" | "rollback" | "brick-wall" | "typo-tolerance";
+export type ExperimentDemo = "da-generator" | "crow-follow" | "round-timer" | "icon-grid";
 
 export interface Experiment {
   id: ExperimentId;
@@ -25,6 +25,10 @@ export interface Experiment {
   /** How it works, in three steps. Backticks mark inline code. */
   how?: Localized<string[]>;
   demo?: ExperimentDemo;
+  /** Shown in the Nid section of the home page (default: every playable experiment). */
+  onHome?: boolean;
+  /** "New" badge on the Nid page. */
+  isNew?: boolean;
   /** Copyable snippet (MIT). `short` is the home-page version. */
   code?: { filename: string; language: "js" | "css"; short: string; full: string };
 }
@@ -151,6 +155,46 @@ grid.addEventListener('click', e => {
 });`;
 
 export const experiments: readonly Experiment[] = [
+  {
+    id: "da-generator",
+    number: "07",
+    status: "playable",
+    from: null,
+    origin: l("Le studio × les tendances", "The studio × the trends"),
+    title: {
+      card: l("Générateur de DA", "Art direction generator"),
+      page: l("Générateur de DA, des tendances au motion design", "Art direction generator, from trends to motion design"),
+    },
+    description: {
+      card: l(
+        "Une direction artistique complète en un clic, tirée des sujets qui font parler : GTA VI, Dune, Backrooms, Frutiger Aero… motion design compris.",
+        "A complete art direction in one click, drawn from what the internet is talking about: GTA VI, Dune, Backrooms, Frutiger Aero… motion design included.",
+      ),
+      page: l(
+        "Huit univers tirés des tendances du moment, de GTA VI aux vidéos TikTok sur Claude. Chaque tirage compose une DA complète (palette, typographies, texture, motion, mise en page) et la joue en boucle, en vidéo 9:16 ou en site web. Les cadenas gardent ce qui plaît ; tout s'exporte en CSS, en tokens, en skill Claude ou en prompt.",
+        "Eight universes drawn from current trends, from GTA VI to TikTok videos about Claude. Each roll composes a complete art direction (palette, type, texture, motion, layout) and plays it on a loop, as a 9:16 video or a website. Locks keep what works; everything exports as CSS, tokens, a Claude skill or a prompt.",
+      ),
+    },
+    tags: {
+      card: l(["motion design", "WAAPI", "générateur"], ["motion design", "WAAPI", "generator"]),
+      page: l(["motion design", "animation", "générateur", "WAAPI", "a11y"], ["motion design", "animation", "generator", "WAAPI", "a11y"]),
+    },
+    how: l(
+      [
+        "Un tirage choisit une option par facette ; le code de la DA (`HW-0K7`) les range en base mixte et voyage dans l'URL.",
+        "Le motion est une timeline de 16 temps au tempo de la DA, écrite avec la Web Animations API ; le ressort devient une courbe CSS `linear()`.",
+        "Les exports lisent les mêmes valeurs que l'aperçu : variables CSS, tokens W3C, `SKILL.md` avec un extrait Remotion, prompt.",
+      ],
+      [
+        "A roll picks one option per facet; the DA code (`HW-0K7`) packs them in mixed radix and travels in the URL.",
+        "Motion is a 16-beat timeline at the DA's tempo, written with the Web Animations API; the spring becomes a CSS `linear()` easing.",
+        "The exports read the same values as the preview: CSS variables, W3C tokens, a `SKILL.md` with a Remotion snippet, and a prompt.",
+      ],
+    ),
+    demo: "da-generator",
+    onHome: false,
+    isNew: true,
+  },
   {
     id: "crow-follow",
     number: "01",
@@ -343,10 +387,12 @@ export const experiments: readonly Experiment[] = [
 ];
 
 export const playableExperiments = experiments.filter((e) => e.status === "playable");
+/** The three compact demos of the home page. */
+export const homeExperiments = playableExperiments.filter((e) => e.onHome !== false);
 export const getExperiment = (id: ExperimentId): Experiment => experiments.find((e) => e.id === id)!;
 
 /** Filter chips of the Nid page. */
 export const experimentFilters = l(
-  ["animation", "pixel art", "temps réel", "UI de jeu", "CSS 3D", "a11y", "algo"],
-  ["animation", "pixel art", "real time", "game UI", "CSS 3D", "a11y", "algo"],
+  ["motion design", "animation", "pixel art", "temps réel", "UI de jeu", "CSS 3D", "a11y", "algo"],
+  ["motion design", "animation", "pixel art", "real time", "game UI", "CSS 3D", "a11y", "algo"],
 );

@@ -1,5 +1,5 @@
 import { useLocale, useTranslations } from "next-intl";
-import { playableExperiments } from "@content/nest";
+import { homeExperiments } from "@content/nest";
 import { experimentDemos } from "@/components/nest/demos";
 import { Tags } from "@/components/ui/Badge";
 import { CopyButton } from "@/components/ui/CopyButton";
@@ -31,7 +31,7 @@ export function NestSection() {
           }
         />
         <div className="lab">
-          {playableExperiments.map((experiment, index) => {
+          {homeExperiments.map((experiment, index) => {
             const Demo = experiment.demo ? experimentDemos[experiment.demo] : null;
             return (
               <Reveal as="article" className="t" key={experiment.id} delay={index * 60}>

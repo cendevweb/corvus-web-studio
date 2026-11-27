@@ -5,6 +5,7 @@ import type { ComponentType, CSSProperties, ReactNode } from "react";
 import { getGame } from "@content/games";
 import { experimentFilters, experiments, type Experiment, type ExperimentDemo } from "@content/nest";
 import { CrowLab } from "@/components/nest/CrowLab";
+import { DaGeneratorLab } from "@/components/nest/DaGeneratorLab";
 import { IconGridLab } from "@/components/nest/IconGridLab";
 import { NestExplorer, type NestCard } from "@/components/nest/NestExplorer";
 import { RoundTimerLab } from "@/components/nest/RoundTimerLab";
@@ -21,6 +22,7 @@ import { resolveLocale, type LocaleParams } from "@/lib/page";
 import { getPageTranslations, type PageTranslator } from "@/lib/page-messages";
 import { buildMetadata } from "@/lib/seo";
 import "@/styles/pages/nest.css";
+import "@/styles/pages/nest-da.css";
 
 export async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
   const locale = await resolveLocale(params);
@@ -30,6 +32,7 @@ export async function generateMetadata({ params }: { params: LocaleParams }): Pr
 
 /** Full, playable version of each experiment (the home page uses the compact ones of `demos.tsx`). */
 const LABS: Record<ExperimentDemo, ComponentType> = {
+  "da-generator": DaGeneratorLab,
   "crow-follow": CrowLab,
   "round-timer": RoundTimerLab,
   "icon-grid": IconGridLab,
@@ -51,6 +54,7 @@ function IdLine({ experiment, locale, t }: { experiment: Experiment; locale: Loc
         {playable && <i aria-hidden="true" />}
         {playable ? t("playable") : t("soon")}
       </span>
+      {experiment.isNew && <span className="st new">{t("new")}</span>}
       <span className="from" style={{ "--c": game?.colors.tag ?? STUDIO_COLOR } as CSSProperties}>
         <i aria-hidden="true" />
         {(playable && experiment.origin?.[locale]) || game?.name || t("studio")}
@@ -115,7 +119,7 @@ export default async function NestPage({ params }: { params: LocaleParams }) {
               </ol>
             </details>
           )}
-          <div className="x-body">
+          <div className={code ? "x-body" : "x-body solo"}>
             {Lab && <Lab />}
             {code && (
               <div className="x-code night">

@@ -4,8 +4,8 @@ import { CrowFollowDemo } from "./CrowFollowDemo";
 import { IconGridDemo } from "./IconGridDemo";
 import { RoundTimerDemo } from "./RoundTimerDemo";
 
-/** Demo component of each playable experiment (`Experiment.demo` in content/nest.ts). */
-export const experimentDemos: Record<ExperimentDemo, ComponentType> = {
+/** Compact demo of each experiment shown on the home page (`Experiment.demo` in content/nest.ts). */
+export const experimentDemos: Partial<Record<ExperimentDemo, ComponentType>> = {
   "crow-follow": CrowFollowDemo,
   "round-timer": RoundTimerDemo,
   "icon-grid": IconGridDemo,

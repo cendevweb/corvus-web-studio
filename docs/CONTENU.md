@@ -233,6 +233,17 @@ haut du fichier.
 `from` vaut le slug du jeu d'origine, ou `null` pour le studio. Les extraits de code du Nid sont publiés
 sous licence MIT.
 
+La version complète jouée sur la page du Nid est inscrite dans `LABS` (`src/app/[locale]/nid/page.tsx`).
+Une expérience trop grande pour la grille de l'accueil prend `onHome: false` (pas de démo compacte à
+écrire) ; `isNew: true` affiche le badge « NOUVEAU » ; sans `code`, la démo occupe toute la largeur.
+
+**Générateur de DA (EXP 07)** : les huit univers sont dans **`content/da.ts`** (palettes, typographies,
+textures, motion, mises en page, accroches, son, à faire / à éviter), en paires FR/EN. Ajouter une palette
+ou un motion à un univers suffit : le tirage, les cadenas, l'aperçu et les exports suivent. Le code d'une
+DA (`#da=HW-0K7`) dépend du nombre et de l'ordre des options de son univers : en ajouter, en retirer ou les
+réordonner change les codes déjà partagés. Les textes d'interface sont dans `messages/<langue>/nest.json`
+(clé `nestPage.da`). Les univers évoquent des styles : jamais de logo, personnage, police ni image officiels.
+
 ---
 
 ## 6. Modifier les traductions
