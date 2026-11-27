@@ -5,8 +5,8 @@ import { cn } from "@/lib/cn";
 import { Icon } from "@/components/ui/Icon";
 
 interface CopyActionProps {
-  /** What to copy: a literal text, the text of an element (by id), or the URL of the page. */
-  source: { text: string } | { elementId: string } | { page: true };
+  /** What to copy: a literal text (or a function read on click), the text of an element (by id), or the URL of the page. */
+  source: { text: string | (() => string) } | { elementId: string } | { page: true };
   label: string;
   copiedLabel: string;
   /** Accessible name when the visible label is too short ("Copier" → "Copier la liste des changements"). */
@@ -14,7 +14,7 @@ interface CopyActionProps {
   className?: string;
 }
 
-async function writeClipboard(text: string): Promise<boolean> {
+export async function writeClipboard(text: string): Promise<boolean> {
   try {
     await navigator.clipboard.writeText(text);
     return true;
@@ -45,7 +45,9 @@ export function CopyAction({ source, label, copiedLabel, ariaLabel, className }:
   const onClick = async () => {
     const text =
       "text" in source
-        ? source.text
+        ? typeof source.text === "function"
+          ? source.text()
+          : source.text
         : "elementId" in source
           ? (document.getElementById(source.elementId)?.innerText.trim() ?? "")
           : window.location.href.split("#")[0]!;

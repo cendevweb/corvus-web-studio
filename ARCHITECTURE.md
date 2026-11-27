@@ -11,6 +11,7 @@ content/            Typed content, no UI
   games.ts          The three games (FR/EN), stats, media, colours
   career.ts         Company works, timeline, skills
   nest.ts           Nest experiments and their code snippets
+  da.ts             Art-direction generator (Nest EXP 07): the eight universes
   news/<locale>/    One Markdown file per news item (see news/README.md)
   types.ts          Localized<T>, l(), pick()
 messages/           UI strings: fr.json and en.json (same keys)
